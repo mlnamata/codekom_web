@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { JsonLd } from '@/komponenty/JsonLd'
 import { Markdown } from '@/komponenty/Markdown'
+import { PortalObceDashboard } from '@/komponenty/PortalObceDashboard'
 import { StrankaHero } from '@/komponenty/StrankaHero'
 import soubory from '@/data/ke-stazeni.json'
 import { casti, naHtml, nactiStranku, vsechnyStranky } from '@/lib/obsah'
@@ -144,6 +145,21 @@ function ObecnaStranka({ s }: { s: { soubor: string; telo: string; title: string
         }
         popis={zbytek}
       />
+
+      {s.soubor === 'co-umime' ? (
+        <section aria-labelledby="navrh-portalu" className="mt-14">
+          <div className="mb-6 max-w-[44em]">
+            <p className="rubrika">Interaktivní návrh portálu obce</p>
+            <h2 id="navrh-portalu" className="mt-1 text-[28px] md:text-[38px]">
+              Jak může vypadat jednotný portál obce
+            </h2>
+            <p className="mt-2 text-[16px] text-sediva">
+              Ukázka propojení elektronické úřední desky, portálu občana s přímými platbami, hlášení závad, IoT senzoriky a obecní půjčovny v jednom přehledném systému.
+            </p>
+          </div>
+          <PortalObceDashboard />
+        </section>
+      ) : null}
 
       <div className="mt-12 space-y-10">
         {c.map((sekce) => (
