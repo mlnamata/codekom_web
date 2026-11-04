@@ -41,6 +41,39 @@ Měsíčně bez DPH, připočítává se k ceně webu. Orientační cena, přesn
 
 Digitální úřad obsahuje poplatky a platby, rezervace, podání, hlášení závad a zastupitelstvo. Zařízení do budov a jejich montáž se platí zvlášť, jednorázově podle prohlídky budovy. Cenu pošleme v nabídce.
 
+## Jednorázový poplatek za nasazení webu
+
+Zavedení webu zahrnuje technickou přípravu, napojení domény obce, výběr a nastavení šablony, naplnění obecními symboly a kontakty, převod základního obsahu a zaškolení obsluhy.
+
+| Položka zavedení | Základ | Pokročilý | Advance |
+|---|---|---|---|
+| Poplatek za nasazení a spuštění | od 4 900 Kč | od 8 900 Kč | od 14 900 Kč |
+
+Jednorázově bez DPH. Orientační cena, přesnou pošleme v nabídce. Platí ke 4. 11. 2026.
+
+V ceně nasazení je nastavení zabezpečení a HTTPS certifikátu, přesměrování starých adres, zprovoznění elektronické úřední desky i mobilní aplikace pro občany.
+
+## Hodinová sazba experta a doplňkové služby
+
+Pro práce nad rámec standardní technické podpory nebo individuální zakázkové požadavky nabízíme služby našich specialistů.
+
+- **Hodinová sazba experta:** 750 Kč za hodinu bez DPH pro individuální práce, zakázkové úpravy bloků a grafické práce.
+- **Přenesení rozsáhlého archivu ze starého webu:** od 2 900 Kč jednorázově (ruční kontrola a převedení stovek historických dokumentů a vyhlášek).
+- **Školení na místě na obecním úřadě:** od 3 500 Kč za půldenní workshop pro starostu, účetní, zastupitele a redaktory spolků.
+- **Balíček SMS zpráv pro občany:** od 990 Kč za 1 000 SMS kreditů na rozesílání krizových i běžných zpráv.
+- **Příprava podkladů pro žádost o dotaci:** od 4 500 Kč za přípravu technické specifikace pro dotační tituly na digitalizaci obcí.
+
+## Katalog součástí pro chytrou obec
+
+Komponenty pro modul Chytré budovy a chytrou obec. Fungují spolehlivě a autonomně i při výpadku internetu:
+
+- **Chytrá termostatická hlavice:** od 1 490 Kč za kus. Bezdrátová digitální hlavice na radiátory v budovách obce (sál, knihovna, hasičárna, úřad). Vytápí podle kalendáře akcí a provozu, šetří výdaje na otop.
+- **Elektronická klika s PIN klávesnicí:** od 4 800 Kč za kus. Kódový zámek pro dveře do společenského sálu, klubovny nebo tělocvičny. Časový kód platí jen po dobu rezervace přes Digitální úřad.
+- **Dálkový odečet vodoměru a elektroměru:** od 2 900 Kč za kus. Snímač se sledováním spotřeby a okamžitým hlášením havárie nebo protékající vody.
+- **Záplavové a hladinové čidlo:** od 3 900 Kč za kus. Ultrazvukové sledování výšky hladiny potoka nebo rybníka. Při nebezpečí ihned odešle krizové hlášení starostovi a do mobilní aplikace občanů.
+- **Obecní meteostanice:** od 6 900 Kč za kus. Měření teploty, větru, srážek a tlaku s živým zobrazením na webu obce pro hasiče, zemědělce i občany.
+- **Venkovní elektronická úřední deska:** od 45 000 Kč za kus. Odolný venkovní e-ink nebo dotykový panel s nízkou spotřebou pro nepřetržitý přístup k dokumentům 24 hodin denně.
+
 ## Spočítejte orientační cenu
 
 {/* Kalkulačka: pole a texty níže. Výsledek v aria-live="polite". */}

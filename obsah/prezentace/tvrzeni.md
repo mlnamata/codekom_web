@@ -34,6 +34,10 @@ Zkratky zdrojů: A, B, D = části `docs/pravni-dokumenty.md` (návrhy ke kontro
 | Změna šablony v úrovni Základ jednou ročně zdarma | ukazky | docs/navrh-platformy/04-admin-editor.md | 2026-11-04 | hypoteza |
 | Rozdíl mezi roční a měsíční platbou | cenik | chybí, [DOPLNIT] | – | neovereno |
 | Cena SMS kreditů, cena pomoci s dotacemi | cenik, dotace | chybí, [DOPLNIT] | – | neovereno |
+| Jednorázový poplatek za nasazení webu od 4 900 Kč bez DPH | cenik | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | orientacni |
+| Hodinová sazba experta 750 Kč bez DPH pro individuální práce | cenik | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | orientacni |
+| Katalog součástí pro chytrou obec od 1 490 Kč | cenik | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | orientacni |
+| Doplňkové služby pro obce: archiv od 2 900 Kč, školení od 3 500 Kč | cenik | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | orientacni |
 
 ## Smlouva a podmínky
 

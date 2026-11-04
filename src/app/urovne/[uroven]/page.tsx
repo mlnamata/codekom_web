@@ -1,138 +1,164 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { StrankaHero } from '@/komponenty/StrankaHero'
 import { STITEK_CENY, VELIKOSTI, kc } from '@/lib/cenik'
 import { odkazAdministrace } from '@/lib/demo'
-import { MATICE, UROVNE, najdiUroven } from '@/lib/urovne'
+import { MATICE, UROVNE } from '@/lib/urovne'
 
 export const dynamicParams = false
 export const generateStaticParams = () => UROVNE.map((u) => ({ uroven: u.klic }))
 
 export async function generateMetadata({ params }: { params: Promise<{ uroven: string }> }): Promise<Metadata> {
-  const u = najdiUroven((await params).uroven)
+  const { uroven } = await params
+  const u = UROVNE.find((x) => x.klic === uroven)
   if (!u) return {}
   return {
-    title: `Úroveň ${u.nazev}: ${u.princip.toLowerCase()} – CodeKom`,
-    description: `${u.popis} ${u.uzivatele}.`.slice(0, 155),
+    title: `Úroveň editoru ${u.nazev} – CodeKom`,
+    description: `${u.princip}. ${u.popis}`.slice(0, 155),
     alternates: { canonical: `/urovne/${u.klic}` },
   }
 }
 
 export default async function DetailUrovne({ params }: { params: Promise<{ uroven: string }> }) {
   const { uroven } = await params
-  const i = UROVNE.findIndex((u) => u.klic === uroven)
+  const i = UROVNE.findIndex((x) => x.klic === uroven)
   const u = UROVNE[i]
   if (!u) notFound()
+
   const vyssi = UROVNE[i + 1]
   const nizsi = UROVNE[i - 1]
-  const admin = odkazAdministrace(u.klic)
-  // Co přibude ve vyšší úrovni: řádky matice, kde se hodnota liší
   const navic = vyssi ? MATICE.filter((r) => r.hodnoty[i] !== r.hodnoty[i + 1]) : []
+  const admin = odkazAdministrace(u.klic)
 
   return (
-    <div className="obal pt-10">
-      <nav aria-label="Drobečková navigace" className="text-[15px]">
-        <Link href="/urovne" className="odkaz">
-          Úrovně editoru
+    <div className="obal pb-24">
+      <nav aria-label="Drobečková navigace" className="pt-6 text-[14px] text-sediva">
+        <Link href="/urovne" className="hover:text-text hover:underline">
+          Úrovně
         </Link>
-        <span className="mx-2 text-sediva" aria-hidden="true">
+        <span className="mx-2 text-linka" aria-hidden="true">
           /
         </span>
-        <span aria-current="page">{u.nazev}</span>
+        <span aria-current="page" className="font-medium text-text">
+          {u.nazev}
+        </span>
       </nav>
 
-      <div className="mt-6 grid gap-12 lg:grid-cols-[1.3fr_1fr]">
-        <div>
-          <p className="stitek">Úroveň {i + 1} ze 3</p>
-          <h1 className="mt-1 text-[34px] md:text-[52px]">{u.nazev}</h1>
-          <p className="mt-2 text-[22px] text-sediva" style={{ fontFamily: 'var(--font-nadpis)' }}>
-            „{u.princip}“
+      <StrankaHero
+        slovoPozadi={u.nazev.toUpperCase()}
+        rubrika={`Úroveň ${i + 1} ze 3: „${u.princip}“`}
+        nadpis={
+          <>
+            Úroveň <span className="text-gradient">{u.nazev}</span>
+          </>
+        }
+        popis={u.popis}
+        odznaky={[
+          `Cena od ${kc(u.ceny[0])} / měsíc`,
+          u.proKoho,
+          'Plná zákonná přístupnost',
+          'Smlouva na dobu neurčitou',
+        ]}
+        tlacitka={[
+          { href: '/cenik', text: 'Spočítat cenu v kalkulačce', primarni: true },
+          { href: '/ukazky', text: 'Prohlédnout šablony' },
+        ]}
+      />
+
+      {/* Ceny a pro koho */}
+      <div className="mt-14 grid gap-8 lg:grid-cols-12">
+        <div className="sklo-svetle rounded-3xl p-8 lg:col-span-7">
+          <span className="text-[13px] font-bold uppercase tracking-wider text-akcent-tmavy">
+            Základní filozofie
+          </span>
+          <h2 className="mt-2 text-[28px] font-bold">Pro koho je úroveň {u.nazev}</h2>
+          <p className="mt-4 text-[17px] leading-relaxed text-text font-medium">{u.proKoho}</p>
+          <p className="mt-3 text-[15px] leading-relaxed text-sediva">
+            Ani v nejvyšší úrovni editoru nelze porušit pravidla přístupnosti (WCAG 2.2 AA) ani rozbít povinné části webu. Systém automaticky kontroluje kontrast, strukturu nadpisů i alt popisy.
           </p>
-          <p className="mt-6 max-w-[34em] text-[19px] text-[#333]">{u.popis}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            {admin ? (
-              <a href={admin} className="tlacitko" rel="noopener noreferrer">
-                Vyzkoušet administraci {u.nazev}
-              </a>
-            ) : null}
-            <Link href="/ukazky" className="tlacitko-obrys">
-              Vybrat šablonu
-            </Link>
-          </div>
         </div>
-        <aside aria-labelledby="cena" className="border-t border-black pt-6 lg:mt-10">
-          <h2 id="cena" className="text-[20px]">
-            Cena
-          </h2>
-          <dl className="mt-3">
-            {VELIKOSTI.map((v, j) => (
-              <div key={v.klic} className="flex justify-between gap-4 border-b border-linka py-3">
-                <dt>{v.nazev}</dt>
-                <dd className="font-medium">od {kc(u.ceny[j]!)}</dd>
-              </div>
-            ))}
-          </dl>
-          <p className="stitek mt-3">Měsíčně bez DPH. {STITEK_CENY}</p>
-          <dl className="mt-6 grid gap-3 text-[16px]">
-            <div>
-              <dt className="text-sediva">Pro koho</dt>
-              <dd>{u.proKoho}</dd>
-            </div>
-            <div>
-              <dt className="text-sediva">Uživatelé</dt>
-              <dd>{u.uzivatele}</dd>
-            </div>
-            <div>
-              <dt className="text-sediva">Podpora</dt>
-              <dd>{u.podpora}</dd>
-            </div>
-          </dl>
+
+        <aside aria-label="Ceny úrovně" className="sklo-svetle flex flex-col justify-between rounded-3xl p-8 lg:col-span-5">
+          <div>
+            <span className="text-[13px] font-bold uppercase tracking-wider text-akcent-tmavy">
+              Měsíční licence
+            </span>
+            <h2 className="mt-2 text-[26px] font-bold">Cena podle velikosti</h2>
+            <ul className="mt-6 space-y-3">
+              {VELIKOSTI.map((v, j) => (
+                <li key={v.klic} className="flex items-baseline justify-between border-b border-linka/60 pb-3">
+                  <span className="text-[15px] text-sediva">{v.nazev}</span>
+                  <span className="text-[20px] font-bold text-noc">od {kc(u.ceny[j]!)}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-2 text-[12px] text-sediva">měsíčně bez DPH</p>
+          </div>
+          <p className="stitek mt-6 border-t border-linka pt-4">{STITEK_CENY}</p>
         </aside>
       </div>
 
-      <section aria-labelledby="co" className="mt-20">
-        <h2 id="co" className="text-[28px] md:text-[36px]">
-          Co v úrovni {u.nazev} uděláte
-        </h2>
-        <ol className="mt-8 grid gap-x-12 md:grid-cols-2">
+      {/* Co v úrovni uděláte */}
+      <section aria-labelledby="co-udelate" className="mt-20">
+        <div className="max-w-[42em]">
+          <p className="rubrika">Funkce a možnosti</p>
+          <h2 id="co-udelate" className="mt-1 text-[28px] md:text-[38px]">
+            Co v úrovni {u.nazev} uděláte
+          </h2>
+        </div>
+        <ol className="mt-8 grid gap-4 sm:grid-cols-2">
           {u.coUdelate.map((t, j) => (
-            <li key={t} className="grid grid-cols-[40px_1fr] gap-3 border-t border-linka py-4">
-              <span className="text-[15px] text-sediva" aria-hidden="true">
+            <li
+              key={t}
+              className="sklo-svetle flex items-start gap-4 rounded-2xl p-6 transition-transform hover:-translate-y-0.5"
+            >
+              <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-noc text-[15px] font-bold text-white">
                 {String(j + 1).padStart(2, '0')}
               </span>
-              <span>{t}</span>
+              <span className="text-[16px] font-medium leading-snug text-text">{t}</span>
             </li>
           ))}
         </ol>
       </section>
 
-      <section aria-labelledby="obrazovky" className="na-tmave mt-20 bg-cerna px-6 py-12 text-white md:px-12">
-        <h2 id="obrazovky" className="text-[28px]" style={{ color: '#fff' }}>
+      {/* Jak vypadá administrace */}
+      <section aria-labelledby="obrazovky-admin" className="na-tmave zare relative isolate mt-20 overflow-hidden rounded-[32px] bg-noc px-6 py-14 md:px-14 md:py-16">
+        <p className="rubrika">Ukázka prostředí</p>
+        <h2 id="obrazovky-admin" className="mt-2 text-[30px] md:text-[42px] text-white">
           Jak vypadá administrace
         </h2>
-        <p className="mt-3 max-w-[40em] text-[#cfcfcf]">Tři obrazovky, na kterých je úroveň {u.nazev} nejlépe vidět. Všechny si můžete proklikat v ukázce bez přihlášení.</p>
-        <ul className="mt-8 grid gap-8 md:grid-cols-3">
+        <p className="mt-3 max-w-[40em] text-[17px] text-white/80">
+          Tři obrazovky, na kterých je úroveň {u.nazev} nejlépe vidět. Všechny si můžete proklikat v ukázce bez nutnosti přihlašování.
+        </p>
+
+        <ul className="mt-10 grid gap-6 md:grid-cols-3">
           {u.obrazovky.map((o) => (
-            <li key={o.nazev} className="border-t border-[#444] pt-4">
-              <h3 className="text-[20px]" style={{ color: '#fff' }}>
-                {o.nazev}
-              </h3>
-              <p className="mt-2 text-[#e0e0e0]">{o.popis}</p>
+            <li key={o.nazev} className="sklo rounded-2xl p-6">
+              <h3 className="text-[20px] font-bold text-white">{o.nazev}</h3>
+              <p className="mt-3 text-[15px] leading-relaxed text-white/80">{o.popis}</p>
             </li>
           ))}
         </ul>
+
         {admin ? (
-          <a href={admin} className="tlacitko mt-10" rel="noopener noreferrer">
-            Otevřít ukázku administrace
-          </a>
+          <div className="mt-10 border-t border-white/10 pt-6">
+            <a href={admin} className="tlacitko" rel="noopener noreferrer">
+              Otevřít živou ukázku administrace
+            </a>
+          </div>
         ) : null}
       </section>
 
-      <section aria-labelledby="vse" className="mt-20">
-        <h2 id="vse" className="text-[28px]">
-          Co platí ve všech úrovních
-        </h2>
-        <ul className="mt-6 grid gap-x-12 md:grid-cols-2">
+      {/* Co platí ve všech úrovních */}
+      <section aria-labelledby="vsechny-urovne" className="mt-20">
+        <div className="max-w-[42em]">
+          <p className="rubrika">Společný základ</p>
+          <h2 id="vsechny-urovne" className="mt-1 text-[28px] md:text-[38px]">
+            Co platí ve všech úrovních
+          </h2>
+        </div>
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
             'Úřední deska s archivem a záznamem o vyvěšení, který nejde smazat.',
             'Povinně zveřejňované informace, prohlášení o přístupnosti a GDPR.',
@@ -141,45 +167,62 @@ export default async function DetailUrovne({ params }: { params: Promise<{ urove
             'Aplikace pro občany s oznámeními a krizovými hlášeními.',
             'Přechod na vyšší úroveň kdykoli, obsah se zachová.',
           ].map((t) => (
-            <li key={t} className="border-t border-linka py-4">
-              {t}
+            <li key={t} className="sklo-svetle flex items-start gap-3 rounded-2xl p-6">
+              <span className="mt-1 size-2 rounded-full bg-akcent-tmavy shrink-0" aria-hidden="true" />
+              <span className="text-[15px] leading-relaxed text-text font-medium">{t}</span>
             </li>
           ))}
         </ul>
       </section>
 
+      {/* Rozdíly oproti vyšší úrovni */}
       {vyssi ? (
-        <section aria-labelledby="navic" className="mt-20">
-          <h2 id="navic" className="text-[28px]">
-            Co přidá úroveň {vyssi.nazev}
-          </h2>
-          <div className="mt-6 overflow-x-auto" role="region" aria-label="Rozdíly úrovní, posuňte do strany" tabIndex={0}>
+        <section aria-labelledby="rozdily-urovni" className="mt-20">
+          <div className="max-w-[42em]">
+            <p className="rubrika">Srovnání</p>
+            <h2 id="rozdily-urovni" className="mt-1 text-[28px] md:text-[38px]">
+              Co přidá úroveň {vyssi.nazev}
+            </h2>
+          </div>
+
+          <div
+            className="sklo-svetle mt-8 overflow-x-auto rounded-3xl border border-linka/80 p-4 md:p-6 shadow-xl"
+            role="region"
+            aria-label={`Rozdíly úrovní ${u.nazev} a ${vyssi.nazev}, posuňte do strany`}
+            tabIndex={0}
+          >
             <table className="w-full min-w-[560px] border-collapse text-left">
               <caption className="sr-only">
                 Rozdíly mezi úrovní {u.nazev} a {vyssi.nazev}
               </caption>
               <thead>
-                <tr className="border-b border-black">
-                  <th scope="col" className="py-3 pr-4 font-semibold">
+                <tr className="border-b-2 border-linka">
+                  <th scope="col" className="pb-3 pr-4 font-bold text-noc">
                     Funkce
                   </th>
-                  <th scope="col" className="py-3 pr-4 font-semibold">
+                  <th scope="col" className="pb-3 pr-4 font-bold text-noc">
                     {u.nazev}
                   </th>
-                  <th scope="col" className="py-3 pr-4 font-semibold">
+                  <th scope="col" className="pb-3 pr-4 font-bold text-noc">
                     {vyssi.nazev}
                   </th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="divide-y divide-linka/60 text-[15px]">
                 {navic.map((r) => (
-                  <tr key={r.funkce} className="border-b border-linka">
-                    <th scope="row" className="py-3 pr-4 font-normal">
+                  <tr key={r.funkce} className="hover:bg-white/40">
+                    <th scope="row" className="py-3.5 pr-4 font-normal text-text">
                       {r.funkce}
                     </th>
                     {[r.hodnoty[i]!, r.hodnoty[i + 1]!].map((h, k) => (
-                      <td key={k} className="py-3 pr-4">
-                        {h === true ? 'Ano' : h === false ? 'Ne' : h}
+                      <td key={k} className="py-3.5 pr-4 font-semibold">
+                        {h === true ? (
+                          <span className="text-akcent-tmavy">Ano</span>
+                        ) : h === false ? (
+                          <span className="text-sediva">Ne</span>
+                        ) : (
+                          h
+                        )}
                       </td>
                     ))}
                   </tr>
@@ -187,22 +230,25 @@ export default async function DetailUrovne({ params }: { params: Promise<{ urove
               </tbody>
             </table>
           </div>
-          <Link href={`/urovne/${vyssi.klic}`} className="odkaz mt-4 font-medium">
-            Podrobně o úrovni {vyssi.nazev}
-          </Link>
+          <div className="mt-6">
+            <Link href={`/urovne/${vyssi.klic}`} className="font-semibold text-akcent-tmavy underline hover:no-underline">
+              Zobrazit podrobnosti o úrovni {vyssi.nazev} &rarr;
+            </Link>
+          </div>
         </section>
       ) : null}
 
-      <nav aria-label="Ostatní úrovně" className="mt-16 flex flex-wrap justify-between gap-4 border-t border-black pt-6">
+      {/* Navigace mezi úrovněmi */}
+      <nav aria-label="Ostatní úrovně" className="mt-16 flex flex-wrap justify-between gap-4 border-t border-linka pt-6">
         {nizsi ? (
-          <Link href={`/urovne/${nizsi.klic}`} className="odkaz">
-            Nižší úroveň: {nizsi.nazev}
+          <Link href={`/urovne/${nizsi.klic}`} className="tlacitko-obrys !min-h-11">
+            &larr; Nižší úroveň: {nizsi.nazev}
           </Link>
         ) : (
           <span />
         )}
-        <Link href="/urovne" className="odkaz">
-          Porovnat všechny úrovně
+        <Link href="/urovne" className="tlacitko-obrys !min-h-11">
+          Porovnat všechny 3 úrovně
         </Link>
       </nav>
     </div>

@@ -1,76 +1,185 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { StrankaHero } from '@/komponenty/StrankaHero'
 import { STITEK_CENY, VELIKOSTI, kc } from '@/lib/cenik'
 import { BLOKY, MATICE, ROLE, UROVNE, type Hodnota } from '@/lib/urovne'
 
 export const metadata: Metadata = {
   title: 'Tři úrovně editoru webu obce – CodeKom',
-  description: 'Základ: píšu obsah. Pokročilý: skládám stránky. Advance: upravuji skoro vše. Porovnání funkcí, rolí a cen všech tří úrovní editoru.',
+  description:
+    'Základ: píšu obsah. Pokročilý: skládám stránky. Advance: upravuji skoro vše. Porovnání funkcí, rolí a cen všech tří úrovní editoru.',
   alternates: { canonical: '/urovne' },
 }
 
 function Bunka({ h }: { h: Hodnota }) {
-  if (h === true) return <span>Ano</span>
+  if (h === true)
+    return (
+      <span className="inline-flex items-center gap-1.5 font-semibold text-akcent-tmavy">
+        <span className="size-2 rounded-full bg-akcent-tmavy" aria-hidden="true" />
+        Ano
+      </span>
+    )
   if (h === false) return <span className="text-sediva">Ne</span>
-  return <span>{h}</span>
+  return <span className="font-medium text-text">{h}</span>
 }
 
 export default function Urovne() {
   return (
-    <div className="obal pt-12">
-      <h1 className="text-[34px] md:text-[48px]">Tři úrovně editoru</h1>
-      <p className="mt-4 max-w-[40em] text-[19px] text-[#333]">
-        Úroveň určuje, co obec smí na webu změnit. Všechny tři jsou jedna aplikace, úroveň jen zapíná funkce. Ani v nejvyšší úrovni nejde rozbít přístupnost ani povinné části webu: editor takovou změnu nepustí do publikace.
-      </p>
+    <div className="obal pb-24">
+      <StrankaHero
+        slovoPozadi="ÚROVNĚ"
+        rubrika="Tři úrovně editoru"
+        nadpis={
+          <>
+            Vyberte si, co chcete <span className="text-gradient">na webu sami ovládat</span>
+          </>
+        }
+        popis="Úroveň určuje, co obec smí na webu změnit. Všechny tři jsou jedna aplikace, úroveň jen zapíná funkce. Ani v nejvyšší úrovni nejde rozbít přístupnost ani povinné části webu: editor takovou změnu nepustí do publikace."
+        odznaky={[
+          'Základ: píšu obsah (3 uživatelé)',
+          'Pokročilý: skládám stránky (10 uživatelů)',
+          'Advance: upravuji skoro vše (neomezeně)',
+          'Přechod na vyšší úroveň kdykoli se zachováním obsahu',
+        ]}
+        tlacitka={[
+          { href: '#matice', text: 'Podrobné srovnání funkcí', primarni: true },
+          { href: '/cenik', text: 'Ceník a kalkulačka' },
+        ]}
+      />
 
-      <ul className="mt-12 grid border-t border-black md:grid-cols-3">
-        {UROVNE.map((u) => (
-          <li key={u.klic} className="flex flex-col border-b border-linka py-8 md:border-b-0 md:border-l md:px-8 md:first:border-l-0 md:first:pl-0">
-            <h2 className="text-[28px]">{u.nazev}</h2>
-            <p className="mt-1 text-sediva">„{u.princip}“</p>
-            <p className="mt-4">{u.popis}</p>
-            <p className="mt-4 text-[15px] text-sediva">{u.proKoho}</p>
-            <p className="mt-6 text-[22px] font-medium" style={{ fontFamily: 'var(--font-nadpis)' }}>
-              od {kc(u.ceny[0])}
-              <span className="block text-[14px] font-normal text-sediva" style={{ fontFamily: 'var(--font-sans)' }}>
-                měsíčně bez DPH, obec do 500 obyvatel
-              </span>
-            </p>
-            <Link href={`/urovne/${u.klic}`} className="tlacitko-obrys mt-6 self-start">
-              Podrobně o úrovni {u.nazev}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <p className="stitek mt-4">{STITEK_CENY}</p>
-
-      <section aria-labelledby="ceny" className="mt-16">
-        <h2 id="ceny" className="text-[28px]">
-          Cena podle velikosti obce
+      {/* 3 karty úrovní */}
+      <section aria-labelledby="tri-urovne" className="mt-14">
+        <h2 id="tri-urovne" className="sr-only">
+          Přehled tří úrovní editoru
         </h2>
-        <div className="mt-6 overflow-x-auto" role="region" aria-label="Tabulka cen, posuňte do strany" tabIndex={0}>
-          <table className="w-full min-w-[560px] border-collapse text-left">
-            <caption className="sr-only">Orientační ceny úrovní editoru měsíčně bez DPH</caption>
+        <div className="grid gap-6 md:grid-cols-3">
+          {UROVNE.map((u) => (
+            <div
+              key={u.klic}
+              className="sklo-svetle flex flex-col justify-between rounded-3xl p-8 transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div>
+                <span className="text-[13px] font-bold uppercase tracking-wider text-akcent-tmavy">
+                  „{u.princip}“
+                </span>
+                <h3 className="mt-1 text-[32px] font-bold">{u.nazev}</h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-text">{u.popis}</p>
+                <p className="mt-4 text-[14px] text-sediva">{u.proKoho}</p>
+
+                <div className="mt-6 border-y border-linka py-4">
+                  <span className="block text-[13px] text-sediva">Cena od</span>
+                  <span className="text-[34px] font-extrabold text-noc">
+                    {kc(u.ceny[0])}
+                  </span>
+                  <span className="block text-[13px] text-sediva">
+                    měsíčně bez DPH, obec do 500 obyvatel
+                  </span>
+                </div>
+              </div>
+
+              <div className="mt-8 space-y-3 pt-4 border-t border-linka">
+                <Link href={`/urovne/${u.klic}`} className="tlacitko w-full text-center">
+                  Podrobně o úrovni {u.nazev}
+                </Link>
+                <Link href="/cenik" className="tlacitko-obrys w-full text-center !min-h-11">
+                  Ceník pro všechny velikosti
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Matice funkcí */}
+      <section id="matice" aria-labelledby="porovnani-funkci" className="mt-24 scroll-mt-28">
+        <div className="max-w-[42em]">
+          <p className="rubrika">Kompletní srovnání</p>
+          <h2 id="porovnani-funkci" className="mt-1 text-[28px] md:text-[40px]">
+            Podrobné porovnání funkcí
+          </h2>
+          <p className="mt-3 text-[16px] text-sediva">
+            Přehledná tabulka možností jednotlivých úrovní. Tabulku lze na telefonu posouvat do stran.
+          </p>
+        </div>
+
+        <div
+          className="sklo-svetle mt-8 overflow-x-auto rounded-3xl border border-linka/80 p-4 md:p-6 shadow-xl"
+          role="region"
+          aria-label="Porovnání tří úrovní, tabulku posuňte do strany"
+          tabIndex={0}
+        >
+          <table className="w-full min-w-[620px] border-collapse text-left">
+            <caption className="sr-only">Podrobné porovnání funkcí tří úrovní editoru</caption>
             <thead>
-              <tr className="border-b border-black">
-                <th scope="col" className="py-3 pr-4 font-semibold">
+              <tr className="border-b-2 border-linka">
+                <th scope="col" className="pb-4 pr-6 text-[17px] font-bold text-noc">
+                  Funkce
+                </th>
+                {UROVNE.map((u) => (
+                  <th key={u.klic} scope="col" className="pb-4 pr-6 text-[17px] font-bold text-noc">
+                    {u.nazev}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-linka/60 text-[15px]">
+              {MATICE.map((r) => (
+                <tr key={r.funkce} className="transition-colors hover:bg-white/40">
+                  <th scope="row" className="py-3.5 pr-6 font-normal text-text">
+                    {r.funkce}
+                  </th>
+                  {r.hodnoty.map((h, j) => (
+                    <td key={j} className="py-3.5 pr-6">
+                      <Bunka h={h} />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* Ceny podle velikosti obce */}
+      <section aria-labelledby="ceny-podle-velikosti" className="mt-24">
+        <div className="max-w-[42em]">
+          <p className="rubrika">Financování</p>
+          <h2 id="ceny-podle-velikosti" className="mt-1 text-[28px] md:text-[38px]">
+            Ceny podle velikosti obce
+          </h2>
+          <p className="mt-3 text-[16px] text-sediva">
+            Orientační měsíční ceny bez DPH. Přesnou kalkulaci s ohledem na počet obyvatel a přídavné moduly vám připravíme v písemné nabídce.
+          </p>
+        </div>
+
+        <div
+          className="sklo-svetle mt-8 overflow-x-auto rounded-3xl border border-linka/80 p-4 md:p-6 shadow-xl"
+          role="region"
+          aria-label="Ceny úrovní podle velikosti obce"
+          tabIndex={0}
+        >
+          <table className="w-full min-w-[560px] border-collapse text-left">
+            <caption className="sr-only">Ceny úrovní podle velikosti obce</caption>
+            <thead>
+              <tr className="border-b-2 border-linka">
+                <th scope="col" className="pb-4 pr-6 text-[17px] font-bold text-noc">
                   Úroveň
                 </th>
                 {VELIKOSTI.map((v) => (
-                  <th key={v.klic} scope="col" className="py-3 pr-4 font-semibold">
+                  <th key={v.klic} scope="col" className="pb-4 pr-6 text-[17px] font-bold text-noc">
                     {v.nazev}
                   </th>
                 ))}
               </tr>
             </thead>
-            <tbody>
+            <tbody className="divide-y divide-linka/60 text-[16px]">
               {UROVNE.map((u) => (
-                <tr key={u.klic} className="border-b border-linka">
-                  <th scope="row" className="py-3 pr-4 font-medium">
+                <tr key={u.klic} className="transition-colors hover:bg-white/40">
+                  <th scope="row" className="py-4 pr-6 font-semibold text-noc">
                     {u.nazev}
                   </th>
-                  {u.ceny.map((c, i) => (
-                    <td key={i} className="py-3 pr-4">
+                  {u.ceny.map((c, j) => (
+                    <td key={j} className="py-4 pr-6 font-medium text-text">
                       od {kc(c)}
                     </td>
                   ))}
@@ -79,96 +188,60 @@ export default function Urovne() {
             </tbody>
           </table>
         </div>
-        <p className="stitek mt-3">Měsíčně bez DPH. {STITEK_CENY} Digitální úřad a Chytré budovy jdou přikoupit ke kterékoli úrovni.</p>
+        <p className="stitek mt-4">{STITEK_CENY}</p>
       </section>
 
-      <section aria-labelledby="matice" className="mt-16">
-        <h2 id="matice" className="text-[28px]">
-          Porovnání funkcí
-        </h2>
-        <p className="mt-3 max-w-[40em] text-[#333]">Každá vyšší úroveň obsahuje vše z nižší. Matice vychází z návrhu platformy ke 4. 11. 2026 a hlavní obrazovky si můžete proklikat v ukázce administrace.</p>
-        <div className="mt-6 overflow-x-auto" role="region" aria-label="Porovnání funkcí, posuňte do strany" tabIndex={0}>
-          <table className="w-full min-w-[720px] border-collapse text-left text-[16px]">
-            <caption className="sr-only">Funkce editoru v úrovních Základ, Pokročilý a Advance</caption>
-            <thead className="sticky top-0 bg-white">
-              <tr className="border-b border-black">
-                <th scope="col" className="w-[34%] py-3 pr-4 font-semibold">
-                  Funkce
-                </th>
-                {UROVNE.map((u) => (
-                  <th key={u.klic} scope="col" className="py-3 pr-4 font-semibold">
-                    {u.nazev}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {MATICE.map((r, i) => {
-                const novaOblast = r.oblast !== MATICE[i - 1]?.oblast
-                return [
-                  novaOblast ? (
-                    <tr key={`o-${r.oblast}`}>
-                      <th scope="colgroup" colSpan={4} className="bg-plocha px-3 py-2 text-[15px] font-semibold">
-                        {r.oblast}
-                      </th>
-                    </tr>
-                  ) : null,
-                  <tr key={r.funkce} className="border-b border-linka">
-                    <th scope="row" className="py-3 pr-4 font-normal">
-                      {r.funkce}
-                    </th>
-                    {r.hodnoty.map((h, i) => (
-                      <td key={i} className="py-3 pr-4 align-top">
-                        <Bunka h={h} />
-                      </td>
-                    ))}
-                  </tr>,
-                ]
-              })}
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      <section aria-labelledby="role" className="mt-16 grid gap-12 lg:grid-cols-2">
-        <div>
-          <h2 id="role" className="text-[28px]">
-            Role a schvalování
+      {/* Role a bloky */}
+      <div className="mt-24 grid gap-8 lg:grid-cols-2">
+        <section aria-labelledby="role-uzivatelu" className="sklo-svetle rounded-3xl p-8 shadow-xl">
+          <p className="rubrika">Správa práv</p>
+          <h2 id="role-uzivatelu" className="mt-1 text-[26px] font-bold">
+            Role uživatelů
           </h2>
-          <p className="mt-3 text-[#333]">Starosta schvaluje, účetní vyvěšuje na desku, ředitelka školy píše jen na svůj podweb. Záznam o vyvěšení na úřední desce nejde smazat ani upravit.</p>
-          <dl className="mt-6">
+          <p className="mt-2 text-[15px] text-sediva">
+            Přidělujte oprávnění přesně podle toho, kdo v obci za co odpovídá.
+          </p>
+          <ul className="mt-6 space-y-3.5 divide-y divide-linka/60 text-[15px]">
             {ROLE.map((r) => (
-              <div key={r.role} className="border-t border-linka py-3">
-                <dt className="flex justify-between gap-4 font-medium">
-                  {r.role} <span className="text-[14px] font-normal text-sediva">od úrovně {r.od}</span>
-                </dt>
-                <dd className="text-[#333]">{r.coSmi}</dd>
-              </div>
+              <li key={r.role} className="pt-3.5 first:pt-0">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <span className="font-bold text-text">{r.role}</span>
+                  <span className="text-[13px] font-semibold text-akcent-tmavy">od úrovně {r.od}</span>
+                </div>
+                <p className="mt-1 text-[14px] text-sediva leading-relaxed">{r.coSmi}</p>
+              </li>
             ))}
-          </dl>
-        </div>
-        <div>
-          <h2 className="text-[28px]">Bloky do stránek</h2>
-          <p className="mt-3 text-[#333]">Každý blok má pevné schéma, takže výsledek je přístupný a funguje i na mobilu.</p>
-          <dl className="mt-6">
-            {BLOKY.map((b) => (
-              <div key={b.nazev} className="border-t border-linka py-3">
-                <dt className="flex justify-between gap-4 font-medium">
-                  {b.nazev} <span className="text-[14px] font-normal text-sediva">od úrovně {b.od}</span>
-                </dt>
-                <dd className="text-[#333]">{b.k}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
+          </ul>
+        </section>
 
-      <div className="mt-16 flex flex-wrap gap-3 border-t border-black pt-8">
+        <section aria-labelledby="bloky-stranek" className="sklo-svetle rounded-3xl p-8 shadow-xl">
+          <p className="rubrika">Obsahové prvky</p>
+          <h2 id="bloky-stranek" className="mt-1 text-[26px] font-bold">
+            Bloky do stránek
+          </h2>
+          <p className="mt-2 text-[15px] text-sediva">
+            Připravené komponenty pro tvorbu moderních a přehledných stránek obce.
+          </p>
+          <ul className="mt-6 space-y-3.5 divide-y divide-linka/60 text-[15px]">
+            {BLOKY.map((b) => (
+              <li key={b.nazev} className="pt-3.5 first:pt-0">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <span className="font-bold text-text">{b.nazev}</span>
+                  <span className="text-[13px] font-semibold text-akcent-tmavy">od úrovně {b.od}</span>
+                </div>
+                <p className="mt-1 text-[14px] text-sediva leading-relaxed">{b.k}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
+
+      <div className="mt-16 flex flex-wrap gap-4">
         <Link href="/ukazky" className="tlacitko">
-          Vybrat šablonu
+          Prohlédnout šablony webů
         </Link>
         <Link href="/cenik" className="tlacitko-obrys">
-          Spočítat cenu
+          Spočítat orientační cenu
         </Link>
       </div>
     </div>
