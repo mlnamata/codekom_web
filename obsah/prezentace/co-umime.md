@@ -85,6 +85,48 @@ Asistent je součástí úrovně Advance.
 
 Co nedělá: není úředník. Jeho odpověď není právní rada, rozhodnutí obce ani závazný slib. Může se splést, proto u důležitých věcí odkáže na úřad.
 
+## Senzorika, IoT a chytrá obec (živá data)
+
+Propojení webu a aplikace s reálným děním v obci prostřednictvím senzorických sítí LoRaWAN a NB-IoT.
+
+- Environmentální senzory: zobrazení aktuální kvality ovzduší, teploty vozovky v zimě, vlhkosti půdy pro zeleň nebo stavu hladiny místního potoka s automatickým varováním při povodni.
+- Sledování komunální techniky a GPS trasy: přehledná mapa s polohou obecních sypačů, traktorů a zametacích vozů. Občan v zimě vidí, které ulice jsou protažené a kde technika zrovna pracuje.
+- Chytré parkování a doprava: informace o obsazenosti parkovišť v centru obce nebo aktuální stav obecních nabíjecích stanic pro elektromobily.
+- Živé odjezdy spojů: napojení na API dopravců s digitální odjezdovou tabulí na webu, která ukazuje reálná zpoždění autobusů a vlaků.
+
+## Komunitní sdílení a lokální ekonomika
+
+Nástroje pro podporu sousedských vztahů a efektivní využití obecního majetku.
+
+- Obecní půjčovna: rezervační systém pro nářadí a vybavení, které obec půjčuje občanům. Štípačky na dřevo, stavební nářadí, elektrocentrály, party stany nebo pivní sety na oslavy.
+- Lokální tržiště a darovna: sousedský bazar, kde mohou místní nabídnout přebytky ze zahrady, zbylý stavební materiál nebo věci za odvoz.
+- Sousedská spolujízda: zabezpečená nástěnka pro občany, kteří denně dojíždějí do stejného města za prací či studiem a chtějí sdílet náklady.
+- Burza dobrovolnictví a brigád: prostor, kde obec i místní spolky poptávají pomoc se sázením stromů či úklidem lesa a občané se mohou jednoduše přihlásit.
+
+## Pokročilá správa majetku a infrastruktury
+
+Přehledná evidence obecního fondu a moderní energetika.
+
+- Obecní nemovitosti a byty: agenda bydlení, pořadníky na obecní byty, žádosti o startovací bydlení a evidence volných parcel k prodeji.
+- Komunitní energetika: přehledný panel pro energetické komunity. Občané vidí aktuální výrobu z obecních fotovoltaik na střeše školy a mohou odebírat přebytky elektřiny.
+- Hřbitov a digitální pasport: digitální pasport hrobových míst s notifikacemi před vypršením nájemní smlouvy nebo možností virtuální piety u významných rodáků obce.
+
+## Bezpečnost a krizové situace
+
+Praktické nástroje pro ochranu zdraví, majetku a rychlou pomoc v nouzi.
+
+- Ztráty a nálezy: evidence nalezených věcí a registr odchycených zvířat s fotografií, místem nálezu a kontaktem na smluvní útulek.
+- AED a první pomoc: interaktivní mapa s přesným umístěním automatických externích defibrilátorů v obci včetně informace, zda je daná budova zrovna otevřená.
+- Kamerový systém: přístup k vybraným veřejným kamerám (např. sníh na návsi nebo hladina potoka) v souladu s pravidly na ochranu osobních údajů.
+
+## Zákulisní portály a zapojení občanů
+
+Nástroje pro vedení obce, aktivní občany i vývojáře.
+
+- Zastupitelský portál: neveřejná sekce pro radní a zastupitele s podklady k jednání, diskuzemi k projektům a historií hlasování.
+- Občanské body a odměny: systém oceňující aktivní občany. Za nahlášení závady, včasnou platbu poplatků nebo účast na brigádě získá občan výhody, například volný vstup na koupaliště.
+- Developer portál a webhooky: otevřená data obce přes bezpečné rozhraní pro napojení do systémů chytrých domácností nebo lokálních aplikací.
+
 ## Co neděláme s daty obce
 
 Dokumenty a osobní údaje obce nepoužíváme pro vlastní účely, neprodáváme je a netrénujeme na nich obecné modely umělé inteligence. Podrobnosti jsou na stránce [Bezpečnost a právo](/bezpecnost-a-pravo).

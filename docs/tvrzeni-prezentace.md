@@ -32,6 +32,11 @@ Zkratky zdrojů: A, B, D = části `docs/pravni-dokumenty.md` (návrhy ke kontro
 | Hodinová sazba experta 750 Kč bez DPH pro individuální práce | cenik | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | orientacni |
 | Katalog součástí pro chytrou obec od 1 490 Kč | cenik | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | orientacni |
 | Doplňkové služby pro obce: archiv od 2 900 Kč, školení od 3 500 Kč | cenik | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | orientacni |
+| Senzorika, IoT a živá data: senzory, technika na mapě, parkování, odjezdy spojů | co-umime | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | hypoteza |
+| Komunitní sdílení: půjčovna nářadí, sousedský bazar, spolujízda, burza brigád | co-umime | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | hypoteza |
+| Správa majetku: obecní byty, komunitní energetika, digitální pasport hřbitova | co-umime | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | hypoteza |
+| Bezpečnost: registr nalezených zvířat, mapa AED, veřejné kamery podle GDPR | co-umime | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | hypoteza |
+| Portály a rozvoj: extranet zastupitelů, občanské body a developer API | co-umime | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | hypoteza |
 
 ## Smlouva a podmínky
 
