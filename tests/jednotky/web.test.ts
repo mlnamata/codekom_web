@@ -3,7 +3,7 @@ import { join } from 'node:path'
 import sharp from 'sharp'
 import { describe, expect, it } from 'vitest'
 import soubory from '@/data/ke-stazeni.json'
-import { HLASOVY_BOT, STITEK_CENY, cenaSekundyPausalu, spocitej } from '@/lib/cenik'
+import { HLASOVY_BOT, HODINOVKA_EXPERTA, SOUCASTKY_CHYTRA_OBEC, STITEK_CENY, cenaHlasovehoBota, cenaSekundyPausalu, jeNaMiru, spocitej, spocitejJednorazove } from '@/lib/cenik'
 import { otazky } from '@/lib/seo'
 
 const APP = join(__dirname, '..', '..')
@@ -20,6 +20,32 @@ describe('kalkulačka', () => {
     expect(ceny).toEqual([0.082, 0.072, 0.062])
     for (const p of HLASOVY_BOT.pausaly) expect(p.dalsiSekunda).toBeLessThan(HLASOVY_BOT.zaSekundu)
     for (let i = 1; i < ceny.length; i++) expect(ceny[i]!).toBeLessThan(ceny[i - 1]!)
+  })
+  it('sečte jednorázově nasazení a hodiny experta', () => {
+    expect(HODINOVKA_EXPERTA).toBe(750)
+    expect(spocitejJednorazove('zaklad', 0)).toBe(4900)
+    expect(spocitejJednorazove('advance', 3)).toBe(14900 + 3 * 750)
+    expect(spocitejJednorazove('zaklad', -2)).toBe(4900)
+    expect(jeNaMiru(3)).toBe(true)
+    expect(jeNaMiru(2)).toBe(false)
+  })
+  it('hlasový bot vybere nejlevnější variantu', () => {
+    expect(cenaHlasovehoBota(0)).toEqual({ nazev: 'bez paušálu', cena: 0 })
+    expect(cenaHlasovehoBota(1000)).toEqual({ nazev: 'bez paušálu', cena: 150 })
+    expect(cenaHlasovehoBota(6000)).toEqual({ nazev: 'paušál Malý', cena: 490 })
+    expect(cenaHlasovehoBota(48000)).toEqual({ nazev: 'paušál Velký', cena: 2990 })
+  })
+  it('hlasový bot ohlásí AI a přepojí na úřad', () => {
+    expect(HLASOVY_BOT.pravidla.join(' ')).toMatch(/umělá inteligence \(čl\. 50 AI Actu\)/)
+    expect(HLASOVY_BOT.pravidla.join(' ')).toMatch(/přepojí hovor na pracovníka úřadu/)
+    expect(HLASOVY_BOT.pravidla.join(' ')).toMatch(/úřední hodiny a telefon úřadu/)
+  })
+  it('katalog: zařízení bez ceny mají standard a údaj o provozu bez internetu', () => {
+    for (const z of SOUCASTKY_CHYTRA_OBEC.filter((x) => x.cenaOd === undefined)) {
+      expect(z.standard).toBeTruthy()
+      expect(z.bezInternetu).toBeTruthy()
+    }
+    expect(SOUCASTKY_CHYTRA_OBEC.map((z) => z.klic)).toEqual(expect.arrayContaining(['danfoss-ally', 'shelly-blu-trv', 'shelly-pro-em', 'nuki-pro', 'nuki-keypad', 'salto-ks', 'zbt-2', 'mini-pc', 'blu-gateway']))
   })
   it('štítek ceny má datum', () => {
     expect(STITEK_CENY).toMatch(/orientační cena, přesnou pošleme v nabídce/i)

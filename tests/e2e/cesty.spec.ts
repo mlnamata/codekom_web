@@ -50,6 +50,30 @@ test('kalkulačka přepočítá cenu se štítkem', async ({ page }) => {
   await expect(page.getByText('Orientační cena, přesnou pošleme v nabídce').first()).toBeVisible()
 })
 
+test('kalkulačka sečte jednorázové náklady a hodiny experta', async ({ page }) => {
+  await page.goto('/cenik')
+  const vysledek = page.locator('[aria-live="polite"]').filter({ hasText: 'Jednorázově' })
+  await expect(vysledek).toContainText('4 900')
+  await page.getByLabel('Hodiny práce experta navíc').fill('2')
+  await expect(vysledek).toContainText('6 400')
+  await page.getByLabel('Minuty hovorů AI hlasového bota za měsíc').fill('100')
+  await expect(vysledek).toContainText('1 080')
+  await expect(vysledek).toContainText('paušál Malý')
+  await page.getByLabel('Velikost obce').selectOption('3')
+  await expect(vysledek).toContainText('Cenu pošleme v nabídce')
+  await expect(page.getByText('Na začátku každého hovoru řekne, že je umělá inteligence').first()).toBeVisible()
+})
+
+test('katalog zařízení z ceníku', async ({ page }) => {
+  await page.goto('/cenik')
+  await page.getByRole('link', { name: 'Celý katalog zařízení' }).click()
+  await expect(page).toHaveURL(/\/katalog$/)
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Katalog')
+  for (const nadpis of ['Úspora vytápění', 'Přístup a rezervace', 'Hlídání energií', 'Čidla', 'Brána a sítě']) await expect(page.getByRole('heading', { level: 2, name: nadpis })).toBeVisible()
+  await expect(page.getByText('Funguje bez internetu').first()).toBeVisible()
+  await expect(page.getByText('Ne, závisí na cloudu')).toBeVisible()
+})
+
 test('fotky mají poznámku o umělé inteligenci', async ({ page }) => {
   for (const cesta of ['/', '/ukazky/naves', '/co-umime']) {
     await page.goto(cesta)

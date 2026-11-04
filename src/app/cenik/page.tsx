@@ -13,6 +13,7 @@ import {
   cenaSekundyPausalu,
   cislo,
   kcSekunda,
+  DOPLNIT_CENU_ZARIZENI,
   SOUCASTKY_CHYTRA_OBEC,
   STITEK_CENY,
   kc,
@@ -291,6 +292,14 @@ export default function Cenik() {
             </li>
           ))}
         </ul>
+        <ul className="mt-6 grid gap-3 md:grid-cols-2">
+          {HLASOVY_BOT.pravidla.map((r) => (
+            <li key={r} className="flex items-start gap-2.5 rounded-2xl bg-plocha p-4 text-[16px]">
+              <span className="mt-2 size-1.5 shrink-0 rounded-full bg-akcent-tmavy" aria-hidden="true" />
+              <span>{r}</span>
+            </li>
+          ))}
+        </ul>
         <p className="stitek mt-4">Měsíčně bez DPH. Účtuje se po sekundách. Nevyčerpané sekundy se nepřevádějí do dalšího měsíce. {STITEK_CENY}</p>
       </section>
 
@@ -321,7 +330,7 @@ export default function Cenik() {
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {SOUCASTKY_CHYTRA_OBEC.map((item) => (
+          {SOUCASTKY_CHYTRA_OBEC.filter((x) => x.cenaOd !== undefined).map((item) => (
             <div
               key={item.klic}
               className="sklo-svetle flex flex-col justify-between rounded-3xl p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
@@ -347,7 +356,7 @@ export default function Cenik() {
                 <div>
                   <span className="block text-[12px] text-sediva">Orientačně od</span>
                   <span className="text-[22px] font-bold text-noc">
-                    {kc(item.cenaOd)}
+                    {item.cenaOd !== undefined ? kc(item.cenaOd) : DOPLNIT_CENU_ZARIZENI}
                   </span>
                   <span className="text-[13px] text-sediva"> / {item.jednotka}</span>
                 </div>
@@ -357,6 +366,11 @@ export default function Cenik() {
           ))}
         </div>
         <p className="stitek mt-4">{STITEK_CENY}</p>
+        <p className="mt-6">
+          <Link href="/katalog" className="tlacitko">
+            Celý katalog zařízení
+          </Link>
+        </p>
       </section>
 
       {/* Garance a férová smlouva */}

@@ -66,6 +66,11 @@ Bot zvedá hovory na lince obce a odpovídá volajícím. Účtuje se po sekund�
 
 Měsíčně bez DPH. Účtuje se po sekundách. Nevyčerpané sekundy se nepřevádějí do dalšího měsíce. Orientační cena, přesnou pošleme v nabídce. Platí ke 4. 11. 2026.
 
+- Na začátku každého hovoru řekne, že je umělá inteligence (čl. 50 AI Actu).
+- Odpovídá jen z dokumentů a údajů dané obce.
+- Na přání volajícího, nebo když si neví rady, přepojí hovor na pracovníka úřadu.
+- Mimo úřední hodiny řekne úřední hodiny a telefon úřadu, aby se volající mohl ozvat člověku.
+
 ## Hodinová sazba experta a doplňkové služby
 
 Pro práce nad rámec standardní technické podpory nebo individuální zakázkové požadavky nabízíme služby našich specialistů.
@@ -88,6 +93,8 @@ Komponenty pro modul Chytré budovy a chytrou obec. Fungují spolehlivě a auton
 - **Obecní meteostanice:** od 6 900 Kč za kus. Měření teploty, větru, srážek a tlaku s živým zobrazením na webu obce pro hasiče, zemědělce i občany.
 - **Venkovní elektronická úřední deska:** od 45 000 Kč za kus. Odolný venkovní e-ink nebo dotykový panel s nízkou spotřebou pro nepřetržitý přístup k dokumentům 24 hodin denně.
 
+Celý katalog zařízení, včetně hlavic, zámků, elektroměrů, čidel a brány pro modul Chytré budovy, je na stránce [Katalog zařízení](/katalog).
+
 ## Spočítejte orientační cenu
 
 {/* Kalkulačka: pole a texty níže. Výsledek v aria-live="polite". */}
@@ -95,8 +102,11 @@ Komponenty pro modul Chytré budovy a chytrou obec. Fungují spolehlivě a auton
 - Velikost obce: do 500 obyvatel, 500–2 000, 2 000–10 000
 - Úroveň webu: Základ, Pokročilý, Advance
 - Digitální úřad: ano, ne
+- Velikost obce nad 10 000 obyvatel: měsíční cenu pošleme v nabídce
 - Počet budov s modulem Chytré budovy: číslo od 0
-- Výsledek: Orientačně od X Kč měsíčně bez DPH. Orientační cena, přesnou pošleme v nabídce. Platí ke 4. 11. 2026.
+- Hodiny práce experta navíc: číslo od 0, 750 Kč za hodinu, připočte se k jednorázové ceně
+- Minuty hovorů AI hlasového bota za měsíc: číslo od 0, kalkulačka vybere nejlevnější variantu (bez paušálu nebo paušál)
+- Výsledek: Orientačně od X Kč měsíčně bez DPH a od Y Kč jednorázově bez DPH (nasazení a hodiny experta). Orientační cena, přesnou pošleme v nabídce. Platí ke 4. 11. 2026.
 
 ## Jak se platí
 
@@ -125,8 +135,9 @@ Podmínky jsou z návrhu smlouvy o poskytování služby (články 3, 4, 6 a 9).
 ## Co v ceně není
 
 - Zařízení do budov a jejich montáž.
-- SMS zprávy občanům, ty se platí podle předplacených kreditů: [DOPLNIT: cena SMS kreditů].
-- Pomoc s žádostí o dotaci: [DOPLNIT: cena pomoci s dotacemi].
+- SMS zprávy občanům, ty se platí podle předplacených kreditů: od 990 Kč za 1 000 SMS.
+- Pomoc s žádostí o dotaci: od 4 500 Kč za žádost.
+- Práce navíc za hodinovou sazbu experta 750 Kč bez DPH.
 
 ## Podklady pro radu
 

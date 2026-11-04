@@ -7,6 +7,7 @@ const SLOUPCE = [
       ['/ukazky', 'Šablony webů'],
       ['/urovne', 'Úrovně editoru'],
       ['/cenik', 'Ceník'],
+      ['/katalog', 'Katalog zařízení'],
       ['/co-umime', 'Co umíme'],
       ['/dotace', 'Dotace'],
     ],

@@ -10,7 +10,7 @@ import { casti, naHtml, nactiStranku, vsechnyStranky } from '@/lib/obsah'
 import { faqJsonLd } from '@/lib/seo'
 
 /** Stránky, které nemají vlastní rozvržení: text z obsah/prezentace beze změny. */
-const VLASTNI = new Set(['/', '/ukazky', '/cenik'])
+const VLASTNI = new Set(['/', '/ukazky', '/cenik', '/katalog'])
 const stranky = () => vsechnyStranky().filter((s) => !VLASTNI.has(s.adresa) && /^\/[\w-]+$/.test(s.adresa))
 
 export const dynamicParams = false

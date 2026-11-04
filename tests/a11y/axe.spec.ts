@@ -1,7 +1,7 @@
 import AxeBuilder from '@axe-core/playwright'
 import { expect, test } from '@playwright/test'
 
-const STRANKY = ['/', '/ukazky', '/ukazky/lipa', '/urovne', '/urovne/zaklad', '/urovne/pokrocily', '/urovne/advance', '/cenik', '/co-umime', '/pro-koho', '/prechod', '/bezpecnost-a-pravo', '/dotace', '/o-nas', '/kontakt', '/ke-stazeni', '/pristupnost', '/zasady-osobnich-udaju', '/cookies']
+const STRANKY = ['/', '/ukazky', '/ukazky/lipa', '/urovne', '/urovne/zaklad', '/urovne/pokrocily', '/urovne/advance', '/cenik', '/katalog', '/co-umime', '/pro-koho', '/prechod', '/bezpecnost-a-pravo', '/dotace', '/o-nas', '/kontakt', '/ke-stazeni', '/pristupnost', '/zasady-osobnich-udaju', '/cookies']
 
 for (const cesta of STRANKY) {
   test(`axe ${cesta}`, async ({ page }) => {
