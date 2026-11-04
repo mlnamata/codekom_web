@@ -2,7 +2,7 @@
 
 | Úkol | Oblast souborů | Stav | Poznámka |
 | --- | --- | --- | --- |
-| Nasazení na codekom.vercel.app | nastavení Vercelu | čeká na zakladatele | projekt napojit na tento repozitář, Root Directory = kořen |
+| Nasazení na codekomweb.vercel.app | nastavení Vercelu | čeká na zakladatele | projekt napojit na tento repozitář, Root Directory = kořen |
 
 ## Hotovo
 

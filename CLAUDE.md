@@ -1,6 +1,6 @@
 # CodeKom web – kontext pro Claude Code
 
-Firemní prezentační web CodeKom pro starosty a účetní obcí do 2 000 obyvatel (https://codekom.vercel.app). Platforma samotná (weby obcí, aplikace, IoT) je v repozitáři `mlnamata/codecom`, ukázka webu obce běží na https://codecom-psi.vercel.app. Zadání webu je v `docs/zadani-prezentacni-web.md`.
+Firemní prezentační web CodeKom pro starosty a účetní obcí do 2 000 obyvatel (https://codekomweb.vercel.app). Platforma samotná (weby obcí, aplikace, IoT) je v repozitáři `mlnamata/codecom`, ukázka webu obce běží na https://codekom.vercel.app. Zadání webu je v `docs/zadani-prezentacni-web.md`.
 
 ## Stack
 

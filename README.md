@@ -79,4 +79,4 @@ pnpm odkazy
 
 ## Nasazení
 
-Vercel: projekt s Root Directory = kořen repozitáře, framework Next.js, region `fra1` (`vercel.json`). Produkční adresa je https://codekom.vercel.app, ukázka obce https://codecom-psi.vercel.app (obojí v `.env.production`, proměnné nastavené ve Vercelu mají přednost). Před ostrým spuštěním doplňte `NEXT_PUBLIC_SITE_URL` (doména [DOPLNIT]), `NEXT_PUBLIC_DEMO_URL` a `NEXT_PUBLIC_APP_DEMO_URL` a spusťte `node scripts/kontrola-doplnit.mjs --prisne`, který skončí chybou, dokud zbývá nějaké `[DOPLNIT]`.
+Vercel: projekt s Root Directory = kořen repozitáře, framework Next.js, region `fra1` (`vercel.json`). Produkční adresa je https://codekomweb.vercel.app, ukázka obce https://codekom.vercel.app (obojí v `.env.production`, proměnné nastavené ve Vercelu mají přednost). Před ostrým spuštěním doplňte `NEXT_PUBLIC_SITE_URL` (doména [DOPLNIT]), `NEXT_PUBLIC_DEMO_URL` a `NEXT_PUBLIC_APP_DEMO_URL` a spusťte `node scripts/kontrola-doplnit.mjs --prisne`, který skončí chybou, dokud zbývá nějaké `[DOPLNIT]`.
