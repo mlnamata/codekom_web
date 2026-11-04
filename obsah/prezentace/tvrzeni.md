@@ -134,7 +134,7 @@ Zkratky zdrojů: A, B, D = části `docs/pravni-dokumenty.md` (návrhy ke kontro
 
 | Tvrzení | Stránka | Zdroj | Datum | Stav |
 |---|---|---|---|---|
-| CodeKom je pro obce do 2 000 obyvatel | uvod, pro-koho | docs/navrh-platformy/01-navrh-platformy.md; CLAUDE.md | 2026-11-04 | overeno |
+| CodeKom je pro všechny obce a města bez omezení velikosti | uvod, pro-koho | rozhodnutí zakladatele 4. 11. 2026 | 2026-11-04 | overeno |
 | 20 šablon, každá ve 3 barevných variantách | uvod, co-umime, ukazky, prechod | design/prototypy, design/generator/palettes.py, design/snimky | 2026-11-04 | overeno |
 | Názvy šablon, „pro koho“ a názvy palet | ukazky, uvod | docs/navrh-platformy/03-sablony-webu.md; design/generator/tpls.py; palettes.py | 2026-11-04 | overeno |
 | Javoří Lhota je smyšlená obec s 684 obyvateli | uvod, ukazky | docs/rozhodnuti.md 2. 11. 2026; obsah/javori-lhota/obec.json | 2026-11-04 | overeno |

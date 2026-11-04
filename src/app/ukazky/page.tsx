@@ -4,6 +4,7 @@ import { Karusel } from '@/komponenty/Karusel'
 import { Markdown } from '@/komponenty/Markdown'
 import { Snimek } from '@/komponenty/Snimek'
 import { StrankaHero } from '@/komponenty/StrankaHero'
+import { VyzvaSekce } from '@/komponenty/VyzvaSekce'
 import { casti, naHtml, nactiStranku } from '@/lib/obsah'
 import { sablonyGalerie } from '@/lib/sablony'
 
@@ -40,6 +41,11 @@ export default function Ukazky() {
         tlacitka={[
           { href: '#galerie', text: 'Prohlédnout všech 20 šablon', primarni: true },
           { href: '/cenik', text: 'Ceník a kalkulačka' },
+        ]}
+        metriky={[
+          ['20 šablon', 'v 60 variantách'],
+          ['Plná přístupnost', 'podle WCAG 2.2 AA'],
+          ['Telefon i PC', 'responzivní zobrazení'],
         ]}
       />
 
@@ -185,6 +191,11 @@ export default function Ukazky() {
           </div>
         </section>
       ) : null}
+
+      <VyzvaSekce
+        nadpis="Vybrali jste si šablonu?"
+        perex="Napište nám, která šablona se vám líbí. Připravíme ukázku přímo s vaším znakem a obsahem."
+      />
     </div>
   )
 }

@@ -1,6 +1,6 @@
 ---
 title: "O nás – CodeKom, web a aplikace pro obce"
-description: "Kdo stojí za CodeKomem, jak pracujeme a proč děláme jeden systém pro web, úřední desku, aplikaci a úřad malých obcí."
+description: "Kdo stojí za CodeKomem, jak pracujeme a proč děláme jeden systém pro web, úřední desku, aplikaci a úřad pro obce a města všech velikostí."
 adresa: "/o-nas"
 ---
 
@@ -20,7 +20,7 @@ Malá obec potřebuje web, úřední desku, hlášení občanům, poplatky a spr
 
 ## Jak pracujeme
 
-- Navrhujeme pro starostu a účetní malé obce, ne pro velký úřad s oddělením komunikace.
+- Navrhujeme tak, aby správu zvládl starosta i účetní samostatně, ale systém bez problémů obslouží i větší městský úřad s více redaktory.
 - Weby stavíme podle pravidel přístupnosti a kontrolujeme je automatickými testy.
 - Data obcí ukládáme v Evropské unii a AI asistent běží na serveru v České republice.
 - Cenu a podmínky píšeme na web. Obec může smlouvu vypovědět kdykoli a svá data si odnese zdarma.

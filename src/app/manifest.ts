@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'CodeKom',
     short_name: 'CodeKom',
-    description: 'Web, úřední deska a aplikace pro obce do 2 000 obyvatel.',
+    description: 'Web, úřední deska a aplikace pro všechny obce a města.',
     lang: 'cs',
     start_url: '/',
     display: 'browser',

@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { FotoAi } from '@/komponenty/FotoAi'
 import { PrepinacPalet } from '@/komponenty/PrepinacPalet'
 import { StrankaHero } from '@/komponenty/StrankaHero'
+import { VyzvaSekce } from '@/komponenty/VyzvaSekce'
 import { odkazAplikace, odkazDema } from '@/lib/demo'
 import { najdiSablonu, sablonyGalerie } from '@/lib/sablony'
 
@@ -58,6 +59,15 @@ export default async function DetailSablony({ params }: { params: Promise<{ klic
           'Elektronická úřední deska',
           'Aplikace pro občany',
           'Přístupnost WCAG 2.2 AA',
+        ]}
+        tlacitka={[
+          { href: '/cenik', text: 'Spočítat cenu v kalkulačce', primarni: true },
+          { href: '/kontakt', text: 'Poptat tuto šablonu' },
+        ]}
+        metriky={[
+          ['3 palety', 'barevné varianty šablony'],
+          ['Mobilní verze', 'rychlé načítání na telefonu'],
+          ['Úřední deska', 's automatickým archivem'],
         ]}
       />
 
@@ -167,6 +177,11 @@ export default async function DetailSablony({ params }: { params: Promise<{ klic
           Spočítat cenu v kalkulačce
         </Link>
       </div>
+
+      <VyzvaSekce
+        nadpis={`Zaujala vás šablona ${s.nazev}?`}
+        perex="Rádi vám připravíme nezávaznou nabídku přímo v této šabloně s vašimi obecními symboly a kontakty."
+      />
     </div>
   )
 }

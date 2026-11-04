@@ -13,7 +13,7 @@ const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: { default: 'CodeKom: web, úřední deska a aplikace pro obce', template: '%s' },
-  description: 'Web obce s elektronickou úřední deskou, aplikace pro občany a digitální úřad pro obce do 2 000 obyvatel.',
+  description: 'Web obce s elektronickou úřední deskou, aplikace pro občany a digitální úřad pro obce a města všech velikostí.',
   openGraph: { locale: 'cs_CZ', type: 'website', siteName: 'CodeKom' },
 }
 

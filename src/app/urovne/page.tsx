@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { StrankaHero } from '@/komponenty/StrankaHero'
+import { VyzvaSekce } from '@/komponenty/VyzvaSekce'
 import { STITEK_CENY, VELIKOSTI, kc } from '@/lib/cenik'
 import { BLOKY, MATICE, ROLE, UROVNE, type Hodnota } from '@/lib/urovne'
 
@@ -44,6 +45,11 @@ export default function Urovne() {
         tlacitka={[
           { href: '#matice', text: 'Podrobné srovnání funkcí', primarni: true },
           { href: '/cenik', text: 'Ceník a kalkulačka' },
+        ]}
+        metriky={[
+          ['3 úrovně', 'podle vašeho času'],
+          ['WCAG 2.2 AA', 'přístupnost v každé úrovni'],
+          ['Přechod kdykoli', 'obsah zůstává zachován'],
         ]}
       />
 
@@ -244,6 +250,11 @@ export default function Urovne() {
           Spočítat orientační cenu
         </Link>
       </div>
+
+      <VyzvaSekce
+        nadpis="Pomůžeme vybrat správnou úroveň"
+        perex="Zavolejte nebo napište. Společně projdeme, kolik lidí bude na webu pracovat a jaká úroveň bude pro vaši obec nejvhodnější."
+      />
     </div>
   )
 }

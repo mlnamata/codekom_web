@@ -31,8 +31,8 @@ a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; 
 .na-tmave h1, .na-tmave h2, .na-tmave h3 { color: #fff; }
 .na-tmave :focus-visible { outline-color: var(--color-akcent); }
 
-.obal { max-width: 1240px; margin-inline: auto; padding-inline: 20px; }
-@media (min-width: 768px) { .obal { padding-inline: 40px; } }
+.obal { max-width: 1080px; margin-inline: auto; padding-inline: 20px; }
+@media (min-width: 768px) { .obal { padding-inline: 32px; } }
 
 /* Sklo: průsvitná plocha s rozmazáním pozadí */
 .sklo { background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.16); backdrop-filter: blur(18px) saturate(150%); -webkit-backdrop-filter: blur(18px) saturate(150%); }

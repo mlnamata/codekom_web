@@ -1,12 +1,12 @@
 ---
-title: "Pro koho je CodeKom: malé obce, města a organizace obce"
-description: "CodeKom je pro obce do 2 000 obyvatel, menší města a organizace obce, jako je škola nebo knihovna. Správu více obcí pro mikroregiony a MAS připravujeme."
+title: "Pro koho je CodeKom: pro obce a města všech velikostí i organizace obce"
+description: "CodeKom je pro všechny obce a města bez omezení počtu obyvatel, stejně jako pro organizace obce (škola, knihovna, hasiči). Správu více obcí pro mikroregiony a MAS připravujeme."
 adresa: "/pro-koho"
 ---
 
 # Pro koho je CodeKom
 
-Hlavně pro malé obce, kde má úřad málo lidí a starosta na web nemá celý den. Web čte a podklady posílá dál starosta, účetní, správce webu nebo externí dodavatel.
+CodeKom je pro všechny obce a města bez ohledu na počet obyvatel: od malých vesniček až po města s tisíci obyvateli. Každá samospráva získá funkce odpovídající jejím potřebám a možnostem úřadu.
 
 ## Malá obec
 
@@ -26,9 +26,9 @@ Web, hlášení občanům a poplatky bývají u různých dodavatelů a účty z
 - Šablona Lípa s hledáním „Co potřebujete vyřídit?“.
 - Měření spotřeby energie po budovách.
 
-## Menší město
+## Města a větší obce
 
-Pro města od 2 000 do 10 000 obyvatel s více budovami a lidmi, kteří na webu pracují.
+Pro města a obce od 2 000 do 10 000 obyvatel i pro větší sídla s více budovami, odbory a redaktory, kteří na webu pracují.
 
 - Úrovně Pokročilý a Advance se schvalováním před zveřejněním a s více uživateli.
 - Šablona Radnice s nabídkou pro občany, podnikatele a návštěvníky.

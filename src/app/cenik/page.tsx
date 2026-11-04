@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { JsonLd } from '@/komponenty/JsonLd'
 import { KalkulackaCeniku } from '@/komponenty/KalkulackaCeniku'
 import { StrankaHero } from '@/komponenty/StrankaHero'
+import { VyzvaSekce } from '@/komponenty/VyzvaSekce'
 import {
   CENY_WEBU,
   DOPLNKOVE_SLUZBY,
@@ -115,6 +116,11 @@ export default function Cenik() {
           { href: '#kalkulacka', text: 'Spočítat orientační cenu', primarni: true },
           { href: '#soucastky', text: 'Katalog součástek pro obec' },
         ]}
+        metriky={[
+          ['od 590 Kč', 'měsíčně bez DPH'],
+          ['30 dní', 'zkušební doba s vrácením'],
+          ['Výpověď kdykoli', 'smlouva na dobu neurčitou'],
+        ]}
       />
 
       {/* 3 úrovně webu */}
@@ -174,7 +180,7 @@ export default function Cenik() {
 
         <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-2xl bg-plocha p-5 text-[15px]">
           <p className="text-sediva">
-            Ceny se přizpůsobují velikosti obce: do 500 obyvatel, 500–2 000 a 2 000–10 000 obyvatel.
+            Ceny se přizpůsobují velikosti obce: do 500 obyvatel, 500–2 000 i 2 000–10 000 obyvatel a pro větší města připravíme individuální kalkulaci.
           </p>
           <Link href="/urovne" className="font-semibold text-akcent-tmavy underline hover:no-underline">
             Zobrazit srovnávací matici všech funkcí
@@ -339,6 +345,11 @@ export default function Cenik() {
           </div>
         </div>
       </section>
+
+      <VyzvaSekce
+        nadpis="Připravíme nabídku pro vaši obec"
+        perex="Napište nám velikost vaší obce a jaké moduly byste rádi využili. Pošleme přesnou písemnou nabídku pro jednání rady."
+      />
     </div>
   )
 }

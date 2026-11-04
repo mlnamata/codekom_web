@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { StrankaHero } from '@/komponenty/StrankaHero'
+import { VyzvaSekce } from '@/komponenty/VyzvaSekce'
 import { STITEK_CENY, VELIKOSTI, kc } from '@/lib/cenik'
 import { odkazAdministrace } from '@/lib/demo'
 import { MATICE, UROVNE } from '@/lib/urovne'
@@ -63,6 +64,11 @@ export default async function DetailUrovne({ params }: { params: Promise<{ urove
         tlacitka={[
           { href: '/cenik', text: 'Spočítat cenu v kalkulačce', primarni: true },
           { href: '/ukazky', text: 'Prohlédnout šablony' },
+        ]}
+        metriky={[
+          [`od ${kc(u.ceny[0])}`, 'měsíčně bez DPH'],
+          [u.uzivatele, 'doporučené využití'],
+          ['Smlouva férově', 'na dobu neurčitou'],
         ]}
       />
 
@@ -251,6 +257,11 @@ export default async function DetailUrovne({ params }: { params: Promise<{ urove
           Porovnat všechny 3 úrovně
         </Link>
       </nav>
+
+      <VyzvaSekce
+        nadpis={`Zaujala vás úroveň ${u.nazev}?`}
+        perex="Rádi vám připravíme nezávaznou nabídku s touto úrovní editoru přesně pro potřeby a velikost vaší obce."
+      />
     </div>
   )
 }

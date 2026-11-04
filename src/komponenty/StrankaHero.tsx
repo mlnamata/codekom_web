@@ -8,6 +8,7 @@ export function StrankaHero({
   slovoPozadi,
   tlacitka,
   odznaky,
+  metriky,
 }: {
   rubrika?: string
   nadpis: ReactNode
@@ -15,6 +16,7 @@ export function StrankaHero({
   slovoPozadi?: string
   tlacitka?: { href: string; text: string; primarni?: boolean; ext?: boolean }[]
   odznaky?: string[]
+  metriky?: [string, string][]
 }) {
   return (
     <div className="na-tmave zare relative isolate overflow-hidden rounded-[32px] border border-white/10 bg-noc px-6 py-12 shadow-2xl md:px-14 md:py-16 my-8">
@@ -60,6 +62,16 @@ export function StrankaHero({
                 </Link>
               )
             )}
+          </div>
+        ) : null}
+        {metriky && metriky.length > 0 ? (
+          <div className="mt-10 grid gap-3 sm:grid-cols-3 max-w-[820px]">
+            {metriky.map(([velke, male]) => (
+              <div key={velke} className="sklo rounded-2xl px-5 py-3.5 border border-white/10">
+                <p className="text-[22px] font-bold tracking-tight text-white">{velke}</p>
+                <p className="text-[14px] text-white/75">{male}</p>
+              </div>
+            ))}
           </div>
         ) : null}
       </div>

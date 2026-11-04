@@ -86,18 +86,18 @@ export default function Uvod() {
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,8,12,0.94)_0%,rgba(7,8,12,0.7)_45%,rgba(7,8,12,0.2)_100%)]" aria-hidden="true" />
         </figure>
         <div className="obal w-full pb-16 pt-24 md:pb-24">
-          <p className="rubrika">Pro obce do 2 000 obyvatel</p>
+          <p className="rubrika">Pro všechny obce a města</p>
           <div>
-            <h1 className="mt-5 max-w-[14ch] text-[48px] font-extrabold md:text-[88px] lg:text-[104px]">
+            <h1 className="mt-5 max-w-[14ch] text-[42px] font-extrabold leading-[1.05] md:text-[68px] lg:text-[80px]">
               Web, úřední deska a aplikace <span className="text-gradient">pro vaši obec</span>
             </h1>
           </div>
           <div>
-            <p className="mt-6 max-w-[36em] text-[19px] text-white/85 md:text-[21px]">
-              CodeKom je web pro obec s elektronickou úřední deskou, aplikací pro občany a hlášením obce do mobilu. Pro starosty a účetní malých obcí, kteří nemají na správu webu celý den.
+            <p className="mt-6 max-w-[36em] text-[18px] text-white/85 md:text-[20px]">
+              CodeKom je web pro obec s elektronickou úřední deskou, aplikací pro občany a hlášením obce do mobilu. Navržený pro starosty, účetní i administrátory obcí a měst všech velikostí, bez omezení počtu obyvatel.
             </p>
           </div>
-          <p className="mt-8 text-[24px] font-bold tracking-tight md:text-[32px]">Ukážeme vám cestu.</p>
+          <p className="mt-8 text-[22px] font-bold tracking-tight md:text-[28px]">Ukážeme vám cestu.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/ukazky" className="tlacitko w-full sm:w-auto">
               Prohlédnout 20 šablon

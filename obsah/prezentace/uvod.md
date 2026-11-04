@@ -1,14 +1,14 @@
 ---
-title: "Web, úřední deska a aplikace pro malé obce – CodeKom"
-description: "Web obce s elektronickou úřední deskou, aplikace pro občany a digitální úřad pro obce do 2 000 obyvatel. Prohlédněte si živou ukázku obce Javoří Lhota."
+title: "Web, úřední deska a aplikace pro obce a města – CodeKom"
+description: "Web obce s elektronickou úřední deskou, aplikace pro občany a digitální úřad pro všechny obce a města bez omezení velikosti. Prohlédněte si živou ukázku obce Javoří Lhota."
 adresa: "/"
 ---
 
 {/* Odkazy: #demo = NEXT_PUBLIC_DEMO_URL, #aplikace = NEXT_PUBLIC_APP_DEMO_URL. Bez vyplněné proměnné se odkaz nezobrazí a zůstanou snímky. */}
 
-# Web, úřední deska a aplikace pro obce do 2 000 obyvatel
+# Web, úřední deska a aplikace pro všechny obce a města
 
-CodeKom je web pro obec s elektronickou úřední deskou, aplikací pro občany a hlášením obce do mobilu. Je pro starosty a účetní malých obcí, kteří nemají na správu webu celý den.
+CodeKom je web pro obec s elektronickou úřední deskou, aplikací pro občany a hlášením obce do mobilu. Je pro starosty, účetní i týmy obcí a měst všech velikostí, kteří chtějí moderní a spolehlivý systém bez starostí.
 
 Obec dostane web, který splňuje zákonné požadavky na přístupnost, úřední desku s evidencí vyvěšení, která nejde smazat, a ceník, který vidí předem.
 
