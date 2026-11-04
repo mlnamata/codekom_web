@@ -5,6 +5,7 @@ import { FotoAi } from '@/komponenty/FotoAi'
 import { JsonLd } from '@/komponenty/JsonLd'
 import { Karusel } from '@/komponenty/Karusel'
 import { Odhaleni } from '@/komponenty/Odhaleni'
+import { OdznakAi } from '@/komponenty/OdznakAi'
 import { Snimek } from '@/komponenty/Snimek'
 import { CENY_WEBU, STITEK_CENY, kc } from '@/lib/cenik'
 import { odkazAplikace, odkazDema } from '@/lib/demo'
@@ -56,13 +57,15 @@ const MODULY = [
   ['AI asistent', 'Odpovídá z dokumentů obce, cituje je a řekne, že je umělá inteligence.'],
 ]
 
-/** Fotka přes celou plochu s povinnou poznámkou o umělé inteligenci ve skleněném štítku. */
+/** Fotka přes celou plochu s grafickým odznakem AI ve skleněném kroužku. */
 function FotoPozadi({ foto, priorita = false, ztmaveni }: { foto: { src: string; alt: string }; priorita?: boolean; ztmaveni: string }) {
   return (
     <figure className="absolute inset-0 -z-10 m-0">
       <Image src={foto.src} alt={foto.alt} fill priority={priorita} sizes="100vw" className="object-cover" />
       <div className={`absolute inset-0 ${ztmaveni}`} aria-hidden="true" />
-      <figcaption className="sklo-tmave absolute bottom-4 right-4 rounded-full px-3 py-1 text-[13px] text-white/90">{AI}</figcaption>
+      <figcaption className="absolute bottom-4 right-4 z-10 m-0">
+        <OdznakAi />
+      </figcaption>
     </figure>
   )
 }

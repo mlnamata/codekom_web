@@ -62,7 +62,7 @@ const POZNAMKA_AI = 'Ilustrační fotografie vytvořená umělou inteligencí'
 /** Řádky „Fotka `x`. Alt text: …“ a „Snímek `x`. Alt text: …“ jsou v textech popisy obrázků. */
 function obrazky(md: string): string {
   let vystup = md.replace(/^- Fotka `([\w-]+)`\. Alt text: (.+?)\. Popisek: .+$/gm, (_, f: string, alt: string) =>
-    `<figure class="foto"><img src="/foto/${f}.webp" alt="${esc(alt)}." width="1344" height="768" loading="lazy"><figcaption>${POZNAMKA_AI}</figcaption></figure>`,
+    `<figure class="foto relative"><img src="/foto/${f}.webp" alt="${esc(alt)}." width="1344" height="768" loading="lazy"><figcaption class="absolute bottom-4 right-4 z-10 m-0"><span class="sklo-tmave inline-flex items-center justify-center rounded-full p-1.5 shadow-lg backdrop-blur-md" title="Ilustrační fotografie vytvořená umělou inteligencí" aria-label="AI – Ilustrační fotografie vytvořená umělou inteligencí"><img src="/brand/ai-odznak-oriznuty.png" alt="" width="24" height="24" class="h-6 w-6 object-contain" /><span class="sr-only">${POZNAMKA_AI}</span></span></figcaption></figure>`,
   )
   vystup = vystup.replace(/^- Snímek `([\w-]+)`\. Alt text: (.+)$/gm, (_, f: string, alt: string) =>
     `<figure class="snimek"><img src="/sablony/${f}.webp" alt="${esc(alt)}" width="1280" height="900" loading="lazy"></figure>`,

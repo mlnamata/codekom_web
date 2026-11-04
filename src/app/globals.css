@@ -102,7 +102,8 @@ mark.doplnit { background: #fff0a6; color: #000; padding: 0 2px; }
 .prosa tr:last-child td { border-bottom: 0; }
 .prosa th { font-weight: 600; background: var(--color-plocha); }
 .prosa figure { margin: 32px 0; }
-.prosa figure img { width: 100%; height: auto; display: block; border-radius: 20px; }
+.prosa figure > img { width: 100%; height: auto; display: block; border-radius: 20px; }
 .prosa figure.snimek img { border: 1px solid var(--color-linka); }
 .prosa figcaption { font-size: 14px; color: var(--color-sediva); margin-top: 8px; }
+.prosa figcaption.absolute { margin-top: 0; }
 .prosa blockquote { border-left: 3px solid var(--color-akcent-tmavy); padding-left: 16px; margin: 24px 0; font-size: 20px; }
