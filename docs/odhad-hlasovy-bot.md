@@ -15,12 +15,14 @@ Odhad ze 4. 11. 2026 na pokyn zakladatele. Není to změřený náklad ani nabí
 
 ## Ceny pro obec
 
-Bez paušálu: **9 Kč za minutu**, žádný měsíční poplatek. Marže kryje nastavení znalostí bota, podporu a výkyvy v cenách dodavatelů.
+Účtuje se po sekundách: obec platí jen čas, kdy bot skutečně hovoří s volajícím, bez zaokrouhlení na celé minuty. Náklad 2,50 Kč za minutu je zhruba 0,042 Kč za sekundu.
 
-| Paušál | Měsíčně | Minut v ceně | Další minuta | Vychází na minutu při vyčerpání | Hrubá marže při vyčerpání |
+Bez paušálu: **0,15 Kč za sekundu** (9 Kč za minutu), žádný měsíční poplatek. Marže kryje nastavení znalostí bota, podporu a výkyvy v cenách dodavatelů.
+
+| Paušál | Měsíčně | Sekund v ceně | Další sekunda | Vychází na sekundu při vyčerpání | Hrubá marže při vyčerpání |
 |---|---|---|---|---|---|
-| Malý | 490 Kč | 100 | 7 Kč | 4,90 Kč | ≈ 49 % |
-| Střední | 1 290 Kč | 300 | 6 Kč | 4,30 Kč | ≈ 42 % |
-| Velký | 2 990 Kč | 800 | 5 Kč | 3,74 Kč | ≈ 33 % |
+| Malý | 490 Kč | 6 000 (100 min) | 0,12 Kč | 0,082 Kč | ≈ 49 % |
+| Střední | 1 290 Kč | 18 000 (300 min) | 0,10 Kč | 0,072 Kč | ≈ 42 % |
+| Velký | 2 990 Kč | 48 000 (800 min) | 0,08 Kč | 0,062 Kč | ≈ 33 % |
 
-Nevyčerpané minuty se nepřevádějí do dalšího měsíce. Počet hovorů na webu je přepočet při průměrné délce hovoru 2 minuty.
+Další sekunda nad paušál dává marži 48–65 % (náklad 0,042 Kč). Nevyčerpané sekundy se nepřevádějí do dalšího měsíce. Počet hovorů na webu je přepočet při průměrné délce hovoru 120 sekund.

@@ -10,7 +10,9 @@ import {
   HLASOVY_BOT,
   HODINOVKA_EXPERTA,
   POPLATEK_NASAZENI,
-  cenaMinutyPausalu,
+  cenaSekundyPausalu,
+  cislo,
+  kcSekunda,
   SOUCASTKY_CHYTRA_OBEC,
   STITEK_CENY,
   kc,
@@ -260,15 +262,15 @@ export default function Cenik() {
             AI hlasový bot na telefonní lince
           </h2>
           <p className="mt-3 text-[17px] text-sediva">
-            Bot zvedá hovory na lince obce a odpovídá volajícím. Platí se za minuty, které bot skutečně provolá. Bez paušálu stojí minuta {kc(HLASOVY_BOT.zaMinutu)}, s paušálem vychází levněji.
+            Bot zvedá hovory na lince obce a odpovídá volajícím. Účtuje se po sekundách, platíte jen čas, kdy bot skutečně hovoří s volajícím. Bez paušálu stojí sekunda {kcSekunda(HLASOVY_BOT.zaSekundu)}, s paušálem vychází levněji.
           </p>
         </div>
         <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <li className="sklo-svetle flex flex-col rounded-3xl p-7">
             <span className="text-[13px] font-bold uppercase tracking-wider text-akcent-tmavy">Bez paušálu</span>
             <p className="mt-3 text-[32px] font-extrabold tracking-tight">
-              {kc(HLASOVY_BOT.zaMinutu)}
-              <span className="block text-[15px] font-normal text-sediva">za provolanou minutu</span>
+              {kcSekunda(HLASOVY_BOT.zaSekundu)}
+              <span className="block text-[15px] font-normal text-sediva">za sekundu hovoru</span>
             </p>
             <p className="mt-4 text-[15px] text-sediva">Žádný měsíční poplatek. Hodí se na vyzkoušení nebo pro linku s málo hovory.</p>
           </li>
@@ -281,15 +283,15 @@ export default function Cenik() {
               </p>
               <ul className="mt-4 space-y-1.5 text-[15px] text-sediva">
                 <li>
-                  <strong className="text-text">{p.minut} minut</strong> v ceně, zhruba {Math.round(p.minut / HLASOVY_BOT.delkaHovoru)} hovorů po {HLASOVY_BOT.delkaHovoru} minutách
+                  <strong className="text-text">{cislo(p.sekund)} sekund</strong> v ceně ({cislo(p.sekund / 60)} minut), zhruba {cislo(Math.round(p.sekund / HLASOVY_BOT.delkaHovoru))} hovorů po {HLASOVY_BOT.delkaHovoru / 60} minutách
                 </li>
-                <li>každá další minuta {kc(p.dalsiMinuta)}</li>
-                <li>při vyčerpání vychází minuta na {kc(cenaMinutyPausalu(p))}</li>
+                <li>každá další sekunda {kcSekunda(p.dalsiSekunda)}</li>
+                <li>při vyčerpání vychází sekunda na {kcSekunda(cenaSekundyPausalu(p))}</li>
               </ul>
             </li>
           ))}
         </ul>
-        <p className="stitek mt-4">Měsíčně bez DPH. Nevyčerpané minuty se nepřevádějí do dalšího měsíce. {STITEK_CENY}</p>
+        <p className="stitek mt-4">Měsíčně bez DPH. Účtuje se po sekundách. Nevyčerpané sekundy se nepřevádějí do dalšího měsíce. {STITEK_CENY}</p>
       </section>
 
       {/* Kalkulačka */}

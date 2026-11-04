@@ -100,23 +100,33 @@ export interface PausalVolani {
   klic: string
   nazev: string
   mesicne: number
-  minut: number
-  dalsiMinuta: number
+  sekund: number
+  dalsiSekunda: number
 }
 
-/** AI hlasový bot na telefonní lince. Odhad ceny viz docs/odhad-hlasovy-bot.md (4. 11. 2026). */
+/**
+ * AI hlasový bot na telefonní lince, účtuje se po sekundách.
+ * Odhad ceny viz docs/odhad-hlasovy-bot.md (4. 11. 2026).
+ */
 export const HLASOVY_BOT = {
-  zaMinutu: 9,
-  delkaHovoru: 2,
+  zaSekundu: 0.15,
+  /** Průměrná délka hovoru v sekundách pro přepočet na počet hovorů. */
+  delkaHovoru: 120,
   pausaly: [
-    { klic: 'maly', nazev: 'Malý', mesicne: 490, minut: 100, dalsiMinuta: 7 },
-    { klic: 'stredni', nazev: 'Střední', mesicne: 1290, minut: 300, dalsiMinuta: 6 },
-    { klic: 'velky', nazev: 'Velký', mesicne: 2990, minut: 800, dalsiMinuta: 5 },
+    { klic: 'maly', nazev: 'Malý', mesicne: 490, sekund: 6000, dalsiSekunda: 0.12 },
+    { klic: 'stredni', nazev: 'Střední', mesicne: 1290, sekund: 18000, dalsiSekunda: 0.1 },
+    { klic: 'velky', nazev: 'Velký', mesicne: 2990, sekund: 48000, dalsiSekunda: 0.08 },
   ] satisfies PausalVolani[],
 }
 
-/** Cena za minutu při vyčerpání paušálu, zaokrouhlená na haléře. */
-export const cenaMinutyPausalu = (p: PausalVolani) => Math.round((p.mesicne / p.minut) * 100) / 100
+/** Cena za sekundu při vyčerpání paušálu, zaokrouhlená na tisíciny koruny. */
+export const cenaSekundyPausalu = (p: PausalVolani) => Math.round((p.mesicne / p.sekund) * 1000) / 1000
+
+/** Cena za sekundu vždy aspoň na haléře: 0,10 Kč, 0,082 Kč. */
+export const kcSekunda = (n: number) => `${n.toLocaleString('cs-CZ', { minimumFractionDigits: 2, maximumFractionDigits: 3 })}${String.fromCharCode(160)}Kč`
+
+/** Číslo s českým oddělovačem tisíců a pevnou mezerou. */
+export const cislo = (n: number) => n.toLocaleString('cs-CZ').replace(/\s/g, String.fromCharCode(160))
 
 export const DOPLNKOVE_SLUZBY = [
   {
@@ -126,8 +136,8 @@ export const DOPLNKOVE_SLUZBY = [
   },
   {
     nazev: 'AI hlasový bot na telefonní lince',
-    cena: `${HLASOVY_BOT.zaMinutu} Kč / minuta nebo paušál od ${HLASOVY_BOT.pausaly[0]!.mesicne} Kč`,
-    popis: 'Hlasový bot, který odpovídá na hovory obce. Platí se za provolané minuty, s paušálem je minuta levnější.',
+    cena: `${HLASOVY_BOT.zaSekundu.toLocaleString('cs-CZ')} Kč / sekunda nebo paušál od ${HLASOVY_BOT.pausaly[0]!.mesicne} Kč`,
+    popis: 'Hlasový bot, který odpovídá na hovory obce. Účtuje se po sekundách hovoru, s paušálem je sekunda levnější.',
   },
   {
     nazev: 'Přenesení rozsáhlého archivu ze starého webu',

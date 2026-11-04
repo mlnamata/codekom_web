@@ -55,16 +55,16 @@ V ceně nasazení je nastavení zabezpečení a HTTPS certifikátu, přesměrov�
 
 ## AI hlasový bot na telefonní lince
 
-Bot zvedá hovory na lince obce a odpovídá volajícím. Platí se za minuty, které bot skutečně provolá.
+Bot zvedá hovory na lince obce a odpovídá volajícím. Účtuje se po sekundách, platí se jen čas, kdy bot skutečně hovoří s volajícím.
 
-| Varianta | Měsíčně | Minut v ceně | Další minuta |
+| Varianta | Měsíčně | Sekund v ceně | Další sekunda |
 |---|---|---|---|
-| Bez paušálu | 0 Kč | 0 | 9 Kč |
-| Paušál Malý | 490 Kč | 100 | 7 Kč |
-| Paušál Střední | 1 290 Kč | 300 | 6 Kč |
-| Paušál Velký | 2 990 Kč | 800 | 5 Kč |
+| Bez paušálu | 0 Kč | 0 | 0,15 Kč |
+| Paušál Malý | 490 Kč | 6 000 (100 minut) | 0,12 Kč |
+| Paušál Střední | 1 290 Kč | 18 000 (300 minut) | 0,10 Kč |
+| Paušál Velký | 2 990 Kč | 48 000 (800 minut) | 0,08 Kč |
 
-Měsíčně bez DPH. Nevyčerpané minuty se nepřevádějí do dalšího měsíce. Orientační cena, přesnou pošleme v nabídce. Platí ke 4. 11. 2026.
+Měsíčně bez DPH. Účtuje se po sekundách. Nevyčerpané sekundy se nepřevádějí do dalšího měsíce. Orientační cena, přesnou pošleme v nabídce. Platí ke 4. 11. 2026.
 
 ## Hodinová sazba experta a doplňkové služby
 
@@ -74,7 +74,7 @@ Pro práce nad rámec standardní technické podpory nebo individuální zakázk
 - **Přenesení rozsáhlého archivu ze starého webu:** od 2 900 Kč jednorázově (ruční kontrola a převedení stovek historických dokumentů a vyhlášek).
 - **Školení na místě na obecním úřadě:** od 3 500 Kč za půldenní workshop pro starostu, účetní, zastupitele a redaktory spolků.
 - **Balíček SMS zpráv pro občany:** od 990 Kč za 1 000 SMS kreditů na rozesílání krizových i běžných zpráv.
-- **AI hlasový bot na telefonní lince:** 9 Kč za provolanou minutu, nebo paušál od 490 Kč měsíčně (viz níže).
+- **AI hlasový bot na telefonní lince:** 0,15 Kč za sekundu hovoru, nebo paušál od 490 Kč měsíčně (viz níže).
 - **Příprava podkladů pro žádost o dotaci:** od 4 500 Kč za přípravu technické specifikace pro dotační tituly na digitalizaci obcí.
 
 ## Katalog součástí pro chytrou obec

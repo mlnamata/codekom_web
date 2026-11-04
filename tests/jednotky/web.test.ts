@@ -3,7 +3,7 @@ import { join } from 'node:path'
 import sharp from 'sharp'
 import { describe, expect, it } from 'vitest'
 import soubory from '@/data/ke-stazeni.json'
-import { HLASOVY_BOT, STITEK_CENY, cenaMinutyPausalu, spocitej } from '@/lib/cenik'
+import { HLASOVY_BOT, STITEK_CENY, cenaSekundyPausalu, spocitej } from '@/lib/cenik'
 import { otazky } from '@/lib/seo'
 
 const APP = join(__dirname, '..', '..')
@@ -15,10 +15,10 @@ describe('kalkulačka', () => {
     expect(spocitej(1, 'advance', true, 0)).toBe(3290)
     expect(spocitej(2, 'pokrocily', true, 3)).toBe(2490 + 2000 + 3 * 390)
   })
-  it('paušál hlasového bota je levnější než minuta bez paušálu a větší paušál vychází levněji', () => {
-    const ceny = HLASOVY_BOT.pausaly.map(cenaMinutyPausalu)
-    expect(ceny).toEqual([4.9, 4.3, 3.74])
-    for (const p of HLASOVY_BOT.pausaly) expect(p.dalsiMinuta).toBeLessThan(HLASOVY_BOT.zaMinutu)
+  it('paušál hlasového bota je levnější než sekunda bez paušálu a větší paušál vychází levněji', () => {
+    const ceny = HLASOVY_BOT.pausaly.map(cenaSekundyPausalu)
+    expect(ceny).toEqual([0.082, 0.072, 0.062])
+    for (const p of HLASOVY_BOT.pausaly) expect(p.dalsiSekunda).toBeLessThan(HLASOVY_BOT.zaSekundu)
     for (let i = 1; i < ceny.length; i++) expect(ceny[i]!).toBeLessThan(ceny[i - 1]!)
   })
   it('štítek ceny má datum', () => {
