@@ -74,12 +74,16 @@ test('katalog zařízení z ceníku', async ({ page }) => {
   await expect(page.getByText('Ne, závisí na cloudu')).toBeVisible()
 })
 
-test('fotky mají poznámku o umělé inteligenci', async ({ page }) => {
+test('fotky mají vodoznak AI místo nápisu', async ({ page }) => {
   for (const cesta of ['/', '/ukazky/naves', '/co-umime']) {
     await page.goto(cesta)
     const fotky = page.locator('figure:has(img[src*="foto"])')
     const n = await fotky.count()
-    for (let i = 0; i < n; i++) await expect(fotky.nth(i)).toContainText('Ilustrační fotografie vytvořená umělou inteligencí')
+    for (let i = 0; i < n; i++) {
+      // Vodoznak AI je vidět, poznámka je jen pro čtečky obrazovky.
+      await expect(fotky.nth(i).locator('img[src*="ai-odznak"]')).toBeVisible()
+      await expect(fotky.nth(i).getByText('Ilustrační fotografie vytvořená umělou inteligencí')).toHaveClass(/sr-only/)
+    }
   }
 })
 

@@ -11,7 +11,7 @@ Next.js 16.4 (App Router), React 19.3, TypeScript strict s `noUncheckedIndexedAc
 - Texty nevymýšlej. Berou se z `obsah/prezentace`. Co chybí, označ `[DOPLNIT]`, neověřené `[OVĚŘIT]`. Tvrzení o produktu musí být v `docs/tvrzeni-prezentace.md` (generuje `pnpm obsah`).
 - Komentáře a texty česky, commity česky v rozkazovacím způsobu. Doménové názvy česky bez diakritiky.
 - Vzhled: moderní, se skleněnými efekty, přechody, tučnějším písmem a animacemi (přání zakladatele ze 4. 11. 2026). Kontrast textu aspoň 4,5 : 1, cíle pro dotyk aspoň 44 × 44 px, `prefers-reduced-motion` musí animace vypnout.
-- Fotky z `design/obrazky/foto` jsou vygenerované AI. Každá zobrazená fotka má poznámku „Ilustrační fotografie vytvořená umělou inteligencí“.
+- Fotky z `design/obrazky/foto` jsou vygenerované AI. Každá zobrazená fotka má v rohu vodoznak AI (`OdznakAi`), viditelný nápis „Ilustrační fotografie vytvořená umělou inteligencí“ tam nebude, je jen pro čtečky obrazovky (přání zakladatele ze 4. 11. 2026).
 - Web nic nesbírá: žádný formulář, analytika ani cookies třetích stran (§ 89 odst. 3 zákona č. 127/2005 Sb.). Fonty jsou lokální (`@fontsource`).
 - Přístupnost podle WCAG 2.2 AA.
 - Tajné klíče jen do `.env`, nikdy do kódu ani commitu.

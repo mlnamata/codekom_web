@@ -161,7 +161,7 @@ Zkratky zdrojů: A, B, D = části `docs/pravni-dokumenty.md` (návrhy ke kontro
 | Školení: Základ video kurz, Pokročilý + 1 hodina online, Advance + 2 hodiny na místě | prechod | docs/navrh-platformy/04-admin-editor.md | 2026-11-04 | hypoteza |
 | Společná správa více obcí (mikroregion, MAS) se připravuje | pro-koho, ukazky | docs/navrh-platformy/01-navrh-platformy.md O5, fáze B3 | 2026-11-04 | hypoteza |
 | Topení podle rozvrhu školy se připravuje | pro-koho | docs/navrh-platformy/01-navrh-platformy.md O4, fáze B2 | 2026-11-04 | hypoteza |
-| Fotografie z AI mají vždy popisek „Ilustrační fotografie vytvořená umělou inteligencí“ | co-umime, ukazky, bezpecnost-a-pravo | docs/rozhodnuti.md 4. 11. 2026 | 2026-11-04 | overeno |
+| Fotografie z AI mají vždy vodoznak AI, pro čtečky obrazovky text „Ilustrační fotografie vytvořená umělou inteligencí“ | co-umime, ukazky, bezpecnost-a-pravo | docs/rozhodnuti.md 4. 11. 2026 | 2026-11-04 | overeno |
 | Dotační výzvy 2026–2027 | dotace | žádná výzva zatím neověřená | – | neovereno |
 | Reference a pilotní obce | o-nas | chybí, [DOPLNIT] | – | neovereno |
 | Údaje CodeKomu: IČO, sídlo, holding, kontakty, tým | o-nas, kontakt, zasady-osobnich-udaju, pristupnost | chybí, [DOPLNIT] | – | neovereno |

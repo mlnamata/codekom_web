@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
 }
 
-const AI = 'Ilustrační fotografie vytvořená umělou inteligencí'
 
 /** Fotky z design/obrazky/foto a jejich popisy (podle zadání v design/obrazky/prompty.txt). */
 const FOTO = {
@@ -180,7 +179,9 @@ export default function Uvod() {
               <figure className="absolute inset-0 -z-10 m-0">
                 <Image src={FOTO.starosta.src} alt={FOTO.starosta.alt} fill sizes="(min-width: 1024px) 400px, 100vw" className="object-cover" />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,8,12,0)_30%,rgba(7,8,12,0.88)_100%)]" aria-hidden="true" />
-                <figcaption className="sklo-tmave absolute right-3 top-3 rounded-full px-3 py-1 text-[13px] text-white/90">{AI}</figcaption>
+                <figcaption className="absolute right-3 top-3 z-10 m-0">
+                  <OdznakAi />
+                </figcaption>
               </figure>
               <div className="na-tmave absolute inset-x-0 bottom-0 p-7">
                 <p className="text-[52px] font-extrabold leading-none">1–2 h</p>

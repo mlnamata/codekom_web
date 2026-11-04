@@ -91,7 +91,7 @@ Od 2. 8. 2026 platí čl. 50 nařízení o umělé inteligenci (AI Act). Kdo s A
 - Dotazy neukládá k jménu ani k účtu a netrénuje se na nich. Text dotazu se uchovává [OVĚŘIT: 30] dní, potom zůstanou jen anonymní statistiky.
 - Model běží na serveru v České republice.
 
-Fotografie vytvořené umělou inteligencí označujeme vždy popiskem „Ilustrační fotografie vytvořená umělou inteligencí“. Zda to vyžaduje čl. 50 odst. 4 AI Actu, ověřujeme [OVĚŘIT].
+Fotografie vytvořené umělou inteligencí označujeme vždy vodoznakem AI v rohu fotky, čtečky obrazovky přečtou „Ilustrační fotografie vytvořená umělou inteligencí“. Zda to vyžaduje čl. 50 odst. 4 AI Actu, ověřujeme [OVĚŘIT].
 
 {/* kotva: kyberneticka-bezpecnost */}
 
