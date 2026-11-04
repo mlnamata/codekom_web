@@ -78,6 +78,10 @@ export default function Uvod() {
 
       {/* Úvod přes celou obrazovku */}
       <section className="na-tmave zare relative isolate flex min-h-[calc(100svh-72px)] items-end overflow-hidden bg-noc">
+        <figure className="absolute inset-0 -z-10 m-0">
+          <Image src="/fotky/uvod-cesta.webp" alt="Zatáčející se asfaltová cesta mezi loukami a stromy za východu slunce, nad údolím se válí ranní mlha." fill priority sizes="100vw" className="object-cover object-[60%_50%]" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,8,12,0.94)_0%,rgba(7,8,12,0.7)_45%,rgba(7,8,12,0.2)_100%)]" aria-hidden="true" />
+        </figure>
         <div className="obal w-full pb-16 pt-24 md:pb-24">
           <p className="rubrika">Pro obce do 2 000 obyvatel</p>
           <div>
@@ -90,7 +94,8 @@ export default function Uvod() {
               CodeKom je web pro obec s elektronickou úřední deskou, aplikací pro občany a hlášením obce do mobilu. Pro starosty a účetní malých obcí, kteří nemají na správu webu celý den.
             </p>
           </div>
-          <div className="mt-10 flex flex-wrap gap-3">
+          <p className="mt-8 text-[24px] font-bold tracking-tight md:text-[32px]">Ukážeme vám cestu.</p>
+          <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/ukazky" className="tlacitko w-full sm:w-auto">
               Prohlédnout 20 šablon
             </Link>
