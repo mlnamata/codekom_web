@@ -7,8 +7,10 @@ import { VyzvaSekce } from '@/komponenty/VyzvaSekce'
 import {
   CENY_WEBU,
   DOPLNKOVE_SLUZBY,
+  HLASOVY_BOT,
   HODINOVKA_EXPERTA,
   POPLATEK_NASAZENI,
+  cenaMinutyPausalu,
   SOUCASTKY_CHYTRA_OBEC,
   STITEK_CENY,
   kc,
@@ -248,6 +250,46 @@ export default function Cenik() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* AI hlasový bot na telefonní lince */}
+      <section id="hlasovy-bot" aria-labelledby="nadpis-hlasovy-bot" className="mt-20 scroll-mt-28">
+        <div className="max-w-[42em]">
+          <p className="rubrika">Doplněk na připlacení</p>
+          <h2 id="nadpis-hlasovy-bot" className="mt-2 text-[32px] md:text-[44px]">
+            AI hlasový bot na telefonní lince
+          </h2>
+          <p className="mt-3 text-[17px] text-sediva">
+            Bot zvedá hovory na lince obce a odpovídá volajícím. Platí se za minuty, které bot skutečně provolá. Bez paušálu stojí minuta {kc(HLASOVY_BOT.zaMinutu)}, s paušálem vychází levněji.
+          </p>
+        </div>
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <li className="sklo-svetle flex flex-col rounded-3xl p-7">
+            <span className="text-[13px] font-bold uppercase tracking-wider text-akcent-tmavy">Bez paušálu</span>
+            <p className="mt-3 text-[32px] font-extrabold tracking-tight">
+              {kc(HLASOVY_BOT.zaMinutu)}
+              <span className="block text-[15px] font-normal text-sediva">za provolanou minutu</span>
+            </p>
+            <p className="mt-4 text-[15px] text-sediva">Žádný měsíční poplatek. Hodí se na vyzkoušení nebo pro linku s málo hovory.</p>
+          </li>
+          {HLASOVY_BOT.pausaly.map((p) => (
+            <li key={p.klic} className="sklo-svetle flex flex-col rounded-3xl p-7">
+              <span className="text-[13px] font-bold uppercase tracking-wider text-akcent-tmavy">Paušál {p.nazev}</span>
+              <p className="mt-3 text-[32px] font-extrabold tracking-tight">
+                {kc(p.mesicne)}
+                <span className="block text-[15px] font-normal text-sediva">měsíčně</span>
+              </p>
+              <ul className="mt-4 space-y-1.5 text-[15px] text-sediva">
+                <li>
+                  <strong className="text-text">{p.minut} minut</strong> v ceně, zhruba {Math.round(p.minut / HLASOVY_BOT.delkaHovoru)} hovorů po {HLASOVY_BOT.delkaHovoru} minutách
+                </li>
+                <li>každá další minuta {kc(p.dalsiMinuta)}</li>
+                <li>při vyčerpání vychází minuta na {kc(cenaMinutyPausalu(p))}</li>
+              </ul>
+            </li>
+          ))}
+        </ul>
+        <p className="stitek mt-4">Měsíčně bez DPH. Nevyčerpané minuty se nepřevádějí do dalšího měsíce. {STITEK_CENY}</p>
       </section>
 
       {/* Kalkulačka */}

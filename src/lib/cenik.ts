@@ -96,6 +96,28 @@ export const SOUCASTKY_CHYTRA_OBEC: SoucastkaKatalogu[] = [
   },
 ]
 
+export interface PausalVolani {
+  klic: string
+  nazev: string
+  mesicne: number
+  minut: number
+  dalsiMinuta: number
+}
+
+/** AI hlasový bot na telefonní lince. Odhad ceny viz docs/odhad-hlasovy-bot.md (4. 11. 2026). */
+export const HLASOVY_BOT = {
+  zaMinutu: 9,
+  delkaHovoru: 2,
+  pausaly: [
+    { klic: 'maly', nazev: 'Malý', mesicne: 490, minut: 100, dalsiMinuta: 7 },
+    { klic: 'stredni', nazev: 'Střední', mesicne: 1290, minut: 300, dalsiMinuta: 6 },
+    { klic: 'velky', nazev: 'Velký', mesicne: 2990, minut: 800, dalsiMinuta: 5 },
+  ] satisfies PausalVolani[],
+}
+
+/** Cena za minutu při vyčerpání paušálu, zaokrouhlená na haléře. */
+export const cenaMinutyPausalu = (p: PausalVolani) => Math.round((p.mesicne / p.minut) * 100) / 100
+
 export const DOPLNKOVE_SLUZBY = [
   {
     nazev: 'Hodinová sazba experta',
@@ -104,8 +126,8 @@ export const DOPLNKOVE_SLUZBY = [
   },
   {
     nazev: 'AI hlasový bot na telefonní lince',
-    cena: 'účtuje se podle využitých minut, cenu pošleme v nabídce',
-    popis: 'Hlasový bot, který odpovídá na hovory obce. Platí se jen za minuty, které bot skutečně využije.',
+    cena: `${HLASOVY_BOT.zaMinutu} Kč / minuta nebo paušál od ${HLASOVY_BOT.pausaly[0]!.mesicne} Kč`,
+    popis: 'Hlasový bot, který odpovídá na hovory obce. Platí se za provolané minuty, s paušálem je minuta levnější.',
   },
   {
     nazev: 'Přenesení rozsáhlého archivu ze starého webu',

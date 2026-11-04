@@ -20,6 +20,8 @@ Zkratky zdrojů: A, B, D = části `docs/pravni-dokumenty.md` (návrhy ke kontro
 | Web Advance od 1 490 / 2 290 / 3 790 Kč měsíčně bez DPH | cenik | docs/navrh-platformy/04-admin-editor.md, 01-navrh-platformy.md | 2026-11-04 | orientacni |
 | Digitální úřad od 600 / 1 000 / 2 000 Kč měsíčně bez DPH | cenik | docs/navrh-platformy/01-navrh-platformy.md | 2026-11-04 | orientacni |
 | Chytré budovy od 390 Kč měsíčně za budovu | cenik | docs/navrh-platformy/01-navrh-platformy.md | 2026-11-04 | orientacni |
+| AI hlasový bot na telefonní lince za 9 Kč za provolanou minutu bez paušálu | cenik | docs/odhad-hlasovy-bot.md (odhad nákladů, [OVĚŘIT] proti ceníkům dodavatelů) | 2026-11-04 | orientacni |
+| Paušály hlasového bota: Malý 490 Kč / 100 min / další 7 Kč, Střední 1 290 Kč / 300 min / další 6 Kč, Velký 2 990 Kč / 800 min / další 5 Kč, měsíčně bez DPH | cenik | docs/odhad-hlasovy-bot.md (odhad nákladů, [OVĚŘIT] proti ceníkům dodavatelů) | 2026-11-04 | orientacni |
 | Velikostní pásma obcí do 500, 500–2 000, 2 000–10 000 obyvatel | cenik, pro-koho, ukazky | docs/navrh-platformy/01-navrh-platformy.md | 2026-11-04 | overeno |
 | Základ 3 uživatelé, Pokročilý 10, Advance neomezeně | cenik | docs/navrh-platformy/04-admin-editor.md | 2026-11-04 | hypoteza |
 | Pokročilý 3 podweby, Advance bez omezení | pro-koho | docs/navrh-platformy/04-admin-editor.md | 2026-11-04 | hypoteza |
