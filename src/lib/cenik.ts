@@ -166,6 +166,9 @@ export const kcSekunda = (n: number) => `${n.toLocaleString('cs-CZ', { minimumFr
 /** Číslo s českým oddělovačem tisíců a pevnou mezerou. */
 export const cislo = (n: number) => n.toLocaleString('cs-CZ').replace(/\s/g, String.fromCharCode(160))
 
+const NBSP = String.fromCharCode(160)
+export const kc = (n: number) => `${n.toLocaleString('cs-CZ').replace(/\s/g, NBSP)}${NBSP}Kč`
+
 export const DOPLNKOVE_SLUZBY = [
   {
     nazev: 'Hodinová sazba experta',
@@ -174,7 +177,7 @@ export const DOPLNKOVE_SLUZBY = [
   },
   {
     nazev: 'AI hlasový bot na telefonní lince',
-    cena: `${HLASOVY_BOT.zaSekundu.toLocaleString('cs-CZ')} Kč / sekunda nebo paušál od ${HLASOVY_BOT.pausaly[0]!.mesicne} Kč`,
+    cena: `${kcSekunda(HLASOVY_BOT.zaSekundu)} / sekunda nebo paušál od ${kc(HLASOVY_BOT.pausaly[0]!.mesicne)}`,
     popis: 'Hlasový bot, který odpovídá na hovory obce. Účtuje se po sekundách hovoru, s paušálem je sekunda levnější.',
   },
   {
@@ -198,9 +201,6 @@ export const DOPLNKOVE_SLUZBY = [
     popis: 'Příprava technické a projektové specifikace pro dotační tituly (IROP, Národní plán obnovy a krajské programy).',
   },
 ]
-
-const NBSP = String.fromCharCode(160)
-export const kc = (n: number) => `${n.toLocaleString('cs-CZ').replace(/\s/g, NBSP)}${NBSP}Kč`
 
 /** Nejlevnější varianta hlasového bota pro daný počet sekund hovorů za měsíc (celé koruny). */
 export function cenaHlasovehoBota(sekund: number): { nazev: string; cena: number } {

@@ -28,12 +28,12 @@ export function KalkulackaCeniku() {
   const [urad, setUrad] = useState(false)
   const [budovy, setBudovy] = useState(0)
   const [hodiny, setHodiny] = useState(0)
-  const [minuty, setMinuty] = useState(0)
+  const [sekundy, setSekundy] = useState(0)
 
   const naMiru = jeNaMiru(velikost)
   const mesicniCena = spocitej(velikost, uroven, urad, budovy)
   const jednorazove = spocitejJednorazove(uroven, hodiny)
-  const bot = cenaHlasovehoBota(minuty * 60)
+  const bot = cenaHlasovehoBota(sekundy)
   const cislo = (max: number, set: (n: number) => void) => (e: ChangeEvent<HTMLInputElement>) =>
     set(Math.max(0, Math.min(max, Math.floor(Number(e.target.value)) || 0)))
 
@@ -112,9 +112,9 @@ export function KalkulackaCeniku() {
           </label>
 
           <label className="block font-medium text-text">
-            Minuty hovorů AI hlasového bota za měsíc
-            <span className="block text-[14px] font-normal text-sediva">Účtuje se po sekundách, počítáme nejlevnější variantu</span>
-            <input type="number" min={0} max={100000} inputMode="numeric" className={poleInput} value={minuty} onChange={cislo(100000, setMinuty)} />
+            Sekundy hovorů AI hlasového bota za měsíc
+            <span className="block text-[14px] font-normal text-sediva">Účtuje se po sekundách (100 minut = 6 000 sekund), počítáme nejlevnější variantu</span>
+            <input type="number" min={0} max={6000000} inputMode="numeric" className={poleInput} value={sekundy} onChange={cislo(6000000, setSekundy)} />
           </label>
         </div>
 
@@ -135,7 +135,7 @@ export function KalkulackaCeniku() {
                 <span className="block text-[15px] text-white/80">měsíčně bez DPH</span>
               </>
             )}
-            {minuty > 0 ? (
+            {sekundy > 0 ? (
               <p className="mt-2 text-[15px] text-white/90">
                 {naMiru ? 'Hlasový bot' : 'Z toho hlasový bot'} {kc(bot.cena)}, {bot.nazev}
               </p>

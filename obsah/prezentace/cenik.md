@@ -105,7 +105,7 @@ Celý katalog zařízení, včetně hlavic, zámků, elektroměrů, čidel a br�
 - Velikost obce nad 10 000 obyvatel: měsíční cenu pošleme v nabídce
 - Počet budov s modulem Chytré budovy: číslo od 0
 - Hodiny práce experta navíc: číslo od 0, 750 Kč za hodinu, připočte se k jednorázové ceně
-- Minuty hovorů AI hlasového bota za měsíc: číslo od 0, kalkulačka vybere nejlevnější variantu (bez paušálu nebo paušál)
+- Sekundy hovorů AI hlasového bota za měsíc: číslo od 0, účtuje se po sekundách, kalkulačka vybere nejlevnější variantu (bez paušálu nebo paušál)
 - Výsledek: Orientačně od X Kč měsíčně bez DPH a od Y Kč jednorázově bez DPH (nasazení a hodiny experta). Orientační cena, přesnou pošleme v nabídce. Platí ke 4. 11. 2026.
 
 ## Jak se platí

@@ -56,7 +56,7 @@ test('kalkulačka sečte jednorázové náklady a hodiny experta', async ({ page
   await expect(vysledek).toContainText('4 900')
   await page.getByLabel('Hodiny práce experta navíc').fill('2')
   await expect(vysledek).toContainText('6 400')
-  await page.getByLabel('Minuty hovorů AI hlasového bota za měsíc').fill('100')
+  await page.getByLabel('Sekundy hovorů AI hlasového bota za měsíc').fill('6000')
   await expect(vysledek).toContainText('1 080')
   await expect(vysledek).toContainText('paušál Malý')
   await page.getByLabel('Velikost obce').selectOption('3')

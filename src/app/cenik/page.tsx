@@ -72,7 +72,7 @@ const UROVNE_KARTY = [
       'AI asistent odpovídající z dokumentů',
       'Vlastní barvy, písma a rozvržení',
       'Neomezený počet podwebů a uživatelů',
-      'Přímá podpora s garancí reakce',
+      'Vlastní kontakt s odpovědí do 4 hodin',
     ],
   },
 ] as const
@@ -80,19 +80,19 @@ const UROVNE_KARTY = [
 const PODMINKY_SMLOUVY = [
   {
     titul: 'Smlouva na dobu neurčitou',
-    text: 'Obec může smlouvu vypovědět kdykoli i bez udání důvodu. Neexistuje žádný závazek na roky dopředu.',
+    text: 'Obec může smlouvu vypovědět kdykoli i bez udání důvodu. Výpovědní doba je 3 měsíce u roční licence a 1 měsíc u měsíčního předplatného, začíná prvním dnem měsíce po doručení výpovědi.',
   },
   {
     titul: '30 dní zkušební doba',
-    text: 'Prvních 30 dní od spuštění běží zkušební doba. Pokud obec službu vypoví, vrátíme do 14 dní celou zaplacenou částku.',
+    text: 'Prvních 30 dní od zpřístupnění služby je zkušební doba. Vypoví-li obec smlouvu ve zkušební době, vrátíme celou zaplacenou cenu do 14 dní.',
   },
   {
     titul: 'Export dat je vždy zdarma',
-    text: 'Veškerá data (články, vyhlášky, úřední deska, kontakty) patří obci. Kdykoli je můžete zdarma vyexportovat v otevřených formátech.',
+    text: 'Export dat je zdarma a za ukončení smlouvy se nic neplatí. Po skončení smlouvy zůstane služba 30 dní v režimu jen pro čtení.',
   },
   {
     titul: 'Úřední deska funguje dál',
-    text: 'Při prodlení s platbou po upomínce se web přepne do režimu jen pro čtení. Úřední deska i krizová hlášení zůstávají ze zákona v chodu.',
+    text: 'Při prodlení s platbou delším než 30 dní po upomínce můžeme službu omezit na režim jen pro čtení. Úřední deska, krizová hlášení a export dat zůstávají vždy funkční.',
   },
 ]
 
@@ -122,7 +122,7 @@ export default function Cenik() {
           { href: '#soucastky', text: 'Katalog součástek pro obec' },
         ]}
         metriky={[
-          ['od 590 Kč', 'měsíčně bez DPH'],
+          [`od ${kc(CENY_WEBU.zaklad[0])}`, 'měsíčně bez DPH'],
           ['30 dní', 'zkušební doba s vrácením'],
           ['Výpověď kdykoli', 'smlouva na dobu neurčitou'],
         ]}
@@ -217,11 +217,11 @@ export default function Cenik() {
             </p>
             <ul className="mt-6 space-y-3 text-[15px]">
               {[
-                'Nastavení domény obce, DNS záznamů, HTTPS zabezpečení a pošty',
-                'Příprava šablony, naplnění znakem obce, obecními barvami a fotografiemi',
-                'Převod povinných informací, kontaktů úřadu a aktuálně vyvěšených dokumentů',
-                'Zprovoznění elektronické úřední desky a aktivace mobilní aplikace pro občany',
-                'Základní zaškolení starosty a účetní (video kurz + online asistence v ceně)',
+                'Technická příprava a napojení domény obce, zabezpečení a HTTPS certifikát',
+                'Výběr a nastavení šablony, naplnění obecními symboly a kontakty',
+                'Převod základního obsahu a přesměrování starých adres',
+                'Zprovoznění elektronické úřední desky a mobilní aplikace pro občany',
+                'Zaškolení obsluhy: video kurz, u Pokročilého navíc 1 hodina online, u Advance 2 hodiny na místě',
               ].map((b) => (
                 <li key={b} className="flex items-start gap-2.5">
                   <span className="mt-1.5 size-1.5 rounded-full bg-akcent-tmavy shrink-0" aria-hidden="true" />
@@ -263,7 +263,7 @@ export default function Cenik() {
             AI hlasový bot na telefonní lince
           </h2>
           <p className="mt-3 text-[17px] text-sediva">
-            Bot zvedá hovory na lince obce a odpovídá volajícím. Účtuje se po sekundách, platíte jen čas, kdy bot skutečně hovoří s volajícím. Bez paušálu stojí sekunda {kcSekunda(HLASOVY_BOT.zaSekundu)}, s paušálem vychází levněji.
+            Bot zvedá hovory na lince obce a odpovídá volajícím. Účtuje se po sekundách, platí se jen čas, kdy bot skutečně hovoří s volajícím. Bez paušálu stojí sekunda {kcSekunda(HLASOVY_BOT.zaSekundu)}, s paušálem vychází levněji.
           </p>
         </div>
         <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
