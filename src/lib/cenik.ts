@@ -103,6 +103,11 @@ export const DOPLNKOVE_SLUZBY = [
     popis: 'Zakázkové grafické úpravy, asistence s obsahem, konzultace přístupnosti a individuální práce nad rámec běžné podpory.',
   },
   {
+    nazev: 'AI hlasový bot na telefonní lince',
+    cena: 'účtuje se podle využitých minut, cenu pošleme v nabídce',
+    popis: 'Hlasový bot, který odpovídá na hovory obce. Platí se jen za minuty, které bot skutečně využije.',
+  },
+  {
     nazev: 'Přenesení rozsáhlého archivu ze starého webu',
     cena: 'od 2 900 Kč jednorázově',
     popis: 'Ruční kontrola, vyčištění a přenesení stovek starších dokumentů, vyhlášek a fotografií z dosavadního systému.',

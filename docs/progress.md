@@ -18,3 +18,4 @@
 - Úvod: fotka v hero nahrazena pozadím `.zare` bez fotky. Karusel na úvodu ukazuje všech 20 šablon (komponenta `Karusel`). Typecheck, lint, build, 33 testů v prohlížeči prošlo.
 - Úvod: pozadí hero je skutečná fotka cesty za úsvitu (`public/fotky/uvod-cesta.webp`, bez poznámky o AI, je to fotka, ne vygenerovaný obrázek). Přidán slogan „Ukážeme vám cestu.“. Typecheck, lint, 28 jednotkových testů, build a 33 testů v prohlížeči prošlo.
 - Podstránky: úvodní pás (`StrankaHero`) přepracován do stejného stylu jako úvod (celošířková fotka cesty, gradient, velký nadpis, skleněné odznaky a metriky). Typecheck, lint, build a 33 testů v prohlížeči prošlo.
+- Ceník: doplněk „AI hlasový bot na telefonní lince“ (účtuje se podle využitých minut, cena se posílá v nabídce). Cena za minutu ani paušály zatím nejsou, chybí podklady o nákladech. Typecheck, lint, 28 testů, build a 33 testů v prohlížeči prošlo.

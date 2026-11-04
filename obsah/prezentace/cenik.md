@@ -61,6 +61,7 @@ Pro práce nad rámec standardní technické podpory nebo individuální zakázk
 - **Přenesení rozsáhlého archivu ze starého webu:** od 2 900 Kč jednorázově (ruční kontrola a převedení stovek historických dokumentů a vyhlášek).
 - **Školení na místě na obecním úřadě:** od 3 500 Kč za půldenní workshop pro starostu, účetní, zastupitele a redaktory spolků.
 - **Balíček SMS zpráv pro občany:** od 990 Kč za 1 000 SMS kreditů na rozesílání krizových i běžných zpráv.
+- **AI hlasový bot na telefonní lince:** účtuje se podle využitých minut hovoru. Cenu za minutu pošleme v nabídce.
 - **Příprava podkladů pro žádost o dotaci:** od 4 500 Kč za přípravu technické specifikace pro dotační tituly na digitalizaci obcí.
 
 ## Katalog součástí pro chytrou obec
