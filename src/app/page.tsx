@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FotoAi } from '@/komponenty/FotoAi'
 import { JsonLd } from '@/komponenty/JsonLd'
+import { Karusel } from '@/komponenty/Karusel'
 import { Odhaleni } from '@/komponenty/Odhaleni'
 import { Snimek } from '@/komponenty/Snimek'
 import { CENY_WEBU, STITEK_CENY, kc } from '@/lib/cenik'
@@ -24,7 +25,6 @@ const AI = 'Ilustrační fotografie vytvořená umělou inteligencí'
 
 /** Fotky z design/obrazky/foto a jejich popisy (podle zadání v design/obrazky/prompty.txt). */
 const FOTO = {
-  naves: { src: '/foto/sablona-01-naves.webp', alt: 'Náves vesnice v podhůří Šumavy s barokním kostelem, starou lípou a roubenými domy.' },
   starosta: { src: '/foto/prezentace-starosta.webp', alt: 'Starosta u dřevěného stolu na obecním úřadě se dívá do tabletu.' },
   urad: { src: '/foto/sablona-20-urad.webp', alt: 'Upravená přepážka malého obecního úřadu se stojanem na formuláře a květinami.' },
   radnice: { src: '/foto/sablona-11-radnice.webp', alt: 'Budova obecního úřadu s omítnutou fasádou, červenou střechou a českou vlajkou.' },
@@ -33,8 +33,6 @@ const FOTO = {
   topeni: { src: '/foto/prezentace-topeni.webp', alt: 'Termostatická hlavice na radiátoru v obecním sále.' },
   mikroregion: { src: '/foto/sablona-19-mikroregion.webp', alt: 'Široké údolí v podhůří Šumavy se čtyřmi vesničkami spojenými silničkami, podzim.' },
 }
-
-const NA_UVODU = ['naves', 'lipa', 'lupa', 'urad']
 
 const ZISK = [
   ['Web podle jedné z 20 šablon', 'Každá šablona ve 3 barevných variantách. Obsah se píše do připravených míst, takže web vypadá dobře i bez grafika.'],
@@ -71,7 +69,6 @@ function FotoPozadi({ foto, priorita = false, ztmaveni }: { foto: { src: string;
 
 export default function Uvod() {
   const sablony = sablonyGalerie()
-  const vybrane = NA_UVODU.map((k) => sablony.find((s) => s.klic === k)!).filter(Boolean)
   const demo = odkazDema('naves', 0)
   const aplikace = odkazAplikace()
 
@@ -80,8 +77,7 @@ export default function Uvod() {
       <JsonLd data={organizaceJsonLd()} />
 
       {/* Úvod přes celou obrazovku */}
-      <section className="na-tmave relative isolate flex min-h-[calc(100svh-72px)] items-end overflow-hidden bg-noc">
-        <FotoPozadi foto={FOTO.naves} priorita ztmaveni="bg-[linear-gradient(90deg,rgba(7,8,12,0.94)_0%,rgba(7,8,12,0.78)_45%,rgba(7,8,12,0.25)_100%)]" />
+      <section className="na-tmave zare relative isolate flex min-h-[calc(100svh-72px)] items-end overflow-hidden bg-noc">
         <div className="obal w-full pb-16 pt-24 md:pb-24">
           <p className="rubrika">Pro obce do 2 000 obyvatel</p>
           <div>
@@ -137,26 +133,28 @@ export default function Uvod() {
               <h2 id="sablony" className="mt-3 text-[40px] md:text-[60px]">
                 Podívejte se, jak bude web vypadat
               </h2>
-              <p className="mt-4 text-[18px] text-white/75">Úvodní stránky čtyř ze 20 šablon na smyšlené obci Javoří Lhota se 684 obyvateli. Obsah je ve všech stejný, liší se rozvržení, písmo a barvy.</p>
+              <p className="mt-4 text-[18px] text-white/75">Úvodní stránky všech 20 šablon na smyšlené obci Javoří Lhota se 684 obyvateli. Obsah je ve všech stejný, liší se rozvržení, písmo a barvy.</p>
             </div>
             <Link href="/ukazky" className="tlacitko-obrys">
               Všech 20 šablon
             </Link>
           </Odhaleni>
-          <ul className="-mx-5 mt-14 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4">
-            {vybrane.map((s, i) => (
-              <Odhaleni as="li" key={s.klic} zpozdeni={i * 90} className="w-[80%] shrink-0 snap-start sm:w-auto">
-                <Link href={`/ukazky/${s.klic}`} className="sklo group block rounded-3xl p-2 no-underline transition-transform duration-300 hover:-translate-y-1">
-                  <Snimek src={s.palety[0]!.snimek} alt={`Úvodní stránka šablony ${s.nazev} pro obec Javoří Lhota, paleta ${s.palety[0]!.nazev}.`} sizes="(min-width: 1240px) 290px, 50vw" />
-                  <span className="block px-3 pb-3 pt-4">
-                    <span className="block text-[13px] font-semibold text-akcent">Šablona {s.cislo}</span>
-                    <span className="block text-[22px] font-bold tracking-tight">{s.nazev}</span>
-                    <span className="block text-[15px] text-white/70">{s.proKoho}</span>
-                  </span>
-                </Link>
-              </Odhaleni>
-            ))}
-          </ul>
+          <div className="mt-14">
+            <Karusel popis="Karusel šablon" popisPasu="Seznam 20 šablon">
+              {sablony.map((s) => (
+                <li key={s.klic} className="w-[85%] shrink-0 snap-start sm:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)]">
+                  <Link href={`/ukazky/${s.klic}`} className="sklo group block rounded-3xl p-2 no-underline transition-transform duration-300 hover:-translate-y-1">
+                    <Snimek src={s.palety[0]!.snimek} alt={`Úvodní stránka šablony ${s.nazev} pro obec Javoří Lhota, paleta ${s.palety[0]!.nazev}.`} sizes="(min-width: 1240px) 360px, (min-width: 640px) 50vw, 85vw" />
+                    <span className="block px-3 pb-3 pt-4">
+                      <span className="block text-[13px] font-semibold text-akcent">Šablona {s.cislo}</span>
+                      <span className="block text-[22px] font-bold tracking-tight">{s.nazev}</span>
+                      <span className="block text-[15px] text-white/70">{s.proKoho}</span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </Karusel>
+          </div>
         </div>
       </section>
 

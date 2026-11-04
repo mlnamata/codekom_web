@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test'
 test('úvod vede na šablony a úrovně', async ({ page }) => {
   await page.goto('/')
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
-  await expect(page.locator('img[alt^="Úvodní stránka šablony"]')).toHaveCount(4)
+  await expect(page.locator('img[alt^="Úvodní stránka šablony"]')).toHaveCount(20)
   await page.getByRole('link', { name: 'Prohlédnout 20 šablon' }).click()
   await expect(page).toHaveURL(/\/ukazky$/)
   await expect(page.locator('main li a[href^="/ukazky/"]')).toHaveCount(20)
