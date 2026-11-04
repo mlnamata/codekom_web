@@ -22,7 +22,7 @@ Ukázka je prototyp, ne ostrý provoz. Telefony, IČO a čísla účtů jsou v n
 
 Alt text snímku má vždy tvar: Úvodní stránka šablony <název> pro obec Javoří Lhota, paleta <název palety>. Mobilní snímek: Úvodní stránka šablony <název> na telefonu, paleta <název první palety>.
 
-Popisek fotky úvodu šablony: Ilustrační fotografie vytvořená umělou inteligencí.
+Fotka úvodu šablony má v rohu štítek AI.
 
 ### Náves
 
