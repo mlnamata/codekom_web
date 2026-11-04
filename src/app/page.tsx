@@ -79,26 +79,26 @@ export default function Uvod() {
     <>
       <JsonLd data={organizaceJsonLd()} />
 
-      {/* Úvod přes celou obrazovku */}
-      <section className="na-tmave zare relative isolate flex min-h-[calc(100svh-72px)] items-end overflow-hidden bg-noc">
+      {/* Úvodní sekce */}
+      <section className="na-tmave zare relative isolate flex items-center overflow-hidden bg-noc py-12 md:py-18">
         <figure className="absolute inset-0 -z-10 m-0">
-          <Image src="/fotky/uvod-cesta.webp" alt="Zatáčející se asfaltová cesta mezi loukami a stromy za východu slunce, nad údolím se válí ranní mlha." fill priority sizes="100vw" className="object-cover object-[60%_50%]" />
-          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,8,12,0.94)_0%,rgba(7,8,12,0.7)_45%,rgba(7,8,12,0.2)_100%)]" aria-hidden="true" />
+          <Image src="/fotky/uvod-cesta.webp" alt="Zatáčející se asfaltová cesta mezi loukami a stromy za východu slunce, nad údolím se válí ranní mlha." fill priority sizes="100vw" className="object-cover object-bottom" />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,8,12,0.95)_0%,rgba(7,8,12,0.76)_48%,rgba(7,8,12,0.22)_100%)]" aria-hidden="true" />
         </figure>
-        <div className="obal w-full pb-16 pt-24 md:pb-24">
+        <div className="obal w-full py-4 md:py-6">
           <p className="rubrika">Pro všechny obce a města</p>
           <div>
-            <h1 className="mt-5 max-w-[14ch] text-[42px] font-extrabold leading-[1.05] md:text-[68px] lg:text-[80px]">
+            <h1 className="mt-3.5 max-w-[14ch] text-[36px] font-extrabold leading-[1.05] md:text-[54px] lg:text-[64px]">
               Web, úřední deska a aplikace <span className="text-gradient">pro vaši obec</span>
             </h1>
           </div>
           <div>
-            <p className="mt-6 max-w-[36em] text-[18px] text-white/85 md:text-[20px]">
+            <p className="mt-4 max-w-[36em] text-[17px] text-white/85 md:text-[19px]">
               CodeKom je web pro obec s elektronickou úřední deskou, aplikací pro občany a hlášením obce do mobilu. Navržený pro starosty, účetní i administrátory obcí a měst všech velikostí, bez omezení počtu obyvatel.
             </p>
           </div>
-          <p className="mt-8 text-[22px] font-bold tracking-tight md:text-[28px]">Ukážeme vám cestu.</p>
-          <div className="mt-6 flex flex-wrap gap-3">
+          <p className="mt-6 text-[20px] font-bold tracking-tight md:text-[26px]">Ukážeme vám cestu.</p>
+          <div className="mt-5 flex flex-wrap gap-3">
             <Link href="/ukazky" className="tlacitko w-full sm:w-auto">
               Prohlédnout 20 šablon
             </Link>
@@ -113,15 +113,15 @@ export default function Uvod() {
               </a>
             ) : null}
           </div>
-          <div className="mt-14 grid max-w-[880px] gap-3 sm:grid-cols-3">
+          <div className="mt-10 grid max-w-[880px] gap-3 sm:grid-cols-3">
             {[
               [`od ${kc(CENY_WEBU.zaklad[0])}`, 'měsíčně bez DPH, orientačně'],
               ['20 šablon', 'každá ve 3 barevných variantách'],
               ['Výpověď kdykoli', 'a 30 dní zkušební doba'],
             ].map(([velke, male]) => (
-              <div key={velke} className="sklo rounded-2xl px-5 py-4">
-                <p className="text-[24px] font-bold tracking-tight">{velke}</p>
-                <p className="text-[15px] text-white/75">{male}</p>
+              <div key={velke} className="sklo rounded-2xl px-5 py-3.5">
+                <p className="text-[22px] font-bold tracking-tight">{velke}</p>
+                <p className="text-[14px] text-white/75">{male}</p>
               </div>
             ))}
           </div>
@@ -130,24 +130,24 @@ export default function Uvod() {
       </section>
 
       {/* Šablony */}
-      <section aria-labelledby="sablony" className="na-tmave zare relative bg-noc py-24">
-        <p className="slovo-pozadi top-6 text-[180px] md:text-[260px]" aria-hidden="true">
+      <section aria-labelledby="sablony" className="na-tmave zare relative bg-noc py-14 md:py-18">
+        <p className="slovo-pozadi top-4 text-[160px] md:text-[220px]" aria-hidden="true">
           Šablony
         </p>
         <div className="obal">
           <Odhaleni className="flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-[40em]">
               <p className="rubrika">20 šablon, 60 variant</p>
-              <h2 id="sablony" className="mt-3 text-[40px] md:text-[60px]">
+              <h2 id="sablony" className="mt-2 text-[34px] md:text-[50px]">
                 Podívejte se, jak bude web vypadat
               </h2>
-              <p className="mt-4 text-[18px] text-white/75">Úvodní stránky všech 20 šablon na smyšlené obci Javoří Lhota se 684 obyvateli. Obsah je ve všech stejný, liší se rozvržení, písmo a barvy.</p>
+              <p className="mt-3 text-[17px] text-white/75">Úvodní stránky všech 20 šablon na smyšlené obci Javoří Lhota se 684 obyvateli. Obsah je ve všech stejný, liší se rozvržení, písmo a barvy.</p>
             </div>
             <Link href="/ukazky" className="tlacitko-obrys">
               Všech 20 šablon
             </Link>
           </Odhaleni>
-          <div className="mt-14">
+          <div className="mt-10">
             <Karusel popis="Karusel šablon" popisPasu="Seznam 20 šablon">
               {sablony.map((s) => (
                 <li key={s.klic} className="w-[85%] shrink-0 snap-start sm:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)]">
@@ -167,31 +167,31 @@ export default function Uvod() {
       </section>
 
       {/* Co obec získá, bento */}
-      <section aria-labelledby="ziska" className="bg-plocha py-24">
+      <section aria-labelledby="ziska" className="bg-plocha py-14 md:py-18">
         <div className="obal">
           <Odhaleni>
             <p className="rubrika">Co obec získá</p>
-            <h2 id="ziska" className="mt-3 max-w-[16ch] text-[40px] md:text-[60px]">
+            <h2 id="ziska" className="mt-2 max-w-[16ch] text-[34px] md:text-[50px]">
               Všechno, co obec na webu potřebuje
             </h2>
           </Odhaleni>
-          <div className="mt-12 grid gap-4 lg:grid-cols-3 lg:grid-rows-2">
-            <Odhaleni className="relative isolate min-h-[360px] overflow-hidden rounded-3xl lg:row-span-2">
+          <div className="mt-10 grid gap-4 lg:grid-cols-3 lg:grid-rows-2">
+            <Odhaleni className="relative isolate min-h-[300px] overflow-hidden rounded-3xl lg:row-span-2">
               <figure className="absolute inset-0 -z-10 m-0">
                 <Image src={FOTO.starosta.src} alt={FOTO.starosta.alt} fill sizes="(min-width: 1024px) 400px, 100vw" className="object-cover" />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,8,12,0)_30%,rgba(7,8,12,0.88)_100%)]" aria-hidden="true" />
                 <figcaption className="sklo-tmave absolute right-3 top-3 rounded-full px-3 py-1 text-[13px] text-white/90">{AI}</figcaption>
               </figure>
               <div className="na-tmave absolute inset-x-0 bottom-0 p-7">
-                <p className="text-[56px] font-extrabold leading-none">1–2 h</p>
-                <p className="mt-2 text-[18px] text-white/85">týdně, pro tolik času je navržená úroveň Základ</p>
+                <p className="text-[52px] font-extrabold leading-none">1–2 h</p>
+                <p className="mt-2 text-[17px] text-white/85">týdně, pro tolik času je navržená úroveň Základ</p>
               </div>
             </Odhaleni>
             {ZISK.map(([nadpis, text], i) => (
-              <Odhaleni key={nadpis} zpozdeni={i * 80} className="sklo-svetle rounded-3xl p-7">
+              <Odhaleni key={nadpis} zpozdeni={i * 80} className="sklo-svetle rounded-3xl p-6 md:p-7">
                 <span className="text-[15px] font-bold text-akcent-tmavy">0{i + 1}</span>
-                <h3 className="mt-3 text-[24px] tracking-tight">{nadpis}</h3>
-                <p className="mt-2 text-[16px] text-sediva">{text}</p>
+                <h3 className="mt-2 text-[22px] tracking-tight font-bold">{nadpis}</h3>
+                <p className="mt-2 text-[15px] text-sediva leading-relaxed">{text}</p>
               </Odhaleni>
             ))}
           </div>
@@ -199,63 +199,63 @@ export default function Uvod() {
       </section>
 
       {/* Úrovně */}
-      <section aria-labelledby="urovne" className="na-tmave zare relative bg-noc py-24">
-        <p className="slovo-pozadi bottom-4 text-right text-[180px] md:text-[260px]" aria-hidden="true">
+      <section aria-labelledby="urovne" className="na-tmave zare relative bg-noc py-14 md:py-18">
+        <p className="slovo-pozadi bottom-4 text-right text-[160px] md:text-[220px]" aria-hidden="true">
           Úrovně
         </p>
         <div className="obal">
           <Odhaleni className="flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-[40em]">
               <p className="rubrika">Editor ve třech úrovních</p>
-              <h2 id="urovne" className="mt-3 text-[40px] md:text-[60px]">
+              <h2 id="urovne" className="mt-2 text-[34px] md:text-[50px]">
                 Podle toho, kolik času máte
               </h2>
-              <p className="mt-4 text-[18px] text-white/75">Úroveň určuje, co obec smí na webu měnit. Přístupnost ani povinné části webu nejde rozbít v žádné z nich. Na vyšší úroveň přejdete kdykoli a obsah zůstane.</p>
+              <p className="mt-3 text-[17px] text-white/75">Úroveň určuje, co obec smí na webu měnit. Přístupnost ani povinné části webu nejde rozbít v žádné z nich. Na vyšší úroveň přejdete kdykoli a obsah zůstane.</p>
             </div>
             <Link href="/urovne" className="tlacitko-obrys">
               Porovnat úrovně
             </Link>
           </Odhaleni>
-          <ul className="mt-14 grid gap-5 md:grid-cols-3">
+          <ul className="mt-10 grid gap-5 md:grid-cols-3">
             {UROVNE.map((u, i) => (
-              <Odhaleni as="li" key={u.klic} zpozdeni={i * 100} className={`sklo flex flex-col rounded-3xl p-8 ${i === 1 ? 'border-akcent/50 md:-translate-y-4' : ''}`}>
-                <p className="text-[14px] font-semibold text-akcent">{u.uzivatele}</p>
-                <h3 className="mt-2 text-[40px] font-extrabold">{u.nazev}</h3>
-                <p className="mt-1 text-[19px] text-white/80">„{u.princip}“</p>
-                <p className="mt-5 flex-1 text-white/75">{u.popis}</p>
-                <p className="mt-8 text-[34px] font-bold tracking-tight">
+              <Odhaleni as="li" key={u.klic} zpozdeni={i * 100} className={`sklo flex flex-col rounded-3xl p-7 md:p-8 ${i === 1 ? 'border-akcent/50 md:-translate-y-2' : ''}`}>
+                <p className="text-[13px] font-semibold text-akcent">{u.uzivatele}</p>
+                <h3 className="mt-1.5 text-[34px] font-extrabold">{u.nazev}</h3>
+                <p className="mt-1 text-[17px] text-white/80">„{u.princip}“</p>
+                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-white/75">{u.popis}</p>
+                <p className="mt-6 text-[30px] font-bold tracking-tight">
                   od {kc(u.ceny[0])}
-                  <span className="block text-[14px] font-normal text-white/70">měsíčně bez DPH, obec do 500 obyvatel</span>
+                  <span className="block text-[13px] font-normal text-white/70">měsíčně bez DPH, obec do 500 obyvatel</span>
                 </p>
-                <Link href={`/urovne/${u.klic}`} className={`${i === 1 ? 'tlacitko' : 'tlacitko-obrys'} mt-6`}>
+                <Link href={`/urovne/${u.klic}`} className={`${i === 1 ? 'tlacitko' : 'tlacitko-obrys'} mt-5`}>
                   Co umí úroveň {u.nazev}
                 </Link>
               </Odhaleni>
             ))}
           </ul>
-          <p className="stitek mt-6">{STITEK_CENY} Další velikosti obcí jsou v ceníku.</p>
+          <p className="stitek mt-5">{STITEK_CENY} Další velikosti obcí jsou v ceníku.</p>
         </div>
       </section>
 
       {/* Čtyři důvody */}
-      <section aria-labelledby="duvody" className="py-24">
+      <section aria-labelledby="duvody" className="py-14 md:py-18">
         <div className="obal">
           <Odhaleni>
             <p className="rubrika">Proč CodeKom</p>
-            <h2 id="duvody" className="mt-3 text-[40px] md:text-[60px]">
+            <h2 id="duvody" className="mt-2 text-[34px] md:text-[50px]">
               Čtyři důvody
             </h2>
           </Odhaleni>
-          <div className="mt-14 grid gap-20">
+          <div className="mt-10 grid gap-12 md:gap-14">
             {DUVODY.map((d, i) => (
-              <Odhaleni key={d.nadpis} className="grid items-center gap-10 md:grid-cols-2">
+              <Odhaleni key={d.nadpis} className="grid items-center gap-8 md:grid-cols-2">
                 <FotoAi src={d.foto.src} alt={d.foto.alt} pomer="aspect-[4/3]" className={i % 2 ? 'md:order-2' : undefined} />
                 <div>
                   <p className="rubrika">
-                    <span className="text-[40px] font-extrabold leading-none tracking-tight text-cerna">0{i + 1}</span> {d.rubrika}
+                    <span className="text-[34px] font-extrabold leading-none tracking-tight text-cerna">0{i + 1}</span> {d.rubrika}
                   </p>
-                  <h3 className="mt-4 text-[32px] md:text-[44px]">{d.nadpis}</h3>
-                  <p className="mt-4 text-[18px] text-sediva">{d.text}</p>
+                  <h3 className="mt-3 text-[28px] md:text-[38px] font-bold">{d.nadpis}</h3>
+                  <p className="mt-3 text-[17px] leading-relaxed text-sediva">{d.text}</p>
                 </div>
               </Odhaleni>
             ))}
@@ -264,26 +264,26 @@ export default function Uvod() {
       </section>
 
       {/* Moduly, bento s fotkami */}
-      <section aria-labelledby="moduly" className="bg-plocha py-24">
+      <section aria-labelledby="moduly" className="bg-plocha py-14 md:py-18">
         <div className="obal">
           <Odhaleni className="flex flex-wrap items-end justify-between gap-6">
             <div>
               <p className="rubrika">Jeden systém</p>
-              <h2 id="moduly" className="mt-3 text-[40px] md:text-[60px]">
+              <h2 id="moduly" className="mt-2 text-[34px] md:text-[50px]">
                 Pět modulů
               </h2>
-              <p className="mt-4 max-w-[36em] text-[18px] text-sediva">Místo několika dodavatelů jeden systém. Moduly přidáte, až je budete potřebovat.</p>
+              <p className="mt-3 max-w-[36em] text-[17px] text-sediva">Místo několika dodavatelů jeden systém. Moduly přidáte, až je budete potřebovat.</p>
             </div>
             <Link href="/co-umime" className="tlacitko-obrys">
               Co umí a co nedělají
             </Link>
           </Odhaleni>
-          <div className="mt-12 grid gap-4 md:grid-cols-6">
+          <div className="mt-10 grid gap-4 md:grid-cols-6">
             {MODULY.map(([nazev, text], i) => (
-              <Odhaleni key={nazev} zpozdeni={i * 70} className={`sklo-svetle rounded-3xl p-7 ${i < 2 ? 'md:col-span-3' : 'md:col-span-2'}`}>
+              <Odhaleni key={nazev} zpozdeni={i * 70} className={`sklo-svetle rounded-3xl p-6 md:p-7 ${i < 2 ? 'md:col-span-3' : 'md:col-span-2'}`}>
                 <span className="text-[15px] font-bold text-akcent-tmavy">0{i + 1}</span>
-                <h3 className="mt-3 text-[24px] tracking-tight">{nazev}</h3>
-                <p className="mt-2 text-[16px] text-sediva">{text}</p>
+                <h3 className="mt-2 text-[22px] tracking-tight font-bold">{nazev}</h3>
+                <p className="mt-2 text-[15px] text-sediva leading-relaxed">{text}</p>
               </Odhaleni>
             ))}
             <Odhaleni className="md:col-span-3">
@@ -297,15 +297,15 @@ export default function Uvod() {
       </section>
 
       {/* Výzva */}
-      <section aria-labelledby="napiste" className="obal py-24">
-        <div className="na-tmave relative isolate overflow-hidden rounded-[32px] px-6 py-16 md:px-16 md:py-24">
+      <section aria-labelledby="napiste" className="obal py-14 md:py-18">
+        <div className="na-tmave relative isolate overflow-hidden rounded-[32px] px-6 py-12 md:px-12 md:py-16 shadow-2xl">
           <FotoPozadi foto={FOTO.mikroregion} ztmaveni="bg-[rgba(7,8,12,0.72)]" />
-          <Odhaleni className="sklo max-w-[640px] rounded-3xl p-8 md:p-10">
-            <h2 id="napiste" className="text-[40px] md:text-[56px]">
+          <Odhaleni className="sklo max-w-[620px] rounded-3xl p-7 md:p-9 shadow-2xl border border-white/15">
+            <h2 id="napiste" className="text-[34px] md:text-[46px] font-bold">
               Napište nám
             </h2>
-            <p className="mt-4 text-[18px] text-white/85">Napište, jak se obec jmenuje a co se vám na dnešním webu nelíbí. Odpovíme a pošleme nabídku, kterou můžete předložit radě.</p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <p className="mt-3 text-[17px] leading-relaxed text-white/85">Napište, jak se obec jmenuje a co se vám na dnešním webu nelíbí. Odpovíme a pošleme nabídku, kterou můžete předložit radě.</p>
+            <div className="mt-7 flex flex-wrap gap-3">
               <Link href="/kontakt" className="tlacitko">
                 Kontakt a nabídka
               </Link>
