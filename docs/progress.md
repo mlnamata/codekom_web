@@ -17,3 +17,4 @@
 - Test produkčních adres (`tests/jednotky/adresy.test.ts`): hlídá `.env.production` (firemní web codekomweb.vercel.app, ukázka obce codekom.vercel.app) a odkazy do ukázky z `src/lib/demo.ts`. Typecheck, lint, 28 jednotkových testů, build a 33 testů v prohlížeči prošly.
 - Úvod: fotka v hero nahrazena pozadím `.zare` bez fotky. Karusel na úvodu ukazuje všech 20 šablon (komponenta `Karusel`). Typecheck, lint, build, 33 testů v prohlížeči prošlo.
 - Úvod: pozadí hero je skutečná fotka cesty za úsvitu (`public/fotky/uvod-cesta.webp`, bez poznámky o AI, je to fotka, ne vygenerovaný obrázek). Přidán slogan „Ukážeme vám cestu.“. Typecheck, lint, 28 jednotkových testů, build a 33 testů v prohlížeči prošlo.
+- Podstránky: úvodní pás (`StrankaHero`) přepracován do stejného stylu jako úvod (celošířková fotka cesty, gradient, velký nadpis, skleněné odznaky a metriky). Typecheck, lint, build a 33 testů v prohlížeči prošlo.
