@@ -39,6 +39,13 @@ Zařízení se platí jednorázově podle prohlídky budovy, montáž hodinovou 
 - **Obecní meteostanice s živými daty:** od 6 900 Kč za kus.
 - **Venkovní webkamera obce:** živý obraz na webu obce, například sníh na návsi nebo hladina potoka. Umístění a záběr v souladu s pravidly na ochranu osobních údajů [OVĚŘIT]. LAN nebo Wi-Fi [OVĚŘIT]. Bez internetu: ověřujeme. Model [DOPLNIT]. Cena [DOPLNIT: cena zařízení].
 
+## Webkamery
+
+- **Venkovní webkamera pro web obce:** pravidelný snímek návsi, silnice nebo potoka na webu obce a v řídicím panelu. LAN nebo PoE k bráně v budově [OVĚŘIT]. Model a cena [DOPLNIT: cena zařízení].
+- **Otočná webkamera s přiblížením:** úřad ji natočí a přiblíží z řídicího panelu, na web jde jen schválený záběr. Model a cena [DOPLNIT: cena zařízení].
+
+Záběr míří jen na veřejný prostor. Obličeje a registrační značky se před zveřejněním rozmažou a u kamery visí informační tabulka. Posouzení podle GDPR pro konkrétní umístění [OVĚŘIT].
+
 ## Veřejný prostor 24/7
 
 - **Venkovní elektronická úřední deska:** od 45 000 Kč za kus.

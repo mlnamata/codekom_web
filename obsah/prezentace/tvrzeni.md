@@ -47,6 +47,7 @@ Zkratky zdrojů: A, B, D = části `docs/pravni-dokumenty.md` (návrhy ke kontro
 | Komunitní sdílení: půjčovna nářadí, sousedský bazar, spolujízda, burza brigád | co-umime | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | hypoteza |
 | Správa majetku: obecní byty, komunitní energetika, digitální pasport hřbitova | co-umime | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | hypoteza |
 | Bezpečnost: registr nalezených zvířat, mapa AED, veřejné kamery podle GDPR | co-umime | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | hypoteza |
+| Webkamery: dodávka a zapojení, snímek na webu obce a v řídicím panelu, rozmazání obličejů a SPZ | co-umime, katalog | požadavek zakladatele 5. 11. 2026, ukázka v codecom (bezpecnost.json, řídicí panel) | 2026-11-05 | hypoteza |
 | Portály a rozvoj: extranet zastupitelů, občanské body a developer API | co-umime | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | hypoteza |
 
 ## Smlouva a podmínky

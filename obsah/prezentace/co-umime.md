@@ -117,7 +117,7 @@ Praktické nástroje pro ochranu zdraví, majetku a rychlou pomoc v nouzi.
 
 - Ztráty a nálezy: evidence nalezených věcí a registr odchycených zvířat s fotografií, místem nálezu a kontaktem na smluvní útulek.
 - AED a první pomoc: interaktivní mapa s přesným umístěním automatických externích defibrilátorů v obci včetně informace, zda je daná budova zrovna otevřená.
-- Kamerový systém: přístup k vybraným veřejným kamerám (např. sníh na návsi nebo hladina potoka) v souladu s pravidly na ochranu osobních údajů.
+- Webkamery: dodáme a zapojíme webkamery na obecní budovy. Snímek návsi, sněhu na silnici nebo hladiny potoka je na webu obce a v řídicím panelu. Obličeje a registrační značky se před zveřejněním rozmažou. Zařízení jsou v [katalogu](/katalog).
 
 ## Zákulisní portály a zapojení občanů
 
