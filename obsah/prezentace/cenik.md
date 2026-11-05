@@ -93,7 +93,7 @@ Komponenty pro modul Chytré budovy a chytrou obec. Fungují spolehlivě a auton
 - **Obecní meteostanice:** od 6 900 Kč za kus. Měření teploty, větru, srážek a tlaku s živým zobrazením na webu obce pro hasiče, zemědělce i občany.
 - **Venkovní elektronická úřední deska:** od 45 000 Kč za kus. Odolný venkovní e-ink nebo dotykový panel s nízkou spotřebou pro nepřetržitý přístup k dokumentům 24 hodin denně.
 
-Celý katalog zařízení, včetně hlavic, zámků, elektroměrů, čidel a brány pro modul Chytré budovy, je na stránce [Katalog zařízení](/katalog).
+Celý katalog zařízení, včetně hlavic, zámků, elektroměrů, čidel, webkamer a brány pro modul Chytré budovy, je na stránce [Katalog zařízení](/katalog).
 
 ## Spočítejte orientační cenu
 

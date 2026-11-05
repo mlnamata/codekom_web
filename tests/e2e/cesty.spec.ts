@@ -72,6 +72,7 @@ test('katalog zařízení z ceníku', async ({ page }) => {
   for (const nadpis of ['Úspora vytápění', 'Přístup a rezervace', 'Hlídání energií', 'Čidla', 'Brána a sítě']) await expect(page.getByRole('heading', { level: 2, name: nadpis })).toBeVisible()
   await expect(page.getByText('Funguje bez internetu').first()).toBeVisible()
   await expect(page.getByText('Ne, závisí na cloudu')).toBeVisible()
+  await expect(page.getByRole('heading', { level: 3, name: 'Venkovní webkamera obce' })).toBeVisible()
 })
 
 test('fotky mají vodoznak AI místo nápisu', async ({ page }) => {
