@@ -102,18 +102,6 @@ export const SOUCASTKY_CHYTRA_OBEC: SoucastkaKatalogu[] = [
     popis: 'Senzorická meteostanice měřící teplotu, vítr, srážky a vlhkost přímo v katastru obce.',
     prinos: 'Aktuální údaje na úvodní stránce obecního webu pro hasiče, místní zemědělce, zahrádkáře a pořadatele akcí.',
   },
-  // Webkamery: přání zakladatele z 5. 11. 2026, kamerový systém v obsah/prezentace/co-umime.md.
-  {
-    klic: 'webkamera',
-    nazev: 'Venkovní webkamera obce',
-    jednotka: 'ks',
-    kategorie: 'Informace pro občany',
-    popis: 'Venkovní kamera s živým obrazem na webu obce, například sníh na návsi nebo hladina potoka.',
-    prinos: 'Občané a hasiči vidí aktuální stav na místě bez cesty ven.',
-    standard: 'LAN nebo Wi-Fi [OVĚŘIT]',
-    bezInternetu: 'overit',
-    poznamka: 'Umístění a záběr kamery v souladu s pravidly na ochranu osobních údajů [OVĚŘIT]. Model [DOPLNIT].',
-  },
   {
     klic: 'infokiosek',
     nazev: 'Venkovní elektronická úřední deska',
