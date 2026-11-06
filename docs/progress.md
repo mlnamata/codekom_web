@@ -27,3 +27,4 @@
 - Webkamery v katalogu (5. 11. 2026): nové zařízení „Venkovní webkamera obce“ v kategorii Informace pro občany (src/lib/cenik.ts, obsah/prezentace/katalog.md, zmínka v cenik.md a tvrzení). Cena a model [DOPLNIT], standard a GDPR [OVĚŘIT]. E2e test hlídá kartu v katalogu. Typecheck, lint, 33 testů, build, 38 testů v prohlížeči prošly.
 - Návrh dalších doplňků (5. 11. 2026): docs/navrh-doplnky.md, 13 doplňků s odhadem ceny, zatím jen návrh, na web nic nepřidáno. Čeká na výběr zakladatele.
 - Webkamery (5. 11. 2026): sloučeno s webkamerami jiné instance (1980b89), moje duplicitní položka se stejným klíčem odebrána, zůstává kategorie Webkamery se 2 kamerami. Kontroly prošly.
+- Celkový test a příprava MVP (6. 11. 2026): všechny kontroly a průchod 39 stránek v prohlížeči prošly. Opraveno přetékání tabulky na mobilu a surový markdown v perexu Bezpečnost a právo. Stav a seznam chybějících údajů v docs/mvp-stav.md.

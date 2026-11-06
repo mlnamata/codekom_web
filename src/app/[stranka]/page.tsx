@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
+import type { ReactNode } from 'react'
 import { notFound } from 'next/navigation'
 import { JsonLd } from '@/komponenty/JsonLd'
 import { Markdown } from '@/komponenty/Markdown'
@@ -28,6 +30,20 @@ function rozeberUvod(uvodText: string) {
   const nadpis = radky.find((r) => r.startsWith('# '))?.replace(/^#\s+/, '') ?? 'CodeKom'
   const zbytek = radky.filter((r) => !r.startsWith('# ')).join('\n').trim()
   return { nadpis, zbytek }
+}
+
+/** Perex v úvodním pásu: markdown odkazy [text](/adresa) jako odkazy, zbytek jako text. */
+function perex(text: string): ReactNode[] {
+  return text.split(/(\[[^\]]+\]\([^)]+\))/g).map((kus, i) => {
+    const m = /^\[([^\]]+)\]\(([^)]+)\)$/.exec(kus)
+    return m ? (
+      <Link key={i} href={m[2]!} className="font-semibold text-white underline hover:no-underline">
+        {m[1]}
+      </Link>
+    ) : (
+      kus
+    )
+  })
 }
 
 /** Rozdělení těla sekce na uvod a podsekce podle ### */
@@ -208,7 +224,7 @@ function KeStazeni({ soubor }: { soubor: string }) {
             {nadpis} <span className="text-gradient">pro obec i město</span>
           </>
         }
-        popis={zbytek}
+        popis={perex(zbytek)}
         odznaky={[
           'Vzorová smlouva a VOP',
           'Smlouva o zpracování GDPR',
@@ -243,7 +259,7 @@ function KeStazeni({ soubor }: { soubor: string }) {
             return (
               <li
                 key={f.soubor}
-                className="sklo-svetle flex flex-col justify-between rounded-3xl p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+                className="sklo-svetle flex min-w-0 flex-col justify-between rounded-3xl p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2">
@@ -317,7 +333,7 @@ function ObecnaStranka({ s }: { s: { soubor: string; telo: string; title: string
             {nadpis}
           </>
         }
-        popis={zbytek}
+        popis={perex(zbytek)}
         odznaky={cfg?.odznaky}
         tlacitka={cfg?.tlacitka}
         metriky={cfg?.metriky}
@@ -362,11 +378,11 @@ function ObecnaStranka({ s }: { s: { soubor: string; telo: string; title: string
                   {podsekce.map((sub, idx) => (
                     <div
                       key={sub.nadpis}
-                      className="sklo-svetle flex flex-col justify-between rounded-3xl p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+                      className="sklo-svetle flex min-w-0 flex-col justify-between rounded-3xl p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
                     >
                       <div>
                         <span className="text-[13px] font-bold uppercase tracking-wider text-akcent-tmavy">
-                          0{idx + 1}
+                          {String(idx + 1).padStart(2, '0')}
                         </span>
                         <h3 className="mt-2 text-[22px] font-bold tracking-tight">
                           {sub.nadpis}
