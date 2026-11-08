@@ -25,13 +25,13 @@ export default function Ukazky() {
     <div className="obal pb-24">
       <StrankaHero
         slovoPozadi="ŠABLONY"
-        rubrika="20 šablon, 60 barevných variant"
+        rubrika="23 šablon, 69 barevných variant"
         nadpis={
           <>
             Šablony webů <span className="text-gradient">pro vaši obec</span>
           </>
         }
-        popis="Úvodní stránky všech 20 šablon na smyšlené obci Javoří Lhota se 684 obyvateli. Obsah je ve všech stejný, liší se rozvržení, typografie a atmosféra. Všechny šablony mají elektronickou úřední desku, hlášení do mobilu a plní zákon o přístupnosti."
+        popis="Úvodní stránky všech 23 šablon na smyšlené obci Javoří Lhota se 684 obyvateli. Obsah je ve všech stejný, liší se rozvržení, typografie a atmosféra. Všechny šablony mají elektronickou úřední desku, hlášení do mobilu a plní zákon o přístupnosti."
         odznaky={[
           'Každá ve 3 barevných paletách',
           'Navrženo pro telefon i počítač',
@@ -39,11 +39,11 @@ export default function Ukazky() {
           'Pevná místa, která nelze rozbít',
         ]}
         tlacitka={[
-          { href: '#galerie', text: 'Prohlédnout všech 20 šablon', primarni: true },
+          { href: '#galerie', text: 'Prohlédnout všech 23 šablon', primarni: true },
           { href: '/cenik', text: 'Ceník a kalkulačka' },
         ]}
         metriky={[
-          ['20 šablon', 'v 60 variantách'],
+          ['23 šablon', 'v 69 variantách'],
           ['Plná přístupnost', 'podle WCAG 2.2 AA'],
           ['Telefon i PC', 'responzivní zobrazení'],
         ]}
@@ -64,7 +64,7 @@ export default function Ukazky() {
         </div>
 
         <div className="mt-8">
-          <Karusel popis="Karusel šablon" popisPasu="Seznam 20 šablon">
+          <Karusel popis="Karusel šablon" popisPasu="Seznam 23 šablon">
             {sablony.map((s, i) => (
               <li
                 key={s.klic}
@@ -110,12 +110,12 @@ export default function Ukazky() {
         </div>
       </div>
 
-      {/* Kompletní přehledová mřížka všech 20 šablon */}
+      {/* Kompletní přehledová mřížka všech 23 šablon */}
       <section id="galerie" aria-labelledby="vsech-20" className="mt-20">
         <div className="max-w-[42em]">
           <p className="rubrika">Kompletní nabídka</p>
           <h2 id="vsech-20" className="mt-1 text-[28px] md:text-[38px]">
-            Všech 20 šablon na jednom místě
+            Všech 23 šablon na jednom místě
           </h2>
           <p className="mt-2 text-[16px] text-sediva">
             Klikněte na kteroukoli šablonu pro zobrazení všech 3 barevných variant, náhledu na mobilním telefonu a detailního popisu.

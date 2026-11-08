@@ -35,7 +35,7 @@ const FOTO = {
 }
 
 const ZISK = [
-  ['Web podle jedné z 20 šablon', 'Každá šablona ve 3 barevných variantách. Obsah se píše do připravených míst, takže web vypadá dobře i bez grafika.'],
+  ['Web podle jedné z 23 šablon', 'Každá šablona ve 3 barevných variantách. Obsah se píše do připravených míst, takže web vypadá dobře i bez grafika.'],
   ['Elektronická úřední deska', 'Sama sundá dokument po uplynutí lhůty a uchová záznam o vyvěšení. Vyvěšený dokument nejde smazat.'],
   ['Aplikace pro občany', 'Oznámení a krizová hlášení v mobilu. Vždy je vidět jen to nejzávažnější hlášení.'],
   ['Cena viditelně a férové podmínky', 'Výpověď kdykoli i bez udání důvodu, 30 dní zkušební doba s vrácením celé ceny a export dat zdarma.'],
@@ -99,7 +99,7 @@ export default function Uvod() {
           <p className="mt-6 text-[20px] font-bold tracking-tight md:text-[26px]">Ukážeme vám cestu.</p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link href="/ukazky" className="tlacitko w-full sm:w-auto">
-              Prohlédnout 20 šablon
+              Prohlédnout 23 šablon
             </Link>
             {demo ? (
               <a href={demo} className="tlacitko-obrys w-full sm:w-auto" rel="noopener noreferrer">
@@ -115,7 +115,7 @@ export default function Uvod() {
           <div className="mt-10 grid max-w-[880px] gap-3 sm:grid-cols-3">
             {[
               [`od ${kc(CENY_WEBU.zaklad[0])}`, 'měsíčně bez DPH, orientačně'],
-              ['20 šablon', 'každá ve 3 barevných variantách'],
+              ['23 šablon', 'každá ve 3 barevných variantách'],
               ['Výpověď kdykoli', 'a 30 dní zkušební doba'],
             ].map(([velke, male]) => (
               <div key={velke} className="sklo rounded-2xl px-5 py-3.5">
@@ -136,18 +136,18 @@ export default function Uvod() {
         <div className="obal">
           <Odhaleni className="flex flex-wrap items-end justify-between gap-6">
             <div className="max-w-[40em]">
-              <p className="rubrika">20 šablon, 60 variant</p>
+              <p className="rubrika">23 šablon, 69 variant</p>
               <h2 id="sablony" className="mt-2 text-[34px] md:text-[50px]">
                 Podívejte se, jak bude web vypadat
               </h2>
-              <p className="mt-3 text-[17px] text-white/75">Úvodní stránky všech 20 šablon na smyšlené obci Javoří Lhota se 684 obyvateli. Obsah je ve všech stejný, liší se rozvržení, písmo a barvy.</p>
+              <p className="mt-3 text-[17px] text-white/75">Úvodní stránky všech 23 šablon na smyšlené obci Javoří Lhota se 684 obyvateli. Obsah je ve všech stejný, liší se rozvržení, písmo a barvy.</p>
             </div>
             <Link href="/ukazky" className="tlacitko-obrys">
-              Všech 20 šablon
+              Všech 23 šablon
             </Link>
           </Odhaleni>
           <div className="mt-10">
-            <Karusel popis="Karusel šablon" popisPasu="Seznam 20 šablon">
+            <Karusel popis="Karusel šablon" popisPasu="Seznam 23 šablon">
               {sablony.map((s) => (
                 <li key={s.klic} className="w-[85%] shrink-0 snap-start sm:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)]">
                   <Link href={`/ukazky/${s.klic}`} className="sklo group block rounded-3xl p-2 no-underline transition-transform duration-300 hover:-translate-y-1">

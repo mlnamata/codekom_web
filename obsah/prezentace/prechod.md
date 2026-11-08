@@ -10,7 +10,7 @@ Obec nedělá nic technického. Vybere šablonu, pošle znak, fotky a kontakty a
 
 ## Kroky
 
-1. **Výběr šablony.** Obec si vybere jednu z 20 šablon a jednu ze 3 barevných variant. Doporučíme tři šablony podle velikosti a charakteru obce.
+1. **Výběr šablony.** Obec si vybere jednu z 23 šablon a jednu ze 3 barevných variant. Doporučíme tři šablony podle velikosti a charakteru obce.
 2. **Přizpůsobení.** Šablonu upravíme podle znaku obce, jejích barev a fotek. Návrh platformy počítá s 5 pracovními dny [OVĚŘIT].
 3. **Převod obsahu.** Ze starého webu převedeme stránky a dokumenty. Web vznikne s předvyplněnými stránkami: povinné informace, úřad a kontakty, úřední deska, rozpočet, zastupitelstvo a prohlášení o přístupnosti.
 4. **Převod úřední desky.** Dokumenty, které na desce visí, převedeme s původním dnem vyvěšení a sejmutí, aby evidence vyvěšení nezanikla. Jak přesně, domluvíme podle toho, co umí vyexportovat dosavadní systém. Záznamy ze starého systému si obec uchová podle svého spisového a skartačního plánu.

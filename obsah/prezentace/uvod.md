@@ -20,7 +20,7 @@ Javoří Lhota je smyšlená obec s 684 obyvateli. Všechna data v ukázce jsou 
 
 ## Co obec získá
 
-- Web obce podle jedné z 20 šablon, ve 3 barevných variantách.
+- Web obce podle jedné z 23 šablon, ve 3 barevných variantách.
 - Elektronickou úřední desku, která sama sundá dokument po uplynutí lhůty a uchová záznam.
 - Aplikaci pro občany s oznámeními a krizovými hlášeními.
 - Cenu viditelně, výpověď kdykoli a export dat zdarma.
@@ -55,7 +55,7 @@ Podrobnosti jsou na stránce [Co umíme](/co-umime).
 
 ## Podívejte se, jak web vypadá
 
-Úvodní stránky čtyř ze 20 šablon na ukázkové obci:
+Úvodní stránky čtyř ze 23 šablon na ukázkové obci:
 
 - Snímek `naves-0-1280`. Alt text: Úvodní stránka šablony Náves pro obec Javoří Lhota, paleta Luční.
 - Snímek `lipa-0-1280`. Alt text: Úvodní stránka šablony Lípa pro obec Javoří Lhota, paleta Lipová.

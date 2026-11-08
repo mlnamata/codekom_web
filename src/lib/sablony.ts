@@ -28,6 +28,13 @@ const BARVY: [string, string][] = [
   ['deep', 'Tmavá plocha'],
 ]
 
+/** Skleněné šablony 21 až 23 nemají vlastní fotku, používají fotky jiných šablon (jako v codecom). */
+const FOTO_SKLA: Record<string, string> = {
+  sklo: '/foto/sablona-09-hreben.webp',
+  noc: '/foto/sablona-17-magistrat.webp',
+  aurora: '/foto/sablona-19-mikroregion.webp',
+}
+
 /** Popisy šablon jsou v obsah/prezentace/ukazky.md, barvy palet v @codekom/tokeny. */
 export function sablonyGalerie(): SablonaGalerie[] {
   const md = nactiStranku('ukazky').telo
@@ -53,7 +60,7 @@ export function sablonyGalerie(): SablonaGalerie[] {
       snimek: `/sablony/${s.klic}-${index}-1280.webp`,
     })),
     snimekMobil: `/sablony/${s.klic}-0-375.webp`,
-    foto: `/foto/sablona-${s.cislo}-${s.klic}.webp`,
+    foto: FOTO_SKLA[s.klic] ?? `/foto/sablona-${s.cislo}-${s.klic}.webp`,
   }))
 }
 

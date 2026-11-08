@@ -3,10 +3,10 @@ import { expect, test } from '@playwright/test'
 test('úvod vede na šablony a úrovně', async ({ page }) => {
   await page.goto('/')
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
-  await expect(page.locator('img[alt^="Úvodní stránka šablony"]')).toHaveCount(20)
-  await page.getByRole('link', { name: 'Prohlédnout 20 šablon' }).click()
+  await expect(page.locator('img[alt^="Úvodní stránka šablony"]')).toHaveCount(23)
+  await page.getByRole('link', { name: 'Prohlédnout 23 šablon' }).click()
   await expect(page).toHaveURL(/\/ukazky$/)
-  await expect(page.locator('main li a[href^="/ukazky/"]')).toHaveCount(20)
+  await expect(page.locator('main li a[href^="/ukazky/"]')).toHaveCount(23)
 })
 
 test('karusel šablon se posouvá tlačítky', async ({ page }) => {
@@ -14,7 +14,7 @@ test('karusel šablon se posouvá tlačítky', async ({ page }) => {
   const karusel = page.getByRole('region', { name: 'Karusel šablon' })
   const predchozi = karusel.getByRole('button', { name: 'Předchozí' })
   const dalsi = karusel.getByRole('button', { name: 'Další' })
-  const pas = karusel.getByRole('list', { name: 'Seznam 20 šablon' })
+  const pas = karusel.getByRole('list', { name: 'Seznam 23 šablon' })
   await expect(predchozi).toBeDisabled()
   await dalsi.click()
   await expect.poll(() => pas.evaluate((el) => el.scrollLeft)).toBeGreaterThan(0)
@@ -34,7 +34,7 @@ test('přepínač palet změní snímek a odkaz do ukázky', async ({ page }) =>
   await page.goto('/ukazky/lipa')
   await page.getByRole('button', { name: 'Obloha' }).click()
   await expect(page.getByRole('button', { name: 'Obloha' })).toHaveAttribute('aria-pressed', 'true')
-  await expect(page.getByAltText('Úvodní stránka šablony Lípa pro obec Javoří Lhota, paleta Obloha.')).toBeVisible()
+  await expect(page.getByAltText('Úvodní stránka šablony Deneb pro obec Javoří Lhota, paleta Obloha.')).toBeVisible()
   const demo = page.getByRole('link', { name: 'Prohlédnout živou ukázku' })
   if (await demo.count()) await expect(demo).toHaveAttribute('href', /\?sablona=lipa&paleta=1$/)
 })

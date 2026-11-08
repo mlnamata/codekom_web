@@ -100,7 +100,7 @@ const KONFIGURACE_STRANEK: Record<string, KonfiguracePodstranky> = {
     slovoPozadi: 'FUNKCE',
     odznaky: ['Web a úřední deska', 'Aplikace pro občany', 'Digitální úřad', 'Chytré budovy', 'AI asistent'],
     tlacitka: [
-      { href: '/ukazky', text: 'Prohlédnout 20 šablon', primarni: true },
+      { href: '/ukazky', text: 'Prohlédnout 23 šablon', primarni: true },
       { href: '/cenik', text: 'Ceník modulů' },
     ],
     metriky: [
@@ -119,7 +119,7 @@ const KONFIGURACE_STRANEK: Record<string, KonfiguracePodstranky> = {
     ],
     metriky: [
       ['Pro každou obec', 'bez omezení velikosti'],
-      ['20 šablon', 've 3 variantách'],
+      ['23 šablon', 've 3 variantách'],
       ['Smlouva férově', 'výpověď kdykoli'],
     ],
   },

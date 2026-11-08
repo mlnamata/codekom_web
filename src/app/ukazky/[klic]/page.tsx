@@ -47,7 +47,7 @@ export default async function DetailSablony({ params }: { params: Promise<{ klic
 
       <StrankaHero
         slovoPozadi={s.nazev.toUpperCase()}
-        rubrika={`Šablona ${s.cislo} z 20`}
+        rubrika={`Šablona ${s.cislo} z ${sablonyGalerie().length}`}
         nadpis={
           <>
             Šablona <span className="text-gradient">{s.nazev}</span>

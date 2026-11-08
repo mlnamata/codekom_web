@@ -14,7 +14,7 @@ CodeKom je jeden systém pro web obce, úřední desku, aplikaci pro občany, sl
 
 Pro starostu, účetní a každého, kdo web obce spravuje.
 
-- Web podle jedné z 20 šablon, každá ve 3 barevných variantách. Obsah píšete do pevných míst šablony, rozvržení nejde rozbít.
+- Web podle jedné z 23 šablon, každá ve 3 barevných variantách. Obsah píšete do pevných míst šablony, rozvržení nejde rozbít.
 - Povinně zveřejňované informace ve struktuře podle vyhlášky č. 515/2020 Sb.
 - Elektronická úřední deska s evidencí vyvěšení a sejmutí. Dokument, který už na desce visel, nejde smazat a každá změna se uloží jako nová verze.
 - Po posledním dni vyvěšení dokument přejde do archivu, nebo z webu zmizí, je-li označený „Po sejmutí nezveřejňovat“. To je výchozí volba.
