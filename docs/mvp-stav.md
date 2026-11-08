@@ -21,6 +21,7 @@ Poznámka pro další AI: Playwright v `node_modules` může mít jinou verzi ne
 
 - Bezpečnost a právo: tabulka podzpracovatelů roztahovala kartu a stránka na mobilu přetékala do strany. Karta má teď `min-w-0` a tabulka se posouvá uvnitř.
 - Bezpečnost a právo: v úvodním pásu byl vidět surový markdown „[Ke stažení](/ke-stazeni)“. Odkazy v perexu se teď vykreslují jako odkazy.
+- Kontakt (8. 11. 2026): v úvodním pásu byl vidět surový seznam kontaktů a HTML odkaz. Teď jsou kontakty pod pásem jako seznam.
 - Číslování karet v přehledech od 10 výše by ukazovalo „010“, teď „10“.
 
 ## Blokuje spuštění: údaje o firmě

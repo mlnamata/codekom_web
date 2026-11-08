@@ -24,12 +24,36 @@ export async function generateMetadata({ params }: { params: Promise<{ stranka: 
   return s ? { title: s.title, description: s.description, alternates: { canonical: s.adresa } } : {}
 }
 
-/** Rozdělení úvodu na nadpis h1 a čistý perex */
+/**
+ * Rozdělení úvodu na nadpis h1, perex a doplněk. Perex je jen první odstavec prostého textu,
+ * seznamy, HTML a další odstavce jdou do doplňku, který se vykreslí jako markdown pod úvodním pásem.
+ */
 function rozeberUvod(uvodText: string) {
   const radky = uvodText.trim().split('\n')
   const nadpis = radky.find((r) => r.startsWith('# '))?.replace(/^#\s+/, '') ?? 'CodeKom'
-  const zbytek = radky.filter((r) => !r.startsWith('# ')).join('\n').trim()
-  return { nadpis, zbytek }
+  const bloky = radky
+    .filter((r) => !r.startsWith('# '))
+    .join('\n')
+    .split(/\n\s*\n/)
+    .map((b) => b.trim())
+    .filter(Boolean)
+  const prvni = bloky[0] ?? ''
+  const jeProstyText = prvni !== '' && !/^(- |\* |\d+\. |<|\||>)/.test(prvni)
+  const zbytek = jeProstyText ? prvni : ''
+  const doplnek = (jeProstyText ? bloky.slice(1) : bloky).join('\n\n')
+  return { nadpis, zbytek, doplnek }
+}
+
+/** Doplněk úvodu (kontakty, seznamy, další odstavce) ve skleněné kartě pod úvodním pásem. */
+function DoplnekUvodu({ md }: { md: string }) {
+  if (!md) return null
+  return (
+    <section className="mt-12">
+      <div className="sklo-svetle rounded-3xl p-7 md:p-10">
+        <Markdown html={naHtml(md)} />
+      </div>
+    </section>
+  )
 }
 
 /** Perex v úvodním pásu: markdown odkazy [text](/adresa) jako odkazy, zbytek jako text. */
@@ -208,7 +232,7 @@ const KONFIGURACE_STRANEK: Record<string, KonfiguracePodstranky> = {
 function KeStazeni({ soubor }: { soubor: string }) {
   const s = nactiStranku(soubor)
   const { uvod, casti: c } = casti(s.telo)
-  const { nadpis, zbytek } = rozeberUvod(uvod)
+  const { nadpis, zbytek, doplnek } = rozeberUvod(uvod)
   const dokumenty = c.find((x) => x.nadpis === 'Dokumenty')
   const popisy = (dokumenty?.telo ?? '').split('\n').filter((r) => r.startsWith('- '))
   const ostatni = c.filter((x) => x !== dokumenty)
@@ -241,6 +265,7 @@ function KeStazeni({ soubor }: { soubor: string }) {
           ['Právní doložky', 'podle zákona o obcích'],
         ]}
       />
+      <DoplnekUvodu md={doplnek} />
 
       <section id="dokumenty" aria-labelledby="dokumenty-nadpis" className="mt-14 scroll-mt-28">
         <div className="max-w-[42em]">
@@ -320,7 +345,7 @@ function KeStazeni({ soubor }: { soubor: string }) {
 /** Vizuální rozvržení pro obecnou podstránku ve stylu landing page */
 function ObecnaStranka({ s }: { s: { soubor: string; telo: string; title: string } }) {
   const { uvod, casti: c } = casti(s.telo)
-  const { nadpis, zbytek } = rozeberUvod(uvod)
+  const { nadpis, zbytek, doplnek } = rozeberUvod(uvod)
   const cfg = KONFIGURACE_STRANEK[s.soubor]
 
   return (
@@ -338,6 +363,8 @@ function ObecnaStranka({ s }: { s: { soubor: string; telo: string; title: string
         tlacitka={cfg?.tlacitka}
         metriky={cfg?.metriky}
       />
+
+      <DoplnekUvodu md={doplnek} />
 
       {s.soubor === 'co-umime' ? (
         <section aria-labelledby="navrh-portalu" className="mt-14">

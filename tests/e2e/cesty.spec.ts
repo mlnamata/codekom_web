@@ -92,3 +92,12 @@ test('kontakt nemá formulář', async ({ page }) => {
   await page.goto('/kontakt')
   await expect(page.locator('form')).toHaveCount(0)
 })
+
+test('úvodní pás podstránky nemá surový markdown ani HTML', async ({ page }) => {
+  await page.goto('/kontakt')
+  const pas = page.locator('section:has(h1)')
+  await expect(pas).not.toContainText('<a href')
+  await expect(pas).not.toContainText('- Telefon')
+  // Kontakty z úvodu jsou pod pásem jako seznam.
+  await expect(page.locator('main li', { hasText: 'Telefon' }).first()).toBeVisible()
+})
