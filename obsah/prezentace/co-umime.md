@@ -63,7 +63,7 @@ Pro obec, která předává klíče od sálu osobně a nechce topit v prázdnýc
 - Upozornění na mráz v budově, únik vody, otevřené okno a slabou baterii.
 - Přehled spotřeby elektřiny po budovách.
 
-Brána v budově řídí topení a zámky i bez internetu. Ochrana proti mrazu nezávisí na cloudu. Zámek jde vždy otevřít klíčem.
+Brána v budově řídí topení a čidla i bez internetu. U zámků to záleží na zařízení, v katalogu je u každého uvedeno, zda funguje bez internetu. Ochrana proti mrazu nezávisí na cloudu. Zámek jde vždy otevřít klíčem.
 
 Úsporu energie chceme měřit. Kolik obec ušetří, napíšeme až z vlastních naměřených dat z budov.
 

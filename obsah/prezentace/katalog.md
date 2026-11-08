@@ -8,7 +8,7 @@ adresa: "/katalog"
 
 # Katalog zařízení
 
-Zařízení pro modul Chytré budovy a chytrou obec. Brána v budově řídí topení, zámky a čidla i bez internetu. Zámek jde vždy otevřít mechanickým klíčem a ochrana proti mrazu nezávisí na cloudu.
+Zařízení pro modul Chytré budovy a chytrou obec. Brána v budově řídí topení a čidla i bez internetu. U zámků to záleží na zařízení, v katalogu je u každého uvedeno, zda funguje bez internetu. Zámek jde vždy otevřít mechanickým klíčem a ochrana proti mrazu nezávisí na cloudu.
 
 Zařízení se platí jednorázově podle prohlídky budovy, montáž hodinovou sazbou experta 750 Kč bez DPH. Modul Chytré budovy stojí od 390 Kč měsíčně za budovu, viz [ceník](/cenik). Ceny jsou orientační ceny „od“ bez DPH. Orientační cena, přesnou pošleme v nabídce. Platí ke 4. 11. 2026.
 

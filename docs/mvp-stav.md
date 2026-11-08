@@ -47,4 +47,4 @@ Zákon č. 99/2019 Sb. vyžaduje datum přípravy a přezkumu prohlášení, pop
 
 - Ceny hlasového bota jsou odhad (`docs/odhad-hlasovy-bot.md`). Před první smlouvou je ověřit proti nabídkám dodavatelů.
 - Které doplňky z `docs/navrh-doplnky.md` dát na web.
-- Ceník u katalogu tvrdí, že zařízení fungují i bez internetu. V katalogu jsou ale i zařízení závislá na cloudu (Salto KS) nebo s neověřeným provozem bez internetu (Nuki, webkamery). Větu je dobré zmírnit.
+- ~~Věta o provozu bez internetu~~ opraveno 8. 11. 2026: na úvodu, v Co umíme, FAQ a katalogu teď stojí, že bez internetu jedou topení a čidla a u zámků to záleží na zařízení podle katalogu.

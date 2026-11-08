@@ -152,7 +152,7 @@ Zkratky zdrojů: A, B, D = části `docs/pravni-dokumenty.md` (návrhy ke kontro
 | Účet v aplikaci e-mailem a jednorázovým kódem, bez hesla; čtení bez účtu | co-umime | prompty/06 (účet bez hesla), 08; docs/navrh-platformy/06; E čl. 2 odst. 1 | 2026-11-04 | hypoteza |
 | Peníze občanů jdou přímo na účet obce | co-umime | CLAUDE.md pravidlo 3; docs/navrh-platformy/05-digitalizace-uradu.md | 2026-11-04 | overeno |
 | Každá online služba má i cestu přes úřad | co-umime | CLAUDE.md pravidlo 6 | 2026-11-04 | hypoteza |
-| Brána řídí topení a zámky bez internetu, protimraz nezávisí na cloudu, zámek jde otevřít klíčem | co-umime, faq | CLAUDE.md pravidlo 5; docs/navrh-platformy/06 | 2026-11-04 | hypoteza |
+| Brána řídí topení a čidla bez internetu, u zámků podle zařízení v katalogu, protimraz nezávisí na cloudu, zámek jde otevřít klíčem | co-umime, faq | CLAUDE.md pravidlo 5; docs/navrh-platformy/06 | 2026-11-04 | hypoteza |
 | Aplikace budovy v první verzi jen zobrazuje | co-umime | docs/rozhodnuti.md 4. 11. 2026 | 2026-11-04 | overeno |
 | Úspora energie bez procenta, dokud nejsou vlastní data | co-umime | prompty/06-prezentacni-web.md | 2026-11-04 | overeno |
 | Nenahrazuje certifikované požární a zabezpečovací systémy | co-umime | docs/navrh-platformy/01-navrh-platformy.md I3.4 | 2026-11-04 | overeno |

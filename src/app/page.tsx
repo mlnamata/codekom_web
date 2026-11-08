@@ -52,7 +52,7 @@ const MODULY = [
   ['Web a úřední deska', 'Povinně zveřejňované informace ve struktuře podle vyhlášky č. 515/2020 Sb. a deska s evidencí vyvěšení a sejmutí.'],
   ['Aplikace pro občany', 'Oznámení a krizová hlášení v mobilu, vždy jen to nejzávažnější.'],
   ['Digitální úřad', 'Poplatky, rezervace sálu, hlášení závad a podání. Peníze jdou přímo na účet obce.'],
-  ['Chytré budovy', 'Topení a zámky, které fungují i bez internetu.'],
+  ['Chytré budovy', 'Topení a čidla, která fungují i bez internetu.'],
   ['AI asistent', 'Odpovídá z dokumentů obce, cituje je a řekne, že je umělá inteligence.'],
 ]
 

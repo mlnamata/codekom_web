@@ -70,7 +70,7 @@ Podpora je dostupná e-mailem a telefonem v pracovní dny 8–16 hodin. Když ne
 
 ### Co když v budově spadne internet?
 
-Brána v budově řídí topení a zámky i bez internetu a ochrana proti mrazu nezávisí na cloudu. Zámek jde vždy otevřít klíčem.
+Brána v budově řídí topení a čidla i bez internetu a ochrana proti mrazu nezávisí na cloudu. U zámků to záleží na zařízení, v katalogu je u každého uvedeno, zda funguje bez internetu. Zámek jde vždy otevřít klíčem.
 
 ## Přechod
 

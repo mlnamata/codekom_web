@@ -28,3 +28,4 @@
 - Návrh dalších doplňků (5. 11. 2026): docs/navrh-doplnky.md, 13 doplňků s odhadem ceny, zatím jen návrh, na web nic nepřidáno. Čeká na výběr zakladatele.
 - Webkamery (5. 11. 2026): sloučeno s webkamerami jiné instance (1980b89), moje duplicitní položka se stejným klíčem odebrána, zůstává kategorie Webkamery se 2 kamerami. Kontroly prošly.
 - Celkový test a příprava MVP (6. 11. 2026): všechny kontroly a průchod 39 stránek v prohlížeči prošly. Opraveno přetékání tabulky na mobilu a surový markdown v perexu Bezpečnost a právo. Stav a seznam chybějících údajů v docs/mvp-stav.md.
+- Provoz bez internetu (8. 11. 2026): věta „brána řídí topení a zámky i bez internetu“ zmírněna podle katalogu na topení a čidla, u zámků podle zařízení (Salto KS závisí na cloudu, Nuki a webkamery se ověřují). Úvod, Co umíme, FAQ, katalog a tvrzení. Typecheck, lint, 33 testů, obsah, build a 38 testů v prohlížeči prošly.

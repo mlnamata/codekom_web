@@ -48,7 +48,7 @@ Obec může smlouvu vypovědět kdykoli i bez udání důvodu. Prvních 30 dní 
 - **Web a úřední deska:** povinně zveřejňované informace ve struktuře podle vyhlášky č. 515/2020 Sb. a deska s evidencí vyvěšení a sejmutí.
 - **Aplikace pro občany:** oznámení a krizová hlášení v mobilu, vždy jen to nejzávažnější.
 - **Digitální úřad:** poplatky, rezervace sálu, hlášení závad a podání; peníze jdou přímo na účet obce.
-- **Chytré budovy:** topení a zámky, které fungují i bez internetu.
+- **Chytré budovy:** topení a čidla, která fungují i bez internetu.
 - **AI asistent:** odpovídá z dokumentů obce, cituje je a řekne, že je umělá inteligence.
 
 Podrobnosti jsou na stránce [Co umíme](/co-umime).

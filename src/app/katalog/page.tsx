@@ -57,7 +57,7 @@ export default function Katalog() {
             Katalog <span className="text-gradient">zařízení</span>
           </>
         }
-        popis="Zařízení, se kterými počítá modul Chytré budovy. Brána v budově řídí topení, zámky a čidla i bez internetu. Zámek jde vždy otevřít mechanickým klíčem a ochrana proti mrazu nezávisí na cloudu."
+        popis="Zařízení, se kterými počítá modul Chytré budovy. Brána v budově řídí topení a čidla i bez internetu. U zámků to záleží na zařízení, v katalogu je u každého uvedeno, zda funguje bez internetu. Zámek jde vždy otevřít mechanickým klíčem a ochrana proti mrazu nezávisí na cloudu."
         odznaky={KATALOG.map((k) => k.nazev)}
         tlacitka={[
           { href: '/cenik', text: 'Ceník', primarni: true },
