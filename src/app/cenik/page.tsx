@@ -311,7 +311,7 @@ export default function Cenik() {
             Spočítejte orientační cenu
           </h2>
           <p className="mt-3 text-[17px] text-sediva">
-            Zvolte parametry vaší obce a zjistěte orientační měsíční i jednorázové náklady. Přesnou nabídku pro radu či zastupitelstvo vám rádi pošleme obratem.
+            Zvolte parametry vaší obce a zjistěte orientační měsíční i jednorázové náklady. Přesnou nabídku pro radu či zastupitelstvo vám rádi pošleme.
           </p>
         </div>
         <KalkulackaCeniku />

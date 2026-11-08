@@ -105,7 +105,7 @@ const KONFIGURACE_STRANEK: Record<string, KonfiguracePodstranky> = {
     ],
     metriky: [
       ['5 modulů', 'v jednom systému'],
-      ['Plný soulad', 'se zákony ČR i EU'],
+      ['Data v EU', 'databáze a zálohy ve Frankfurtu'],
       ['Export zdarma', 'vašich dat kdykoli'],
     ],
   },
@@ -133,22 +133,22 @@ const KONFIGURACE_STRANEK: Record<string, KonfiguracePodstranky> = {
     ],
     metriky: [
       ['30 dní', 'zkušební doba s vrácením'],
-      ['Bez výpadku', 'úřední desky i e-mailů'],
+      ['Evidence vyvěšení', 'převedeme s původními dny'],
       ['Převod dat', 'zajistíme za vás'],
     ],
   },
   kontakt: {
     rubrika: 'Rádi vám ukážeme cestu',
     slovoPozadi: 'KONTAKT',
-    odznaky: ['Odpovídáme obratem', 'Nezávazná nabídka zdarma', 'Konzultace pro radu obce'],
+    odznaky: ['Telefon nebo e-mail', 'Nabídka pro radu obce', 'Podklady ke stažení'],
     tlacitka: [
       { href: '/ke-stazeni', text: 'Podklady pro jednání rady', primarni: true },
       { href: '/cenik', text: 'Kalkulačka cen' },
     ],
     metriky: [
-      ['Rychlá reakce', 'odpovídáme obratem'],
+      ['Odpovíme', 'a pošleme nabídku'],
       ['Bez závazků', 'nabídka je nezávazná'],
-      ['Český software', 'vyvíjený pro samosprávy'],
+      ['Bez formuláře', 'web nic nesbírá'],
     ],
   },
   'o-nas': {
@@ -160,8 +160,8 @@ const KONFIGURACE_STRANEK: Record<string, KonfiguracePodstranky> = {
       { href: '/co-umime', text: 'Co vše umíme' },
     ],
     metriky: [
-      ['Český software', 'sídlo i servery v ČR/EU'],
-      ['WCAG 2.2 AA', 'nejvyšší přístupnost'],
+      ['Data v EU', 'AI asistent na serveru v ČR'],
+      ['WCAG 2.2 AA', 'zákon žádá 2.1 AA'],
       ['Smlouva', 'na dobu neurčitou'],
     ],
   },
@@ -182,21 +182,21 @@ const KONFIGURACE_STRANEK: Record<string, KonfiguracePodstranky> = {
   'bezpecnost-a-pravo': {
     rubrika: 'Právní jistota a ochrana údajů',
     slovoPozadi: 'BEZPEČNOST',
-    odznaky: ['Vyhláška č. 515/2020 Sb.', 'Zákon č. 99/2019 Sb.', 'GDPR v Evropské unii', 'Nezničitelná úřední deska'],
+    odznaky: ['Vyhláška č. 515/2020 Sb.', 'Zákon č. 99/2019 Sb.', 'GDPR v Evropské unii', 'Vyvěšený dokument nejde smazat'],
     tlacitka: [
       { href: '/ke-stazeni', text: 'Vzor smlouvy GDPR', primarni: true },
       { href: '/kontakt', text: 'Konzultace s námi' },
     ],
     metriky: [
       ['Servery v EU', 'databáze i zálohy v unii'],
-      ['Verzování', 'žádný dokument nelze smazat'],
+      ['Verzování', 'každá změna je nová verze'],
       ['Auditovatelnost', 'záznam každé změny'],
     ],
   },
   pristupnost: {
     rubrika: 'Přístupnost podle zákona',
     slovoPozadi: 'PŘÍSTUPNOST',
-    odznaky: ['Zákon č. 99/2019 Sb.', 'Standard WCAG 2.2 AA', 'Kontrola před publikací', 'Testování čtečkami'],
+    odznaky: ['Zákon č. 99/2019 Sb.', 'Standard WCAG 2.2 AA', 'Kontrola před publikací', 'Automatické testy axe'],
     tlacitka: [{ href: '/kontakt', text: 'Kontaktovat nás', primarni: true }],
     metriky: [
       ['WCAG 2.2 AA', 'nad rámec zákona'],
@@ -223,7 +223,7 @@ const KONFIGURACE_STRANEK: Record<string, KonfiguracePodstranky> = {
     metriky: [
       ['0 cookies', 'třetích stran a reklamy'],
       ['Čistý web', 'bez otravných lišt'],
-      ['Zákon č. 127', 'plný soulad'],
+      ['Nic neukládáme', 'do vašeho zařízení'],
     ],
   },
 }
