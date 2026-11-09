@@ -126,7 +126,7 @@ const KONFIGURACE_STRANEK: Record<string, KonfiguracePodstranky> = {
   prechod: {
     rubrika: 'Přechod na CodeKom',
     slovoPozadi: 'PŘECHOD',
-    odznaky: ['30 dní zkušební doba', 'Převod stávající desky', 'Kompletní zaškolení', 'Smlouva na dobu neurčitou'],
+    odznaky: ['30 dní zkušební doba', 'Převod stávající desky', 'Školení podle úrovně', 'Smlouva na dobu neurčitou'],
     tlacitka: [
       { href: '/kontakt', text: 'Nezávazně poptat přechod', primarni: true },
       { href: '/ke-stazeni', text: 'Podklady pro radu' },
@@ -250,7 +250,7 @@ function KeStazeni({ soubor }: { soubor: string }) {
         }
         popis={perex(zbytek)}
         odznaky={[
-          'Vzorová smlouva a VOP',
+          'Vzorová smlouva o službě',
           'Smlouva o zpracování GDPR',
           'Vzor usnesení zastupitelstva',
           'Časté otázky a odpovědi',
@@ -310,7 +310,7 @@ function KeStazeni({ soubor }: { soubor: string }) {
                     className="tlacitko-obrys w-full !min-h-11 text-center text-[14px]"
                     download
                   >
-                    Stáhnout dokument (PDF)
+                    Stáhnout dokument (PDF)<span className="sr-only">: {f.nazev}</span>
                   </a>
                 </div>
               </li>

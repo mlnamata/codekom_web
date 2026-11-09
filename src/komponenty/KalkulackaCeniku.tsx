@@ -113,7 +113,7 @@ export function KalkulackaCeniku() {
 
           <label className="block font-medium text-text">
             Sekundy hovorů AI hlasového bota za měsíc
-            <span className="block text-[14px] font-normal text-sediva">Účtuje se po sekundách (100 minut = 6 000 sekund), počítáme nejlevnější variantu</span>
+            <span className="block text-[14px] font-normal text-sediva">Účtuje se po sekundách (100&nbsp;minut = 6&nbsp;000&nbsp;sekund), počítáme nejlevnější variantu</span>
             <input type="number" min={0} max={6000000} inputMode="numeric" className={poleInput} value={sekundy} onChange={cislo(6000000, setSekundy)} />
           </label>
         </div>

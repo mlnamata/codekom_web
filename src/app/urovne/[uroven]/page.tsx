@@ -56,9 +56,9 @@ export default async function DetailUrovne({ params }: { params: Promise<{ urove
         }
         popis={u.popis}
         odznaky={[
-          `Cena od ${kc(u.ceny[0])} / měsíc`,
-          u.proKoho,
-          'Plná zákonná přístupnost',
+          u.uzivatele,
+          'Přístupnost WCAG 2.2 AA',
+          'Kontrola přístupnosti před publikací',
           'Smlouva na dobu neurčitou',
         ]}
         tlacitka={[
@@ -67,8 +67,8 @@ export default async function DetailUrovne({ params }: { params: Promise<{ urove
         ]}
         metriky={[
           [`od ${kc(u.ceny[0])}`, 'měsíčně bez DPH'],
-          [u.uzivatele, 'doporučené využití'],
-          ['Smlouva férově', 'na dobu neurčitou'],
+          [u.uzivatele, 'v ceně úrovně'],
+          ['Výpověď kdykoli', 'smlouva na dobu neurčitou'],
         ]}
       />
 
