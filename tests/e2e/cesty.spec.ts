@@ -101,3 +101,34 @@ test('úvodní pás podstránky nemá surový markdown ani HTML', async ({ page 
   // Kontakty z úvodu jsou pod pásem jako seznam.
   await expect(page.locator('main li', { hasText: 'Telefon' }).first()).toBeVisible()
 })
+
+test('kalkulačka přičte digitální doplňky a nastavení je v odkazu', async ({ page }) => {
+  await page.goto('/cenik')
+  const vysledek = page.locator('[aria-live="polite"]').filter({ hasText: 'Orientačně od' })
+  await page.getByLabel('Úroveň webu').selectOption('advance')
+  await page.getByLabel(/AI kontrola osobních údajů před vyvěšením/).check()
+  // Advance do 500 obyvatel 1 490 Kč + doplněk 290 Kč.
+  await expect(vysledek).toContainText('1 780')
+  await expect(vysledek).toContainText('Z toho digitální doplňky 290')
+  await expect(page).toHaveURL(/u=advance/)
+  await expect(page).toHaveURL(/x=anonymizace/)
+  // Stejný odkaz otevře stejný výpočet.
+  await page.goto(page.url())
+  await expect(page.locator('[aria-live="polite"]').filter({ hasText: 'Orientačně od' })).toContainText('1 780')
+  await expect(page.getByRole('heading', { name: 'Další digitální služby pro úřad a občany' })).toBeVisible()
+})
+
+test('časté otázky se rozbalují a vzor usnesení jde zkopírovat', async ({ page }) => {
+  await page.goto('/ke-stazeni')
+  const otazka = page.locator('details.otazka').first()
+  await expect(otazka).not.toHaveAttribute('open', '')
+  await otazka.locator('summary').click()
+  await expect(otazka).toHaveAttribute('open', '')
+  await expect(page.getByRole('button', { name: 'Zkopírovat text usnesení' })).toBeVisible()
+})
+
+test('neexistující adresa ukáže českou stránku 404', async ({ page }) => {
+  const odpoved = await page.goto('/tahle-stranka-neni')
+  expect(odpoved?.status()).toBe(404)
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Tuhle stránku jsme nenašli')
+})

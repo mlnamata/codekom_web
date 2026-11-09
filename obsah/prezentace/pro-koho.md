@@ -1,6 +1,6 @@
 ---
-title: "Pro koho je CodeKom: pro obce a města všech velikostí i organizace obce"
-description: "CodeKom je pro všechny obce a města bez omezení počtu obyvatel, stejně jako pro organizace obce (škola, knihovna, hasiči). Správu více obcí pro mikroregiony a MAS připravujeme."
+title: "Pro koho je CodeKom: obce, města i jejich organizace"
+description: "Pro obce a města bez omezení počtu obyvatel i pro jejich organizace: školu, knihovnu, hasiče. Správu více obcí pro mikroregiony připravujeme."
 adresa: "/pro-koho"
 ---
 

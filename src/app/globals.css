@@ -87,7 +87,7 @@ mark.doplnit { background: #fff0a6; color: #000; padding: 0 2px; }
 .prosa h1 { font-size: 44px; margin: 0 0 24px; }
 @media (min-width: 768px) { .prosa h1 { font-size: 64px; } }
 .prosa h1 + p { font-size: 21px; line-height: 1.5; color: #3c414c; }
-.prosa h2 { font-size: 32px; margin: 56px 0 16px; }
+.prosa h2 { font-size: 32px; margin: 56px 0 16px; scroll-margin-top: 7rem; }
 .prosa > :first-child, .prosa > .prosa > :first-child { margin-top: 0; }
 .prosa > :last-child, .prosa > .prosa > :last-child { margin-bottom: 0; }
 .prosa h3 { font-size: 22px; margin: 32px 0 8px; letter-spacing: -0.02em; }
@@ -109,3 +109,29 @@ mark.doplnit { background: #fff0a6; color: #000; padding: 0 2px; }
 .prosa figcaption { font-size: 14px; color: var(--color-sediva); margin-top: 8px; }
 .prosa figcaption.absolute { margin-top: 0; }
 .prosa blockquote { border-left: 3px solid var(--color-akcent-tmavy); padding-left: 16px; margin: 24px 0; font-size: 20px; }
+
+/* Tisk: bez navigace, patičky a ovládacích prvků. Tlačítko „Vytisknout výpočet“ vytiskne jen kalkulačku. */
+@media print {
+  header, footer, nav, .neTisknout, a[href="#obsah"] { display: none !important; }
+  body { background: #fff !important; }
+  * { box-shadow: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+  .vysledek, .na-tmave { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  html.tisk-kalkulacky main .obal > :not(#kalkulacka) { display: none !important; }
+  html.tisk-kalkulacky #kalkulacka { margin-top: 0 !important; }
+  .kalkulacka { padding: 0 !important; border: 0 !important; }
+  .kalkulacka > .grid { grid-template-columns: 7fr 5fr; gap: 20px; font-size: 13px; }
+  .kalkulacka > .grid > * { grid-column: auto !important; }
+  .kalkulacka select, .kalkulacka input[type="number"] { min-height: 32px; margin-top: 4px; }
+  .kalkulacka .grid.gap-5 { gap: 10px; }
+  html.tisk-kalkulacky .obal { padding-bottom: 0 !important; }
+}
+
+/* Časté otázky jako rozbalovací seznam (<details>), funguje i bez JavaScriptu. */
+.prosa .otazka { border-bottom: 1px solid var(--color-linka); }
+.prosa .otazka summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; padding: 12px 0; cursor: pointer; list-style: none; }
+.prosa .otazka summary::-webkit-details-marker { display: none; }
+.prosa .otazka summary::after { content: '+'; flex-shrink: 0; font-size: 26px; line-height: 1; color: var(--color-akcent-tmavy); transition: transform 0.2s ease; }
+.prosa .otazka[open] summary::after { transform: rotate(45deg); }
+.prosa .otazka summary h3 { margin: 0; font-size: 19px; }
+.prosa .otazka summary:focus-visible { outline: 2px solid var(--color-akcent-tmavy); outline-offset: 4px; border-radius: 8px; }
+.prosa .otazka .odpoved { padding-bottom: 16px; }

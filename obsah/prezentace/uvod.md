@@ -1,6 +1,6 @@
 ---
 title: "Web, úřední deska a aplikace pro obce a města – CodeKom"
-description: "Web obce s elektronickou úřední deskou, aplikace pro občany a digitální úřad pro všechny obce a města bez omezení velikosti. Prohlédněte si živou ukázku obce Javoří Lhota."
+description: "Web obce s elektronickou úřední deskou, aplikace pro občany a digitální úřad pro obce a města všech velikostí. Prohlédněte si živou ukázku."
 adresa: "/"
 ---
 

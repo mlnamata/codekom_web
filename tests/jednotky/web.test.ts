@@ -3,7 +3,7 @@ import { join } from 'node:path'
 import sharp from 'sharp'
 import { describe, expect, it } from 'vitest'
 import soubory from '@/data/ke-stazeni.json'
-import { HLASOVY_BOT, HODINOVKA_EXPERTA, SOUCASTKY_CHYTRA_OBEC, STITEK_CENY, cenaHlasovehoBota, cenaSekundyPausalu, jeNaMiru, spocitej, spocitejJednorazove } from '@/lib/cenik'
+import { DIGITALNI_DOPLNKY, HLASOVY_BOT, MESICNI_DOPLNKY, cenaDoplnku, HODINOVKA_EXPERTA, SOUCASTKY_CHYTRA_OBEC, STITEK_CENY, cenaHlasovehoBota, cenaSekundyPausalu, jeNaMiru, spocitej, spocitejJednorazove } from '@/lib/cenik'
 import { otazky } from '@/lib/seo'
 
 const APP = join(__dirname, '..', '..')
@@ -34,6 +34,15 @@ describe('kalkulačka', () => {
     expect(cenaHlasovehoBota(1000)).toEqual({ nazev: 'bez paušálu', cena: 150 })
     expect(cenaHlasovehoBota(6000)).toEqual({ nazev: 'paušál Malý', cena: 490 })
     expect(cenaHlasovehoBota(48000)).toEqual({ nazev: 'paušál Velký', cena: 2990 })
+  })
+  it('digitální doplňky: jedinečné klíče, kladné ceny a součet jen měsíčních', () => {
+    expect(new Set(DIGITALNI_DOPLNKY.map((d) => d.klic)).size).toBe(DIGITALNI_DOPLNKY.length)
+    for (const d of DIGITALNI_DOPLNKY) expect(d.cenaOd).toBeGreaterThan(0)
+    expect(cenaDoplnku([])).toBe(0)
+    expect(cenaDoplnku(['anonymizace', 'svoz'])).toBe(290 + 190)
+    // Doplněk placený za kus ani neznámý klíč se do měsíční ceny nepočítá.
+    expect(cenaDoplnku(['zapis', 'neexistuje'])).toBe(0)
+    expect(MESICNI_DOPLNKY.every((d) => d.platba === 'mesicne')).toBe(true)
   })
   it('hlasový bot ohlásí AI a přepojí na úřad', () => {
     expect(HLASOVY_BOT.pravidla.join(' ')).toMatch(/umělá inteligence \(čl\. 50 AI Actu\)/)

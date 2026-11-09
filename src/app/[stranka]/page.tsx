@@ -3,6 +3,7 @@ import Link from 'next/link'
 import type { ReactNode } from 'react'
 import { notFound } from 'next/navigation'
 import { JsonLd } from '@/komponenty/JsonLd'
+import { KopirovatText } from '@/komponenty/KopirovatText'
 import { Markdown } from '@/komponenty/Markdown'
 import { PortalObceDashboard } from '@/komponenty/PortalObceDashboard'
 import { StrankaHero } from '@/komponenty/StrankaHero'
@@ -228,6 +229,25 @@ const KONFIGURACE_STRANEK: Record<string, KonfiguracePodstranky> = {
   },
 }
 
+/** Otázky (h3) s odpovědí do rozbalovacích <details>, nadpis zůstává v <summary> kvůli navigaci čtečkou. */
+function naRozbalovaci(html: string): string {
+  return html.replace(
+    /<h3([^>]*)>([\s\S]*?)<\/h3>([\s\S]*?)(?=<h[23][\s>]|$)/g,
+    (_, atributy: string, otazka: string, odpoved: string) =>
+      `<details class="otazka"><summary><h3${atributy}>${otazka}</h3></summary><div class="odpoved">${odpoved}</div></details>`,
+  )
+}
+
+/** Čistý text vzoru usnesení pro schránku: bez úvodní poznámky a bez markdownu. */
+function textUsneseni(telo: string): string {
+  return telo
+    .split('\n')
+    .filter((r) => r.trim() && !r.startsWith('Vzor, před podpisem'))
+    .map((r) => r.replace(/\*\*/g, ''))
+    .join('\n')
+    .trim()
+}
+
 /** Stránka ke stažení dokumentů */
 function KeStazeni({ soubor }: { soubor: string }) {
   const s = nactiStranku(soubor)
@@ -324,12 +344,13 @@ function KeStazeni({ soubor }: { soubor: string }) {
           <div className="prosa max-w-none">
             <Markdown html={naHtml(`## ${x.nadpis}\n${x.telo}`)} />
           </div>
+          {x.nadpis === 'Vzor usnesení' ? <KopirovatText text={textUsneseni(x.telo)} popisek="Zkopírovat text usnesení" /> : null}
         </section>
       ))}
 
-      <section id="caste-otazky" aria-label="Časté otázky" className="sklo-svetle mt-16 rounded-3xl p-8 md:p-12 shadow-xl scroll-mt-28">
+      <section aria-label="Časté otázky" className="sklo-svetle mt-16 rounded-3xl p-8 md:p-12 shadow-xl">
         <div className="prosa max-w-none">
-          <Markdown html={naHtml(faq)} />
+          <Markdown html={naRozbalovaci(naHtml(faq))} />
         </div>
       </section>
       <JsonLd data={faqJsonLd([s.telo, faq])} />

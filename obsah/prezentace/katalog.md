@@ -1,6 +1,6 @@
 ---
 title: "Katalog zařízení pro chytrou obec – CodeKom"
-description: "Hlavice, zámky, elektroměry, čidla, meteostanice, webkamery a brána pro modul Chytré budovy a chytrou obec. U zařízení standard, provoz bez internetu a orientační cena."
+description: "Hlavice, zámky, elektroměry, čidla, meteostanice a webkamery pro modul Chytré budovy. U každého zařízení standard, provoz bez internetu a cena."
 adresa: "/katalog"
 ---
 

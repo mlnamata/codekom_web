@@ -71,6 +71,31 @@ Měsíčně bez DPH. Účtuje se po sekundách. Nevyčerpané sekundy se nepřev
 - Na přání volajícího, nebo když si neví rady, přepojí hovor na pracovníka úřadu.
 - Mimo úřední hodiny řekne úřední hodiny a telefon úřadu, aby se volající mohl ozvat člověku.
 
+## Digitální doplňky
+
+{/* Návrh a odhad cen v docs/vylepseni-2026-11.md (9. 11. 2026). Ceny jsou odhad z běžných tržních cen [OVĚŘIT]. Data stránky: DIGITALNI_DOPLNKY v src/lib/cenik.ts. */}
+
+Doplňky jdou přikoupit ke kterékoli úrovni a kdykoli zrušit. Měsíční doplňky přičte i kalkulačka.
+
+| Doplněk | Cena |
+|---|---|
+| AI kontrola osobních údajů před vyvěšením | od 290 Kč měsíčně |
+| Přístupné dokumenty z PDF | od 390 Kč měsíčně |
+| AI asistent i pro Základ a Pokročilý | od 490 Kč měsíčně |
+| Živý přenos zastupitelstva | od 490 Kč měsíčně |
+| Hlášení rozhlasu hlasem | od 290 Kč měsíčně |
+| Jazykové verze s AI překladem | od 290 Kč měsíčně za jazyk |
+| Připomínky svozu odpadu do mobilu | od 190 Kč měsíčně |
+| Statistiky webu bez cookies | od 190 Kč měsíčně |
+| Energetický report budov | od 290 Kč měsíčně |
+| Poloha zimní techniky | od 190 Kč měsíčně za vozidlo |
+| AI zápis ze zastupitelstva | od 390 Kč za jednání |
+| Obecní zpravodaj z webu | od 690 Kč za číslo |
+| Digitalizace kroniky | od 25 Kč za stranu |
+| Roční audit přístupnosti | od 3 900 Kč ročně |
+
+Ceny bez DPH. Orientační cena, přesnou pošleme v nabídce. Platí ke 4. 11. 2026.
+
 ## Hodinová sazba experta a doplňkové služby
 
 Pro práce nad rámec standardní technické podpory nebo individuální zakázkové požadavky nabízíme služby našich specialistů.
@@ -106,6 +131,9 @@ Celý katalog zařízení, včetně hlavic, zámků, elektroměrů, čidel, webk
 - Počet budov s modulem Chytré budovy: číslo od 0
 - Hodiny práce experta navíc: číslo od 0, 750 Kč za hodinu, připočte se k jednorázové ceně
 - Sekundy hovorů AI hlasového bota za měsíc: číslo od 0, účtuje se po sekundách, kalkulačka vybere nejlevnější variantu (bez paušálu nebo paušál)
+- Měsíční digitální doplňky: zaškrtávací políčka, cena se přičte k měsíčnímu poplatku
+- Odkaz na výpočet: nastavení kalkulačky je v adrese stránky, tlačítko ho zkopíruje. Web nic neukládá.
+- Vytisknout výpočet: vytiskne jen kalkulačku
 - Výsledek: Orientačně od X Kč měsíčně bez DPH a od Y Kč jednorázově bez DPH (nasazení a hodiny experta). Orientační cena, přesnou pošleme v nabídce. Platí ke 4. 11. 2026.
 
 ## Jak se platí

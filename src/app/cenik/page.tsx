@@ -6,6 +6,7 @@ import { StrankaHero } from '@/komponenty/StrankaHero'
 import { VyzvaSekce } from '@/komponenty/VyzvaSekce'
 import {
   CENY_WEBU,
+  DIGITALNI_DOPLNKY,
   DOPLNKOVE_SLUZBY,
   HLASOVY_BOT,
   HODINOVKA_EXPERTA,
@@ -301,6 +302,32 @@ export default function Cenik() {
           ))}
         </ul>
         <p className="stitek mt-4">Měsíčně bez DPH. Účtuje se po sekundách. Nevyčerpané sekundy se nepřevádějí do dalšího měsíce. {STITEK_CENY}</p>
+      </section>
+
+      {/* Digitální doplňky */}
+      <section id="digitalni-doplnky" aria-labelledby="nadpis-doplnky" className="mt-20 scroll-mt-28">
+        <div className="max-w-[44em]">
+          <p className="rubrika">Digitální doplňky</p>
+          <h2 id="nadpis-doplnky" className="mt-2 text-[32px] md:text-[44px]">
+            Další digitální služby pro úřad a občany
+          </h2>
+          <p className="mt-3 text-[17px] text-sediva">
+            Doplňky jdou přikoupit ke kterékoli úrovni a kdykoli zrušit. Měsíční doplňky přičte i kalkulačka níže.
+          </p>
+        </div>
+        <ul className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {DIGITALNI_DOPLNKY.map((d) => (
+            <li key={d.klic} className="sklo-svetle flex flex-col rounded-3xl p-7">
+              <h3 className="text-[20px] font-bold leading-snug">{d.nazev}</h3>
+              <p className="mt-2 flex-1 text-[15px] leading-relaxed text-sediva">{d.popis}</p>
+              <p className="mt-4 border-t border-linka pt-3">
+                <span className="text-[22px] font-bold text-noc">od {kc(d.cenaOd)}</span>{' '}
+                <span className="text-[14px] text-sediva">{d.jednotka} bez DPH</span>
+              </p>
+            </li>
+          ))}
+        </ul>
+        <p className="stitek mt-4">Ceny bez DPH. {STITEK_CENY}</p>
       </section>
 
       {/* Kalkulačka */}

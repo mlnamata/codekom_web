@@ -229,3 +229,45 @@ export function spocitej(velikost: number, uroven: KlicUrovne, urad: boolean, bu
   const v = Math.min(2, Math.max(0, velikost))
   return CENY_WEBU[uroven][v]! + (urad ? CENA_URADU[v]! : 0) + Math.max(0, Math.floor(budovy)) * CENA_BUDOVY
 }
+
+/** Jak se digitální doplněk platí: měsíčně jde do kalkulačky, ostatní jen do přehledu. */
+export type PlatbaDoplnku = 'mesicne' | 'za-kus' | 'rocne'
+
+export interface DigitalniDoplnek {
+  klic: string
+  nazev: string
+  popis: string
+  /** Orientační cena „od“ bez DPH. */
+  cenaOd: number
+  platba: PlatbaDoplnku
+  /** Jednotka u ceny, např. „za jednání“, „za jazyk“. */
+  jednotka: string
+}
+
+/**
+ * Digitální doplňky k platformě. Ceny jsou odhad z běžných tržních cen [OVĚŘIT],
+ * návrh v docs/vylepseni-2026-11.md (9. 11. 2026).
+ */
+export const DIGITALNI_DOPLNKY: DigitalniDoplnek[] = [
+  { klic: 'anonymizace', nazev: 'AI kontrola osobních údajů před vyvěšením', popis: 'Před vyvěšením na desku AI najde v dokumentu jména, rodná čísla, adresy a podpisy a navrhne začernění. Vyvěšení vždy potvrdí člověk.', cenaOd: 290, platba: 'mesicne', jednotka: 'měsíčně' },
+  { klic: 'pristupne-pdf', nazev: 'Přístupné dokumenty z PDF', popis: 'Naskenované a nepřístupné PDF převede na text s nadpisy, který přečte čtečka obrazovky. Pomáhá plnit zákon č. 99/2019 Sb.', cenaOd: 390, platba: 'mesicne', jednotka: 'měsíčně' },
+  { klic: 'ai-asistent', nazev: 'AI asistent i pro Základ a Pokročilý', popis: 'AI asistent z úrovně Advance bez přechodu na dražší úroveň. Odpovídá z dokumentů obce a řekne, že je umělá inteligence.', cenaOd: 490, platba: 'mesicne', jednotka: 'měsíčně' },
+  { klic: 'prenos', nazev: 'Živý přenos zastupitelstva', popis: 'Přenos zasedání na web a do aplikace, záznam v archivu u zápisu z jednání. Kamera a mikrofon podle nabídky.', cenaOd: 490, platba: 'mesicne', jednotka: 'měsíčně' },
+  { klic: 'rozhlas', nazev: 'Hlášení rozhlasu hlasem', popis: 'Text hlášení z aplikace přečte syntetický hlas do obecního rozhlasu. Které rozhlasy jde napojit, ověříme při prohlídce.', cenaOd: 290, platba: 'mesicne', jednotka: 'měsíčně' },
+  { klic: 'preklady', nazev: 'Jazykové verze s AI překladem', popis: 'Překlad stálých stránek a hlášení, například do angličtiny, ukrajinštiny nebo němčiny. Povinné informace kontroluje člověk.', cenaOd: 290, platba: 'mesicne', jednotka: 'měsíčně za jazyk' },
+  { klic: 'svoz', nazev: 'Připomínky svozu odpadu do mobilu', popis: 'Kalendář svozu podle ulice a den předem oznámení v aplikaci občanům, kteří si ho zapnou.', cenaOd: 190, platba: 'mesicne', jednotka: 'měsíčně' },
+  { klic: 'statistiky', nazev: 'Statistiky webu bez cookies', popis: 'Kolik lidí čte které stránky a hlášení. Bez cookies a bez sledování jednotlivých návštěvníků.', cenaOd: 190, platba: 'mesicne', jednotka: 'měsíčně' },
+  { klic: 'energie', nazev: 'Energetický report budov', popis: 'Měsíční přehled spotřeby obecních budov s porovnáním a doporučením, co upravit. K modulu Chytré budovy.', cenaOd: 290, platba: 'mesicne', jednotka: 'měsíčně' },
+  { klic: 'technika', nazev: 'Poloha zimní techniky', popis: 'GPS jednotka v sypači nebo traktoru a mapa protažených ulic v aplikaci. Jednotka podle nabídky.', cenaOd: 190, platba: 'mesicne', jednotka: 'měsíčně za vozidlo' },
+  { klic: 'zapis', nazev: 'AI zápis ze zastupitelstva', popis: 'Ze zvukového záznamu jednání návrh zápisu a usnesení. Zapisovatel jen kontroluje a upravuje.', cenaOd: 390, platba: 'za-kus', jednotka: 'za jednání' },
+  { klic: 'zpravodaj', nazev: 'Obecní zpravodaj z webu', popis: 'Z článků za měsíc PDF zpravodaj připravený do tisku.', cenaOd: 690, platba: 'za-kus', jednotka: 'za číslo' },
+  { klic: 'kronika', nazev: 'Digitalizace kroniky', popis: 'Sken, přepis a vyhledávání v kronice obce na webu.', cenaOd: 25, platba: 'za-kus', jednotka: 'za stranu' },
+  { klic: 'audit', nazev: 'Roční audit přístupnosti', popis: 'Kontrola webu a dokumentů člověkem, zpráva pro zastupitelstvo a aktualizace prohlášení o přístupnosti.', cenaOd: 3900, platba: 'rocne', jednotka: 'ročně' },
+]
+
+export const MESICNI_DOPLNKY = DIGITALNI_DOPLNKY.filter((d) => d.platba === 'mesicne')
+
+/** Součet vybraných měsíčních doplňků (neznámé klíče se ignorují). */
+export function cenaDoplnku(klice: readonly string[]): number {
+  return MESICNI_DOPLNKY.filter((d) => klice.includes(d.klic)).reduce((s, d) => s + d.cenaOd, 0)
+}
