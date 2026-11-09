@@ -22,9 +22,11 @@ export function Karusel({ children, popis, popisPasu }: { children: ReactNode; p
       const prvni = el.children[0] as HTMLElement | undefined
       const celkem = el.children.length
       if (!prvni || !celkem) return
-      const krok = prvni.offsetWidth + parseFloat(getComputedStyle(el).columnGap || '0')
+      const mezera = parseFloat(getComputedStyle(el).columnGap) || 0
+      const krok = prvni.offsetWidth + mezera
       const od = Math.min(celkem, Math.round(el.scrollLeft / krok) + 1)
-      const videt = Math.max(1, Math.floor((el.clientWidth + 8) / krok))
+      // Za poslední viditelnou položkou mezera není, proto ji k šířce pásu přičteme.
+      const videt = Math.max(1, Math.floor((el.clientWidth + mezera + 8) / krok))
       setPozice({ od, do: Math.min(celkem, od + videt - 1), celkem })
     }
     aktualizuj()

@@ -33,11 +33,11 @@ interface ZavadaBod {
 }
 
 const DESKA_POLOZKY: PolozkaDesky[] = [
-  { id: '1', nazev: 'Záměr směny obecního pozemku parc. č. 182/4', datum: '28. 11. 2025', stitek: 'Záměr', barva: 'bg-amber-100 text-amber-900' },
-  { id: '2', nazev: 'Obecně závazná vyhláška o místních poplatcích', datum: '28. 11. 2025', stitek: 'Vyhláška', barva: 'bg-blue-100 text-blue-900' },
-  { id: '3', nazev: 'Návrh rozpočtu obce Veselá pro rok 2026', datum: '28. 11. 2025', stitek: 'Rozpočet', barva: 'bg-emerald-100 text-emerald-900' },
-  { id: '4', nazev: 'Opatření obecné povahy – přechodná úprava provozu', datum: '28. 11. 2025', stitek: 'Doprava', barva: 'bg-purple-100 text-purple-900' },
-  { id: '5', nazev: 'Pozvánka na 18. veřejné zasedání zastupitelstva', datum: '28. 11. 2025', stitek: 'Jednání', barva: 'bg-slate-100 text-slate-900' },
+  { id: '1', nazev: 'Záměr směny obecního pozemku parc. č. 182/4', datum: '2. 11. 2026', stitek: 'Záměr', barva: 'bg-amber-100 text-amber-900' },
+  { id: '2', nazev: 'Obecně závazná vyhláška o místních poplatcích', datum: '2. 11. 2026', stitek: 'Vyhláška', barva: 'bg-blue-100 text-blue-900' },
+  { id: '3', nazev: 'Návrh rozpočtu obce Veselá pro rok 2027', datum: '2. 11. 2026', stitek: 'Rozpočet', barva: 'bg-emerald-100 text-emerald-900' },
+  { id: '4', nazev: 'Opatření obecné povahy – přechodná úprava provozu', datum: '2. 11. 2026', stitek: 'Doprava', barva: 'bg-purple-100 text-purple-900' },
+  { id: '5', nazev: 'Pozvánka na 18. veřejné zasedání zastupitelstva', datum: '2. 11. 2026', stitek: 'Jednání', barva: 'bg-slate-100 text-slate-900' },
 ]
 
 const BODY_ZAVAD: ZavadaBod[] = [
@@ -48,10 +48,10 @@ const BODY_ZAVAD: ZavadaBod[] = [
 ]
 
 const KALENDAR_AKCI = [
-  { den: '18. nov', nazev: 'Setkání občanů s vedením obce', misto: 'Sál obecního úřadu' },
-  { den: '25. nov', nazev: 'Slavnostní rozsvícení vánočního stromu', misto: 'Náves u kapličky' },
-  { den: '28. nov', nazev: '18. zasedání zastupitelstva obce', misto: 'Zasedací místnost' },
-  { den: '30. nov', nazev: 'Sousedská brigáda v obecním sadu', misto: 'Sraz u hasičárny' },
+  { den: '18. lis', nazev: 'Setkání občanů s vedením obce', misto: 'Sál obecního úřadu' },
+  { den: '25. lis', nazev: 'Slavnostní rozsvícení vánočního stromu', misto: 'Náves u kapličky' },
+  { den: '28. lis', nazev: '18. zasedání zastupitelstva obce', misto: 'Zasedací místnost' },
+  { den: '30. lis', nazev: 'Sousedská brigáda v obecním sadu', misto: 'Sraz u hasičárny' },
   { den: '5. pro', nazev: 'Mikulášská nadílka pro děti', misto: 'Kulturní dům' },
   { den: '12. pro', nazev: 'Svoz nebezpečného a velkého odpadu', misto: 'Sběrný dvůr' },
 ]
@@ -86,7 +86,7 @@ export function PortalObceDashboard() {
               </div>
             </div>
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-wider text-emerald-400">Oficiální informační systém</p>
+              <p className="text-[12px] font-semibold uppercase tracking-wider text-emerald-400">Oficiální informační systém</p>
               <h3 className="!text-white text-[17px] font-bold tracking-tight md:text-[20px]">PORTÁL OBCE VESELÁ</h3>
             </div>
           </div>
@@ -113,19 +113,19 @@ export function PortalObceDashboard() {
             </div>
           </div>
 
-          {/* Přihlášení přes BankID a živé senzory */}
+          {/* Přihlášení e-mailem s jednorázovým kódem a živé senzory */}
           <div className="order-2 flex items-center gap-2.5 sm:order-3">
-            {/* Tlačítko BankID */}
+            {/* Tlačítko přihlášení */}
             <button
               type="button"
-              onClick={() => alert('Ukázka přihlášení: V produkci probíhá ověření přes BankID nebo Identitu občana (NIA) bezpečně bez nutnosti pamatovat si heslo.')}
+              onClick={() => alert('Ukázka přihlášení: účet se zakládá e-mailem a jednorázovým kódem, bez hesla.')}
               className="inline-flex min-h-[44px] items-center gap-2 rounded-xl bg-emerald-800 px-3.5 py-2 text-[13px] font-bold text-white shadow-sm transition hover:bg-emerald-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
             >
               <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
                 <path d="M7 11V7a5 5 0 0 1 10 0v4" />
               </svg>
-              <span>Přihlášení (BankID)</span>
+              <span>Přihlášení</span>
             </button>
 
             {/* Živý widget prostředí */}
@@ -220,12 +220,12 @@ export function PortalObceDashboard() {
                     <p className="text-[12px] font-bold uppercase tracking-wider text-slate-700">Platby za odpady a psy</p>
                     <ul className="mt-2 divide-y divide-slate-100 text-[13px]">
                       <li className="flex items-center justify-between py-2">
-                        <span className="font-medium text-slate-800">Poplatek za svoz odpadu 2025</span>
-                        <span className="font-semibold text-emerald-900">850 Kč</span>
+                        <span className="font-medium text-slate-800">Poplatek za svoz odpadu 2026</span>
+                        <span className="shrink-0 whitespace-nowrap pl-3 font-semibold text-emerald-900">850 Kč</span>
                       </li>
                       <li className="flex items-center justify-between py-2">
                         <span className="font-medium text-slate-800">Místní poplatek ze psů (1 pes)</span>
-                        <span className="font-semibold text-emerald-900">200 Kč</span>
+                        <span className="shrink-0 whitespace-nowrap pl-3 font-semibold text-emerald-900">200 Kč</span>
                       </li>
                     </ul>
                   </div>
@@ -267,7 +267,7 @@ export function PortalObceDashboard() {
                   </div>
                 </div>
 
-                <p className="mt-3 text-[11px] text-slate-600">
+                <p className="mt-3 text-[12px] text-slate-600">
                   Peníze jdou přímo na účet obce. CodeKom peníze nikdy nedrží.
                 </p>
               </div>
@@ -287,9 +287,9 @@ export function PortalObceDashboard() {
                           <p className="font-semibold leading-snug text-slate-900 hover:text-emerald-800">
                             {pol.nazev}
                           </p>
-                          <p className="mt-0.5 text-[11px] text-slate-600">Vyvěšeno: {pol.datum}</p>
+                          <p className="mt-0.5 text-[12px] text-slate-600">Vyvěšeno: {pol.datum}</p>
                         </div>
-                        <span className={`shrink-0 rounded-md px-2 py-0.5 text-[11px] font-bold ${pol.barva}`}>
+                        <span className={`shrink-0 rounded-md px-2 py-0.5 text-[12px] font-bold ${pol.barva}`}>
                           {pol.stitek}
                         </span>
                       </div>
@@ -298,7 +298,7 @@ export function PortalObceDashboard() {
                 </ul>
 
                 <div className="mt-4 border-t border-slate-100 pt-3">
-                  <p className="text-[11px] text-slate-600">
+                  <p className="text-[12px] text-slate-600">
                     Dokument, který visel na desce, nejde smazat. Evidence lhůt podle vyhlášky č. 515/2020 Sb.
                   </p>
                 </div>
@@ -372,7 +372,7 @@ export function PortalObceDashboard() {
                       <div className="flex items-center justify-between">
                         <span className="font-bold text-slate-900">{vybranaZavada.nazev}</span>
                         <span
-                          className={`rounded px-1.5 py-0.5 text-[10px] font-semibold ${
+                          className={`rounded px-1.5 py-0.5 text-[12px] font-semibold ${
                             vybranaZavada.stav === 'nove'
                               ? 'bg-rose-100 text-rose-800'
                               : vybranaZavada.stav === 'reseno'
@@ -420,12 +420,12 @@ export function PortalObceDashboard() {
                       </div>
                       <div>
                         <p className="text-[13px] font-semibold text-slate-900">Obsazenost parkovišť</p>
-                        <p className="text-[11px] text-slate-600">Centrum u nádraží</p>
+                        <p className="text-[12px] text-slate-600">Centrum u nádraží</p>
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-[16px] font-extrabold text-slate-900">12 / 50</p>
-                      <p className="text-[10px] text-slate-600">volných míst</p>
+                      <p className="whitespace-nowrap text-[16px] font-extrabold text-slate-900">12 / 50</p>
+                      <p className="text-[12px] text-slate-600">volných míst</p>
                     </div>
                   </div>
 
@@ -440,12 +440,12 @@ export function PortalObceDashboard() {
                       </div>
                       <div>
                         <p className="text-[13px] font-semibold text-slate-900">Komunální technika</p>
-                        <p className="text-[11px] text-slate-600">Zimní sypač v terénu</p>
+                        <p className="text-[12px] text-slate-600">Zimní sypač v terénu</p>
                       </div>
                     </div>
                     <div className="text-right">
-                      <p className="text-[16px] font-extrabold text-slate-900">1 vůz</p>
-                      <p className="text-[10px] text-slate-600">v provozu</p>
+                      <p className="whitespace-nowrap text-[16px] font-extrabold text-slate-900">1 vůz</p>
+                      <p className="text-[12px] text-slate-600">v provozu</p>
                     </div>
                   </div>
 
@@ -458,7 +458,7 @@ export function PortalObceDashboard() {
                         </svg>
                         <span className="text-[13px] font-semibold text-slate-900">Zaplněnost kontejnerů</span>
                       </div>
-                      <span className="text-[11px] font-bold text-slate-700">stav čidel</span>
+                      <span className="text-[12px] font-bold text-slate-700">stav čidel</span>
                     </div>
 
                     {/* Sloupcový diagram jednotlivých komodit */}
@@ -480,7 +480,7 @@ export function PortalObceDashboard() {
                   </div>
                 </div>
 
-                <div className="mt-3 border-t border-slate-100 pt-2 text-[11px] text-slate-600">
+                <div className="mt-3 border-t border-slate-100 pt-2 text-[12px] text-slate-600">
                   Přenos probíhá po síti LoRaWAN a NB-IoT s výdrží čidel až 5 let.
                 </div>
               </div>
@@ -505,7 +505,7 @@ export function PortalObceDashboard() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="text-[13px] font-bold text-slate-900">Přívěsný vozík Agados</p>
-                      <p className="text-[11px] text-slate-600">Nosnost 750 kg, sklopný</p>
+                      <p className="text-[12px] text-slate-600">Nosnost 750 kg, sklopný</p>
                       <p className="mt-0.5 text-[12px] font-semibold text-emerald-900">250 Kč / den</p>
                     </div>
                   </div>
@@ -522,7 +522,7 @@ export function PortalObceDashboard() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="text-[13px] font-bold text-slate-900">Štípačka dřeva 10 t</p>
-                      <p className="text-[11px] text-slate-600">Hydraulická, motor 3 kW</p>
+                      <p className="text-[12px] text-slate-600">Hydraulická, motor 3 kW</p>
                       <p className="mt-0.5 text-[12px] font-semibold text-emerald-900">350 Kč / den</p>
                     </div>
                   </div>
@@ -555,7 +555,7 @@ export function PortalObceDashboard() {
                       <span className="mt-0.5 block h-7 w-1 shrink-0 rounded-full bg-emerald-700" aria-hidden="true" />
                       <div className="min-w-0 flex-1">
                         <p className="font-semibold leading-tight text-slate-900">{akce.nazev}</p>
-                        <p className="mt-0.5 text-[11px] text-slate-600">
+                        <p className="mt-0.5 text-[12px] text-slate-600">
                           <span className="font-medium text-emerald-900">{akce.den}</span> | {akce.misto}
                         </p>
                       </div>
@@ -564,7 +564,7 @@ export function PortalObceDashboard() {
                 </ul>
 
                 <div className="mt-3 border-t border-slate-100 pt-3">
-                  <p className="text-[11px] text-slate-600">
+                  <p className="text-[12px] text-slate-600">
                     Akce spolků a obce se synchronizují s mobilní aplikací CodeKom.
                   </p>
                 </div>
@@ -604,7 +604,7 @@ export function PortalObceDashboard() {
                     <svg className="h-16 w-16 text-slate-800" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M3 3h6v6H3V3zm2 2v2h2V5H5zm8-2h6v6h-6V3zm2 2v2h2V5h-2zM3 13h6v6H3v-6zm2 2v2h2v-2H5zm13-2h3v2h-3v-2zm-5 0h2v3h-2v-3zm3 3h3v3h-3v-3zm-3 2h2v2h-2v-2zm-5-2h2v2H7v-2zm8-10h2v2h-2V5zm-4 4h2v2h-2V9zm-2 2h2v2H9v-2zm2 2h2v2h-2v-2zm2-2h2v2h-2v-2z" />
                     </svg>
-                    <span className="mt-1 text-[10px] font-bold uppercase tracking-wider text-slate-600">SPAYD QR KÓD</span>
+                    <span className="mt-1 text-[12px] font-bold uppercase tracking-wider text-slate-600">SPAYD QR KÓD</span>
                   </div>
                 </div>
               </div>
@@ -659,7 +659,7 @@ export function PortalObceDashboard() {
                   ✓
                 </div>
                 <p className="mt-3 text-[16px] font-bold">Hlášení bylo předáno obci</p>
-                <p className="mt-1 text-[13px] text-white/70">Přidělené evidenční číslo: #2025-084. Stav řešení můžete sledovat na mapě.</p>
+                <p className="mt-1 text-[13px] text-white/70">Přidělené evidenční číslo: #2026-084. Stav řešení můžete sledovat na mapě.</p>
                 <button
                   type="button"
                   onClick={() => { setDialogNahlaseni(false); setHlaseniOdeslano(false); }}
@@ -757,7 +757,7 @@ export function PortalObceDashboard() {
                 </div>
                 <div>
                   <label htmlFor="datum-vypujcky" className="block font-semibold text-white/90">Termín výpůjčky</label>
-                  <input type="text" id="datum-vypujcky" defaultValue="Pátek 28. 11. až Neděle 30. 11. 2025" className="mt-1 w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-white" />
+                  <input type="text" id="datum-vypujcky" defaultValue="pátek 13. 11. až neděle 15. 11. 2026" className="mt-1 w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-white" />
                 </div>
                 <p className="text-[12px] text-white/70">
                   Předání probíhá na sběrném dvoře obce po předložení občanského průkazu nebo ověření v aplikaci.

@@ -10,7 +10,7 @@ test('úvod vede na šablony a úrovně', async ({ page }) => {
 })
 
 test('karusel šablon se posouvá tlačítky', async ({ page }) => {
-  await page.goto('/ukazky')
+  await page.goto('/')
   const karusel = page.getByRole('region', { name: 'Karusel šablon' })
   const predchozi = karusel.getByRole('button', { name: 'Předchozí' })
   const dalsi = karusel.getByRole('button', { name: 'Další' })

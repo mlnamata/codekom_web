@@ -62,33 +62,29 @@ export default function Urovne() {
           {UROVNE.map((u) => (
             <div
               key={u.klic}
-              className="sklo-svetle flex flex-col justify-between rounded-3xl p-8 transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl"
+              className="sklo-svetle flex flex-col rounded-3xl p-8 transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl"
             >
-              <div>
+              <div className="flex-1">
                 <span className="text-[13px] font-bold uppercase tracking-wider text-akcent-tmavy">
                   „{u.princip}“
                 </span>
                 <h3 className="mt-1 text-[32px] font-bold">{u.nazev}</h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-text">{u.popis}</p>
                 <p className="mt-4 text-[14px] text-sediva">{u.proKoho}</p>
-
-                <div className="mt-6 border-y border-linka py-4">
-                  <span className="block text-[13px] text-sediva">Cena od</span>
-                  <span className="text-[34px] font-extrabold text-noc">
-                    {kc(u.ceny[0])}
-                  </span>
-                  <span className="block text-[13px] text-sediva">
-                    měsíčně bez DPH, obec do 500 obyvatel
-                  </span>
-                </div>
               </div>
 
-              <div className="mt-8 space-y-3 pt-4 border-t border-linka">
-                <Link href={`/urovne/${u.klic}`} className="tlacitko w-full text-center">
+              <div className="mt-6 border-t border-linka pt-4">
+                <span className="block text-[13px] text-sediva">Cena od</span>
+                <span className="text-[34px] font-extrabold text-noc">{kc(u.ceny[0])}</span>
+                <span className="block text-[13px] text-sediva">měsíčně bez DPH, obec do 500 obyvatel</span>
+              </div>
+
+              <div className="mt-6 space-y-3">
+                <Link href={`/urovne/${u.klic}`} className="tlacitko w-full !px-4">
                   Podrobně o úrovni {u.nazev}
                 </Link>
-                <Link href="/cenik" className="tlacitko-obrys w-full text-center !min-h-11">
-                  Ceník pro všechny velikosti
+                <Link href="/cenik" className="tlacitko-obrys w-full !min-h-11 !px-4">
+                  Ceník a kalkulačka
                 </Link>
               </div>
             </div>

@@ -62,7 +62,7 @@ export function Paticka() {
         ))}
       </div>
       <div className="obal border-t border-white/10 py-6 text-[14px] text-sediva-tma">
-        Web nepoužívá cookies ani měření návštěvnosti. Fotografie na webu vytvořila umělá inteligence a jsou tak označené.
+        Web nepoužívá cookies ani měření návštěvnosti. Fotografie s odznakem AI vytvořila umělá inteligence.
       </div>
     </footer>
   )

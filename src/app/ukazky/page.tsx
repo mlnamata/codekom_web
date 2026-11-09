@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Karusel } from '@/komponenty/Karusel'
 import { Markdown } from '@/komponenty/Markdown'
 import { Snimek } from '@/komponenty/Snimek'
 import { StrankaHero } from '@/komponenty/StrankaHero'
@@ -49,69 +48,8 @@ export default function Ukazky() {
         ]}
       />
 
-      {/* Rychlé listování karuselem */}
-      <div className="mt-14">
-        <div className="flex flex-wrap items-baseline justify-between gap-4">
-          <div>
-            <p className="rubrika">Rychlé listování</p>
-            <h2 className="mt-1 text-[28px] md:text-[38px]">
-              Karusel šablon
-            </h2>
-          </div>
-          <p className="text-[15px] text-sediva">
-            Listujte tlačítky Předchozí a Další, posunutím prstem nebo šipkami na klávesnici.
-          </p>
-        </div>
-
-        <div className="mt-8">
-          <Karusel popis="Karusel šablon" popisPasu="Seznam 23 šablon">
-            {sablony.map((s, i) => (
-              <li
-                key={s.klic}
-                className="w-[85%] shrink-0 snap-start sm:w-[calc(50%-12px)] lg:w-[calc((100%-48px)/3)]"
-              >
-                <Link
-                  href={`/ukazky/${s.klic}`}
-                  className="sklo-svetle group block rounded-3xl p-3 no-underline transition-all duration-200 hover:-translate-y-1.5 hover:shadow-xl"
-                >
-                  <Snimek
-                    src={s.palety[0]!.snimek}
-                    alt={`Úvodní stránka šablony ${s.nazev} pro obec Javoří Lhota, paleta ${s.palety[0]!.nazev}.`}
-                    priorita={i < 3}
-                    sizes="(min-width: 1120px) 360px, (min-width: 640px) 50vw, 100vw"
-                  />
-                  <span className="block px-3 pb-3 pt-4">
-                    <span className="flex items-center justify-between">
-                      <span className="text-[13px] font-bold uppercase tracking-wider text-akcent-tmavy">
-                        Šablona {s.cislo}
-                      </span>
-                      <span className="flex gap-1" aria-hidden="true">
-                        {s.palety.map((p) => (
-                          <span
-                            key={p.index}
-                            className="size-3.5 rounded-full border border-linka"
-                            style={{ background: p.barvy[3]!.hodnota }}
-                          />
-                        ))}
-                      </span>
-                    </span>
-                    <span
-                      className="mt-1 block text-[22px] font-bold tracking-tight text-noc group-hover:text-akcent-tmavy transition-colors"
-                      style={{ fontFamily: 'var(--font-nadpis)' }}
-                    >
-                      {s.nazev}
-                    </span>
-                    <span className="mt-1 block text-[14px] text-sediva">{s.proKoho}</span>
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </Karusel>
-        </div>
-      </div>
-
       {/* Kompletní přehledová mřížka všech 23 šablon */}
-      <section id="galerie" aria-labelledby="vsech-20" className="mt-20">
+      <section id="galerie" aria-labelledby="vsech-20" className="mt-14 scroll-mt-28">
         <div className="max-w-[42em]">
           <p className="rubrika">Kompletní nabídka</p>
           <h2 id="vsech-20" className="mt-1 text-[28px] md:text-[38px]">
@@ -122,9 +60,9 @@ export default function Ukazky() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {sablony.map((s) => (
-            <div key={s.klic}>
+            <li key={s.klic}>
               <Link
                 href={`/ukazky/${s.klic}`}
                 className="sklo-svetle group flex h-full flex-col justify-between rounded-3xl p-3 no-underline transition-all duration-200 hover:-translate-y-1.5 hover:shadow-xl"
@@ -164,9 +102,9 @@ export default function Ukazky() {
                   <span aria-hidden="true">&rsaquo;</span>
                 </div>
               </Link>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
       {/* Jak šablonu vybrat */}
