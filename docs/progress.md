@@ -3,6 +3,7 @@
 | Úkol | Oblast souborů | Stav | Poznámka |
 | --- | --- | --- | --- |
 | Důkladný audit webu, opravy a vylepšení (9. 11. 2026) | src/, obsah/prezentace, docs/audit-2026-11.md, tests/ | rozpracováno | nálezy a návrhy v docs/audit-2026-11.md |
+| Připravenost k prodeji: kontroly, průchod všech stránek, ceník vs kalkulačka vs PDF, cesta ke kontaktu, právní stránky, SEO, `docs/pripravenost-k-prodeji.md` | src/, obsah/prezentace, public/ke-stazeni, docs/pripravenost-k-prodeji.md | rozpracováno | fork session prodej 9. 11.; navazuje na audit výše, nepřepisuje jeho práci |
 | Nasazení na codekomweb.vercel.app | nastavení Vercelu | čeká na zakladatele | projekt napojit na tento repozitář, Root Directory = kořen |
 
 ## Hotovo
