@@ -2,6 +2,7 @@
 
 | Úkol | Oblast souborů | Stav | Poznámka |
 | --- | --- | --- | --- |
+| Důkladný audit webu, opravy a vylepšení (9. 11. 2026) | src/, obsah/prezentace, docs/audit-2026-11.md, tests/ | rozpracováno | nálezy a návrhy v docs/audit-2026-11.md |
 | Nasazení na codekomweb.vercel.app | nastavení Vercelu | čeká na zakladatele | projekt napojit na tento repozitář, Root Directory = kořen |
 
 ## Hotovo
