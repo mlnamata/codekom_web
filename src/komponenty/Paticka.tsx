@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { udajFirmy } from '@/lib/firma'
 
 const SLOUPCE = [
   {
@@ -41,7 +42,7 @@ export function Paticka() {
         <div>
           <img src="/brand-svg/logo-bile.svg" alt="CodeKom, Tvoříme kódy pro lidi." width={941} height={630} className="h-auto w-[180px]" />
           <p className="mt-4 text-[15px] text-sediva-tma">
-            CodeKom s.r.o., IČO <mark className="doplnit">[DOPLNIT: IČO]</mark>
+            CodeKom s.r.o., IČO {udajFirmy('IČO') ?? <mark className="doplnit">[DOPLNIT: IČO]</mark>}
           </p>
         </div>
         {SLOUPCE.map((s) => (

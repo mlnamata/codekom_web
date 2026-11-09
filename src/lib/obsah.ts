@@ -1,4 +1,5 @@
 import { readFileSync, readdirSync } from 'node:fs'
+import { dosadFirmu } from './firma'
 import { join, resolve } from 'node:path'
 import { Marked } from 'marked'
 import { odkazDema, odkazAplikace } from './demo'
@@ -26,7 +27,8 @@ function frontmatter(text: string): { meta: Record<string, string>; telo: string
 }
 
 export function nactiStranku(soubor: string): Stranka {
-  const text = readFileSync(join(SLOZKA, `${soubor}.md`), 'utf8')
+  // Údaje o firmě z proměnných FIRMA_* se dosadí místo [DOPLNIT: …] (src/lib/firma.ts).
+  const text = dosadFirmu(readFileSync(join(SLOZKA, `${soubor}.md`), 'utf8'))
   const { meta, telo } = frontmatter(text)
   return {
     soubor,
