@@ -8,7 +8,7 @@ adresa: "/dotace"
 
 # Dotace
 
-Dotaci za obec nezískáme a nemůžeme slíbit, že ji obec dostane. Můžeme pomoct s podklady k žádosti. Cena této pomoci: [DOPLNIT: cena pomoci s dotacemi].
+Dotaci za obec nezískáme a nemůžeme slíbit, že ji obec dostane. Můžeme pomoct s podklady k žádosti. Cena této pomoci: od 4 500 Kč bez DPH za žádost (podklady a technická specifikace), viz [ceník](/cenik).
 
 ## Přehled výzev
 
