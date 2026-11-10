@@ -121,7 +121,8 @@ export function KalkulackaCeniku() {
   return (
     <div className="kalkulacka sklo-svetle my-8 rounded-3xl border border-white/80 p-6 md:p-8">
       <div className="grid gap-8 lg:grid-cols-12">
-        <div className="grid gap-5 lg:col-span-7">
+        {/* Dokud se kalkulačka nenačte, jsou pole neaktivní: změna před načtením by se ztratila a cena by neodpovídala výběru. */}
+        <fieldset disabled={!nacteno} aria-busy={!nacteno} className="m-0 grid min-w-0 gap-5 border-0 p-0 lg:col-span-7">
           <label className="block font-medium text-text">
             Velikost obce
             <select className={poleInput} value={n.velikost} onChange={(e) => zmen({ velikost: Number(e.target.value) })}>
@@ -202,7 +203,7 @@ export function KalkulackaCeniku() {
               ))}
             </ul>
           </fieldset>
-        </div>
+        </fieldset>
 
         {/* Na telefonu je výsledek až pod formulářem, proto lišta s cenou drží u spodního okraje obrazovky. */}
         <div className="neTisknout sticky bottom-3 z-20 -mt-2 lg:hidden" aria-hidden="true">
