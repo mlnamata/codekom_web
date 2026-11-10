@@ -19,10 +19,17 @@ import {
   STITEK_CENY,
   kc,
 } from '@/lib/cenik'
-import { nactiStranku } from '@/lib/obsah'
+import { Markdown } from '@/komponenty/Markdown'
+import { casti, naHtml, nactiStranku } from '@/lib/obsah'
 import { sluzbaJsonLd } from '@/lib/seo'
 
 const stranka = nactiStranku('cenik')
+
+/** Části ceníku přímo z obsah/prezentace/cenik.md, aby tabulky a podmínky byly jen na jednom místě. */
+const CASTI = casti(stranka.telo).casti
+const cast = (nadpis: string) => CASTI.find((c) => c.nadpis === nadpis)?.telo ?? ''
+/** Text části do prvního nadpisu třetí úrovně. */
+const bezPodnadpisu = (md: string) => md.split(/^### /m)[0] ?? ''
 
 export const metadata: Metadata = {
   title: stranka.title,
@@ -43,7 +50,7 @@ const UROVNE_KARTY = [
       'Mobilní aplikace pro občany',
       'Kontrola přístupnosti před publikací',
       'Hlídání zákonných lhůt',
-      'Až 3 redaktoři obce',
+      '3 uživatelé',
     ],
   },
   {
@@ -55,10 +62,10 @@ const UROVNE_KARTY = [
     nasazeni: POPLATEK_NASAZENI.pokrocily,
     vyhody: [
       'Vše z úrovně Základ',
-      'Skládání stránek z 15 bloků',
+      'Skládání stránek z bloků knihovny',
       'Schvalovací kolečko před zveřejněním',
       'Až 3 podweby (škola, hasiči, knihovna)',
-      'Až 10 redaktorů',
+      '10 uživatelů',
     ],
   },
   {
@@ -120,7 +127,7 @@ export default function Cenik() {
         ]}
         tlacitka={[
           { href: '#kalkulacka', text: 'Spočítat orientační cenu', primarni: true },
-          { href: '#soucastky', text: 'Katalog součástek pro obec' },
+          { href: '#ceny-podle-velikosti', text: 'Ceny podle velikosti obce' },
         ]}
         metriky={[
           [`od ${kc(CENY_WEBU.zaklad[0])}`, 'měsíčně bez DPH'],
@@ -192,6 +199,26 @@ export default function Cenik() {
             Zobrazit srovnávací matici všech funkcí
           </Link>
         </div>
+      </section>
+
+      {/* Úplné ceny podle velikosti obce a moduly navíc */}
+      <section id="ceny-podle-velikosti" aria-labelledby="nadpis-ceny-podle-velikosti" className="mt-20 scroll-mt-28">
+        <div className="max-w-[42em]">
+          <p className="rubrika">Všechny velikosti obcí</p>
+          <h2 id="nadpis-ceny-podle-velikosti" className="mt-2 text-[32px] md:text-[44px]">
+            Ceny podle velikosti obce
+          </h2>
+          <p className="mt-3 text-[17px] text-sediva">
+            Cena závisí na počtu obyvatel a na úrovni editoru. Moduly Digitální úřad a Chytré budovy jdou přikoupit ke kterékoli úrovni. Pro obce nad 10 000 obyvatel cenu pošleme v nabídce.
+          </p>
+        </div>
+        <div className="prosa mt-8 max-w-none">
+          <h3 id="web-podle-urovne">Web obce podle úrovně editoru</h3>
+          <Markdown html={naHtml(bezPodnadpisu(cast('Web obce podle úrovně editoru')).replace(/^Měsíčně bez DPH\..*$/m, ''), { nazev: 'Web obce podle úrovně editoru' })} />
+          <h3 id="moduly-navic">Moduly navíc</h3>
+          <Markdown html={naHtml(cast('Moduly navíc').replace(/^Měsíčně bez DPH, připočítává se k ceně webu\..*$/m, 'Připočítává se k ceně webu.'), { nazev: 'Moduly navíc' })} />
+        </div>
+        <p className="stitek mt-2">Měsíčně bez DPH. {STITEK_CENY}</p>
       </section>
 
       {/* Zavedení, hodinovka a doplňkové služby */}
@@ -399,6 +426,26 @@ export default function Cenik() {
           </Link>
         </p>
       </section>
+
+      {/* Jak se platí a co v ceně není, z cenik.md */}
+      <div className="mt-24 grid gap-6 md:grid-cols-2">
+        <section aria-labelledby="jak-se-plati" className="sklo-svetle rounded-3xl p-8">
+          <h2 id="jak-se-plati" className="text-[26px] font-bold">
+            Jak se platí
+          </h2>
+          <div className="prosa mt-4 max-w-none text-[16px]">
+            <Markdown html={naHtml(cast('Jak se platí'))} />
+          </div>
+        </section>
+        <section aria-labelledby="co-v-cene-neni" className="sklo-svetle rounded-3xl p-8">
+          <h2 id="co-v-cene-neni" className="text-[26px] font-bold">
+            Co v ceně není
+          </h2>
+          <div className="prosa mt-4 max-w-none text-[16px]">
+            <Markdown html={naHtml(cast('Co v ceně není'))} />
+          </div>
+        </section>
+      </div>
 
       {/* Garance a férová smlouva */}
       <section aria-labelledby="podminky-zaruky" className="mt-24">

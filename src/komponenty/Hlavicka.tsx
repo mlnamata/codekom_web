@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useEffect, useRef } from 'react'
 import { Logo } from './Logo'
 
 export const NAVIGACE = [
@@ -19,6 +20,33 @@ export const NAVIGACE = [
  */
 export function Hlavicka() {
   const pathname = usePathname()
+  const menu = useRef<HTMLDetailsElement>(null)
+
+  // Po přechodu na jinou stránku se mobilní nabídka zavře (záhlaví zůstává v layoutu otevřené).
+  useEffect(() => {
+    if (menu.current) menu.current.open = false
+  }, [pathname])
+
+  // Escape a klepnutí mimo nabídku ji zavřou, fokus se vrátí na tlačítko Menu.
+  useEffect(() => {
+    const el = menu.current
+    if (!el) return
+    const klavesa = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && el.open) {
+        el.open = false
+        el.querySelector('summary')?.focus()
+      }
+    }
+    const klik = (e: MouseEvent) => {
+      if (el.open && e.target instanceof Node && !el.contains(e.target)) el.open = false
+    }
+    document.addEventListener('keydown', klavesa)
+    document.addEventListener('click', klik)
+    return () => {
+      document.removeEventListener('keydown', klavesa)
+      document.removeEventListener('click', klik)
+    }
+  }, [])
 
   const jeAktivni = (href: string) => {
     if (href === '/') return pathname === '/'
@@ -62,7 +90,7 @@ export function Hlavicka() {
         <Link href="/kontakt" className="tlacitko !min-h-11 whitespace-nowrap max-xl:!hidden">
           Napište nám
         </Link>
-        <details className="relative xl:hidden">
+        <details ref={menu} className="relative xl:hidden">
           <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 font-medium text-white transition-colors hover:bg-white/10 select-none [&::-webkit-details-marker]:hidden">
             <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true" className="stroke-white">
               <path d="M1 1h16M1 7h16M1 13h16" strokeWidth="2" strokeLinecap="round" />

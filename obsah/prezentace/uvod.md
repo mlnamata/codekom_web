@@ -62,7 +62,7 @@ Podrobnosti jsou na stránce [Co umíme](/co-umime).
 - Snímek `lupa-0-1280`. Alt text: Úvodní stránka šablony Lupa pro obec Javoří Lhota, paleta Žlutá.
 - Snímek `urad-0-1280`. Alt text: Úvodní stránka šablony Úřad pro obec Javoří Lhota, paleta Státní modrá.
 
-Všech 20 najdete v [galerii ukázek](/ukazky).
+Všech 23 najdete v [galerii ukázek](/ukazky).
 
 ## Cena
 

@@ -99,7 +99,7 @@ export const SOUCASTKY_CHYTRA_OBEC: SoucastkaKatalogu[] = [
     cenaOd: 6900,
     jednotka: 'ks',
     kategorie: 'Informace pro občany',
-    popis: 'Senzorická meteostanice měřící teplotu, vítr, srážky a vlhkost přímo v katastru obce.',
+    popis: 'Senzorická meteostanice měřící teplotu, vítr a srážky přímo v katastru obce.',
     prinos: 'Aktuální údaje na úvodní stránce obecního webu pro hasiče, místní zemědělce, zahrádkáře a pořadatele akcí.',
   },
   {
@@ -201,7 +201,7 @@ export const DOPLNKOVE_SLUZBY = [
   {
     nazev: 'Příprava podkladů pro dotaci na digitalizaci',
     cena: 'od 4 500 Kč za žádost',
-    popis: 'Příprava technické a projektové specifikace pro dotační tituly (IROP, Národní plán obnovy a krajské programy).',
+    popis: 'Popis služby, cenová nabídka a další podklady do žádosti. O dotaci rozhoduje poskytovatel, viz stránka Dotace.',
   },
 ]
 

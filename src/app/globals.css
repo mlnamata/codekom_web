@@ -76,6 +76,8 @@ mark.doplnit { background: #fff0a6; color: #000; padding: 0 2px; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
 @media (scripting: none) { .odhaleni { opacity: 1; transform: none; } }
+/* Při tisku a ukládání do PDF musí být vidět i obsah, ke kterému čtenář neodroloval. */
+@media print { .odhaleni { opacity: 1; transform: none; } body > header { display: none; } }
 
 /* Pás snímků šablon, který se pomalu posouvá */
 @keyframes pas { from { transform: translateX(0); } to { transform: translateX(-50%); } }

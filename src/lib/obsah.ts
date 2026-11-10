@@ -64,7 +64,7 @@ const POZNAMKA_AI = 'Ilustrační fotografie vytvořená umělou inteligencí'
 /** Řádky „Fotka `x`. Alt text: …“ a „Snímek `x`. Alt text: …“ jsou v textech popisy obrázků. */
 function obrazky(md: string): string {
   let vystup = md.replace(/^- Fotka `([\w-]+)`\. Alt text: (.+?)\. Popisek: .+$/gm, (_, f: string, alt: string) =>
-    `<figure class="foto relative"><img src="/foto/${f}.webp" alt="${esc(alt)}." width="1344" height="768" loading="lazy"><figcaption class="absolute bottom-4 right-4 z-10 m-0"><span class="sklo-tmave inline-flex items-center justify-center rounded-full p-1.5 shadow-lg backdrop-blur-md" aria-label="AI – Ilustrační fotografie vytvořená umělou inteligencí"><img src="/brand/ai-odznak-oriznuty.png" alt="" width="24" height="24" class="h-6 w-6 object-contain" /><span class="sr-only">${POZNAMKA_AI}</span></span></figcaption></figure>`,
+    `<figure class="foto relative"><img src="/foto/${f}.webp" alt="${esc(alt)}." width="1344" height="768" loading="lazy"><figcaption class="absolute bottom-4 right-4 z-10 m-0"><span class="sklo-tmave inline-flex items-center justify-center rounded-full p-1.5 shadow-lg backdrop-blur-md"><img src="/brand/ai-odznak-oriznuty.png" alt="" width="24" height="24" class="h-6 w-6 object-contain" /><span class="sr-only">${POZNAMKA_AI}</span></span></figcaption></figure>`,
   )
   vystup = vystup.replace(/^- Snímek `([\w-]+)`\. Alt text: (.+)$/gm, (_, f: string, alt: string) =>
     `<figure class="snimek"><img src="/sablony/${f}.webp" alt="${esc(alt)}" width="1280" height="900" loading="lazy"></figure>`,
@@ -100,13 +100,16 @@ function zvyrazni(html: string): string {
 
 const marked = new Marked({ gfm: true })
 
-export function naHtml(md: string, { bezH1 = false } = {}): string {
+/** `nazev` popíše tabulky v části bez vlastního nadpisu, aby oblasti na stránce měly různé popisky. */
+export function naHtml(md: string, { bezH1 = false, nazev = 'Tabulka' }: { bezH1?: boolean; nazev?: string } = {}): string {
   let zdroj = odkazyUkazky(obrazky(md))
   if (bezH1) zdroj = zdroj.replace(/^# .+$/m, '')
   let html = marked.parse(zdroj, { async: false })
   html = html.replace(/<a href="(https?:[^"]+)"/g, '<a href="$1" rel="noopener noreferrer"')
+  // Odkaz mailto bez skutečné adresy by otevřel poštu s „[DOPLNIT]“. Dokud adresa chybí, je to jen text.
+  html = html.replace(/<a href="mailto:(?:\[|%5B)DOPLNIT[^"]*"[^>]*>([^<]+)<\/a>/g, '<span class="odkaz-chybi">$1: [DOPLNIT: e-mail]</span>')
   // Každá tabulka dostane popisek podle nadpisu nad ní (unikátní oblasti pro čtečky).
-  let nadpis = 'Tabulka'
+  let nadpis = nazev
   html = html.replace(/<h[1-4][^>]*>([^<]+)<\/h[1-4]>|<table>/g, (m: string, t?: string) => {
     if (t) {
       nadpis = t

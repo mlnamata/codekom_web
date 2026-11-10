@@ -104,7 +104,7 @@ Pro práce nad rámec standardní technické podpory nebo individuální zakázk
 - **Přenesení rozsáhlého archivu ze starého webu:** od 2 900 Kč jednorázově (ruční kontrola a převedení stovek historických dokumentů a vyhlášek).
 - **Školení na místě na obecním úřadě:** od 3 500 Kč za půldenní workshop pro starostu, účetní, zastupitele a redaktory spolků.
 - **Balíček SMS zpráv pro občany:** od 990 Kč za 1 000 SMS kreditů na rozesílání krizových i běžných zpráv.
-- **AI hlasový bot na telefonní lince:** 0,15 Kč za sekundu hovoru, nebo paušál od 490 Kč měsíčně (viz níže).
+- **AI hlasový bot na telefonní lince:** 0,15 Kč za sekundu hovoru, nebo paušál od 490 Kč měsíčně (viz výše).
 - **Příprava podkladů pro žádost o dotaci:** od 4 500 Kč za přípravu technické specifikace pro dotační tituly na digitalizaci obcí.
 
 ## Katalog součástí pro chytrou obec
@@ -115,7 +115,7 @@ Komponenty pro modul Chytré budovy a chytrou obec. Fungují spolehlivě a auton
 - **Elektronická klika s PIN klávesnicí:** od 4 800 Kč za kus. Kódový zámek pro dveře do společenského sálu, klubovny nebo tělocvičny. Časový kód platí jen po dobu rezervace přes Digitální úřad.
 - **Dálkový odečet vodoměru a elektroměru:** od 2 900 Kč za kus. Snímač se sledováním spotřeby a okamžitým hlášením havárie nebo protékající vody.
 - **Záplavové a hladinové čidlo:** od 3 900 Kč za kus. Ultrazvukové sledování výšky hladiny potoka nebo rybníka. Při nebezpečí ihned odešle krizové hlášení starostovi a do mobilní aplikace občanů.
-- **Obecní meteostanice:** od 6 900 Kč za kus. Měření teploty, větru, srážek a tlaku s živým zobrazením na webu obce pro hasiče, zemědělce i občany.
+- **Obecní meteostanice:** od 6 900 Kč za kus. Měření teploty, větru a srážek s živým zobrazením na webu obce pro hasiče, zemědělce i občany.
 - **Venkovní elektronická úřední deska:** od 45 000 Kč za kus. Odolný venkovní e-ink nebo dotykový panel s nízkou spotřebou pro nepřetržitý přístup k dokumentům 24 hodin denně.
 
 Celý katalog zařízení, včetně hlavic, zámků, elektroměrů, čidel, webkamer a brány pro modul Chytré budovy, je na stránce [Katalog zařízení](/katalog).

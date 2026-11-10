@@ -8,6 +8,15 @@ import { VyzvaSekce } from '@/komponenty/VyzvaSekce'
 import { odkazAplikace, odkazDema } from '@/lib/demo'
 import { najdiSablonu, sablonyGalerie } from '@/lib/sablony'
 
+const velkymPismenem = (t: string) => t.charAt(0).toLocaleUpperCase('cs-CZ') + t.slice(1)
+
+/** Popis pro vyhledávače do 160 znaků, zkrácený na celé slovo. */
+function zkratPopis(t: string): string {
+  if (t.length <= 160) return t
+  const kus = t.slice(0, 157)
+  return `${kus.slice(0, kus.lastIndexOf(' '))}…`
+}
+
 export const dynamicParams = false
 export const generateStaticParams = () => sablonyGalerie().map((s) => ({ klic: s.klic }))
 
@@ -16,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ klic: str
   if (!s) return {}
   return {
     title: `Šablona ${s.nazev} pro web obce – CodeKom`,
-    description: `${s.proKoho} ${s.cimSeLisi}`.slice(0, 155),
+    description: zkratPopis(`Šablona ${s.nazev} ${s.proKoho.replace(/\.$/, '')}. ${velkymPismenem(s.cimSeLisi)}`),
     alternates: { canonical: `/ukazky/${s.klic}` },
   }
 }
@@ -34,7 +43,7 @@ export default async function DetailSablony({ params }: { params: Promise<{ klic
   return (
     <div className="obal pb-24">
       <nav aria-label="Drobečková navigace" className="pt-6 text-[14px] text-sediva">
-        <Link href="/ukazky" className="hover:text-text hover:underline">
+        <Link href="/ukazky" className="inline-flex min-h-11 items-center underline hover:text-text hover:no-underline">
           Šablony
         </Link>
         <span className="mx-2 text-linka" aria-hidden="true">
@@ -66,7 +75,7 @@ export default async function DetailSablony({ params }: { params: Promise<{ klic
         ]}
         metriky={[
           ['3 palety', 'barevné varianty šablony'],
-          ['Mobilní verze', 'rychlé načítání na telefonu'],
+          ['Na telefonu', 'sbalené menu'],
           ['Úřední deska', 's automatickým archivem'],
         ]}
       />
@@ -92,13 +101,13 @@ export default async function DetailSablony({ params }: { params: Promise<{ klic
           </h2>
           <p className="mt-3 text-[17px] leading-relaxed text-text font-medium">{s.cimSeLisi}</p>
           <p className="mt-4 text-[15px] leading-relaxed text-sediva">
-            Všechny šablony mají úřední desku s evidencí a archivem, rychlé úkony pro občany, kontakty úřadu, povinnou patičku a na telefonu přehledné sbalené menu.
+            Všechny šablony mají úřední desku, rychlé úkony, kontakt na úřad a povinnou patičku a na telefonu sbalené menu.
           </p>
 
           <div className="mt-8 border-t border-linka pt-6">
             <h3 className="text-[20px] font-bold">Zobrazení na telefonu</h3>
             <p className="mt-2 text-[15px] text-sediva">
-              Mobilní rozvržení je optimalizované pro rychlé načítání i při slabém signálu a snadné ovládání jednou rukou.
+              Na telefonu se menu sbalí a obsah jde pod sebou ve stejném pořadí jako na počítači.
             </p>
             <div className="mt-5 inline-block overflow-hidden rounded-2xl border-4 border-noc/80 bg-white p-1 shadow-xl">
               <img

@@ -10,7 +10,7 @@ adresa: "/pristupnost"
 
 CodeKom s.r.o. chce, aby jeho web mohl používat každý, i s čtečkou obrazovky, jen klávesnicí nebo na malém displeji. Pro naši firmu zákon č. 99/2019 Sb. povinný není. Řídíme se jím, protože podle něj stavíme weby obcí.
 
-Prohlášení se týká webu [DOPLNIT: adresa webu CodeKom].
+Prohlášení se týká webu https://codekomweb.vercel.app.
 
 ## Stav souladu
 

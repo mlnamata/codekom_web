@@ -35,7 +35,7 @@ export default async function DetailUrovne({ params }: { params: Promise<{ urove
   return (
     <div className="obal pb-24">
       <nav aria-label="Drobečková navigace" className="pt-6 text-[14px] text-sediva">
-        <Link href="/urovne" className="hover:text-text hover:underline">
+        <Link href="/urovne" className="inline-flex min-h-11 items-center underline hover:text-text hover:no-underline">
           Úrovně
         </Link>
         <span className="mx-2 text-linka" aria-hidden="true">

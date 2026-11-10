@@ -34,7 +34,7 @@ Zkratky zdrojů: A, B, D = části `docs/pravni-dokumenty.md` (návrhy ke kontro
 | AI asistent je součástí úrovně Advance | cenik, co-umime, ukazky | docs/navrh-platformy/01-navrh-platformy.md, 04-admin-editor.md | 2026-11-04 | hypoteza |
 | Změna šablony v úrovni Základ jednou ročně zdarma | ukazky | docs/navrh-platformy/04-admin-editor.md | 2026-11-04 | hypoteza |
 | Rozdíl mezi roční a měsíční platbou | cenik | chybí, [DOPLNIT] | – | neovereno |
-| Cena SMS kreditů, cena pomoci s dotacemi | cenik, dotace | chybí, [DOPLNIT] | – | neovereno |
+| Cena SMS kreditů (ceník: od 990 Kč za 1 000 SMS) a pomoci s dotacemi (ceník: od 4 500 Kč za žádost) | cenik, dotace | ceny jsou v ceníku od 4. 11. 2026, podklad k nim chybí [OVĚŘIT] | – | neovereno |
 | Jednorázový poplatek za nasazení webu od 4 900 Kč bez DPH | cenik | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | orientacni |
 | Hodinová sazba experta 750 Kč bez DPH pro individuální práce | cenik | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | orientacni |
 | Katalog součástí pro chytrou obec od 1 490 Kč | cenik | požadavek zakladatele 4. 11. 2026 | 2026-11-04 | orientacni |
