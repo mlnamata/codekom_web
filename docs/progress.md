@@ -3,10 +3,12 @@
 | Úkol | Oblast souborů | Stav | Poznámka |
 | --- | --- | --- | --- |
 | Důkladný audit webu, opravy a vylepšení (9. 11. 2026) | src/, obsah/prezentace, docs/audit-2026-11.md, tests/ | rozpracováno | nálezy a návrhy v docs/audit-2026-11.md |
-| Připravenost k prodeji: kontroly, průchod všech stránek, ceník vs kalkulačka vs PDF, cesta ke kontaktu, právní stránky, SEO, `docs/pripravenost-k-prodeji.md` | src/, obsah/prezentace, public/ke-stazeni, docs/pripravenost-k-prodeji.md | rozpracováno | fork session prodej 9. 11.; navazuje na audit výše, nepřepisuje jeho práci |
+| Připravenost k prodeji: kontroly, průchod všech stránek, ceník vs kalkulačka vs PDF, cesta ke kontaktu, právní stránky, SEO, `docs/pripravenost-k-prodeji.md` | src/, obsah/prezentace, public/ke-stazeni, docs/pripravenost-k-prodeji.md | hotovo | fork session prodej 9. 11.; navazuje na audit výše, nepřepisuje jeho práci |
 | Nasazení na codekomweb.vercel.app | nastavení Vercelu | čeká na zakladatele | projekt napojit na tento repozitář, Root Directory = kořen |
 
 ## Hotovo
+
+- Připravenost k prodeji (20. 11. 2026): Obchodní podmínky (návrh), postup spolupráce na úvodu, shodná cena pomoci s dotacemi, PDF přegenerovaná, průchod 43 stránek bez chyb, 51 testů v prohlížeči. Co musí zakladatel doplnit: `docs/pripravenost-k-prodeji.md`.
 
 - Seznam šablon srovnaný s codecom (8. 11. 2026): hvězdné názvy, skleněné šablony 21 Canopus, 22 Achernar a 23 Bellatrix, nové snímky všech 23 šablon, počty 23 šablon a 69 variant.
 
