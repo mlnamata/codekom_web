@@ -142,3 +142,11 @@ test('obchodní podmínky jsou v patičce, nesou upozornění a jsou v sitemap',
   const mapa = await (await request.get('/sitemap.xml')).text()
   expect(mapa).toContain('/obchodni-podminky')
 })
+
+test('úvod ukazuje postup spolupráce a vede na celý přechod', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.getByRole('heading', { level: 2, name: 'Od první zprávy ke spuštění webu' })).toBeVisible()
+  await expect(page.locator('#spoluprace').locator('xpath=ancestor::section').getByRole('listitem')).toHaveCount(4)
+  await page.getByRole('link', { name: 'Celý postup přechodu' }).click()
+  await expect(page).toHaveURL(/\/prechod$/)
+})

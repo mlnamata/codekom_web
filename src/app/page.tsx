@@ -48,6 +48,13 @@ const DUVODY = [
   { rubrika: 'Podmínky', nadpis: 'Férové podmínky', text: 'Obec může smlouvu vypovědět kdykoli i bez udání důvodu. Prvních 30 dní je zkušební doba s vrácením celé ceny. Export dat je zdarma. Úřední deska běží i tehdy, když obec přestane platit.', foto: FOTO.zpravodaj },
 ]
 
+const KROKY = [
+  ['Výběr šablony', 'Vyberete jednu z 23 šablon a jednu ze 3 barevných variant. Doporučíme tři podle velikosti a charakteru obce.'],
+  ['Přizpůsobení a převod', 'Šablonu upravíme podle znaku, barev a fotek obce. Ze starého webu převedeme stránky a úřední desku s původním dnem vyvěšení.'],
+  ['Školení', 'Podle úrovně editoru video kurz, online hodina nebo dvě hodiny na místě.'],
+  ['Spuštění', 'Web zapneme, až ho obec zkontroluje. Doména zůstává na obci a prvních 30 dní je zkušební doba s vrácením celé ceny.'],
+]
+
 const MODULY = [
   ['Web a úřední deska', 'Povinně zveřejňované informace ve struktuře podle vyhlášky č. 515/2020 Sb. a deska s evidencí vyvěšení a sejmutí.'],
   ['Aplikace pro občany', 'Oznámení a krizová hlášení v mobilu, vždy jen to nejzávažnější.'],
@@ -294,6 +301,32 @@ export default function Uvod() {
               <FotoAi src={FOTO.topeni.src} alt={FOTO.topeni.alt} pomer="aspect-[16/10]" />
             </Odhaleni>
           </div>
+        </div>
+      </section>
+
+      {/* Jak probíhá spolupráce */}
+      <section aria-labelledby="spoluprace" className="py-14 md:py-18">
+        <div className="obal">
+          <Odhaleni className="flex flex-wrap items-end justify-between gap-6">
+            <div className="max-w-[40em]">
+              <p className="rubrika">Jak to probíhá</p>
+              <h2 id="spoluprace" className="mt-2 text-[34px] md:text-[50px]">
+                Od první zprávy ke spuštění webu
+              </h2>
+            </div>
+            <Link href="/prechod" className="tlacitko-obrys">
+              Celý postup přechodu
+            </Link>
+          </Odhaleni>
+          <ol className="mt-10 grid gap-5 md:grid-cols-4">
+            {KROKY.map(([nadpis, text], i) => (
+              <Odhaleni as="li" key={nadpis} zpozdeni={i * 80} className="sklo-svetle rounded-3xl p-6">
+                <p className="text-[15px] font-semibold text-akcent-tmavy">Krok {i + 1}</p>
+                <h3 className="mt-2 text-[22px] font-bold tracking-tight">{nadpis}</h3>
+                <p className="mt-3 text-[17px]">{text}</p>
+              </Odhaleni>
+            ))}
+          </ol>
         </div>
       </section>
 
