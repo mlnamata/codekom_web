@@ -78,7 +78,7 @@ table{border-collapse:collapse;width:100%;margin:8pt 0}th,td{border-bottom:0.5pt
 a{color:#000}`
 
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;')
-const prohlizec = await chromium.launch()
+const prohlizec = await chromium.launch(process.env.PW_CHROMIUM ? { executablePath: process.env.PW_CHROMIUM } : {})
 const seznam = []
 try {
   const stranka = await prohlizec.newPage()
