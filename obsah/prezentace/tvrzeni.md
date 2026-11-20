@@ -73,6 +73,8 @@ Zkratky zdrojů: A, B, D = části `docs/pravni-dokumenty.md` (návrhy ke kontro
 | Podpora e-mailem a telefonem v pracovní dny 8–16 hodin, kritické chyby nepřetržitě | prechod, faq | A čl. 5 odst. 3 | 2026-11-04 | overeno |
 | Reakce a obnovení: kritická do 1 hodiny / do 8 hodin, vysoká do 4 pracovních hodin / do 2 pracovních dnů, běžná do 1 pracovního dne | prechod, faq | A čl. 5, tabulka | 2026-11-04 | overeno |
 | Měsíční dostupnost nejméně 99,5 %, při nižší odpočet z ceny | prechod | A čl. 5 odst. 1 a 2 | 2026-11-04 | overeno |
+| Odpočet z další platby při nižší dostupnosti: pod 99,5 % je 10 % měsíční ceny, pod 99 % je 25 %, pod 97 % je 50 %; obec o odpočet požádá do 30 dní | obchodni-podminky | A čl. 5 odst. 2 | 2026-11-04 | overeno |
+| Kterákoli strana může od smlouvy odstoupit při podstatném porušení, například při dostupnosti pod 97 % ve 2 měsících ze 3 po sobě jdoucích | obchodni-podminky | A čl. 6 odst. 5 | 2026-11-04 | overeno |
 | Obchodní podmínky jsou součástí smlouvy, obec podepisuje jeden dokument | ke-stazeni | A, úvod | 2026-11-04 | overeno |
 | Smlouva o zpracování je příloha č. 3 smlouvy o službě | ke-stazeni | A čl. 10, čl. 12 odst. 4 | 2026-11-04 | overeno |
 | Zařízení v budovách nejsou součástí měsíční ceny | co-umime, cenik | A čl. 1 odst. 4; 01-navrh-platformy.md (hardware jednorázově) | 2026-11-04 | overeno |

@@ -132,3 +132,13 @@ test('neexistující adresa ukáže českou stránku 404', async ({ page }) => {
   expect(odpoved?.status()).toBe(404)
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Tuhle stránku jsme nenašli')
 })
+
+test('obchodní podmínky jsou v patičce, nesou upozornění a jsou v sitemap', async ({ page, request }) => {
+  await page.goto('/')
+  await page.locator('footer').getByRole('link', { name: 'Obchodní podmínky' }).click()
+  await expect(page).toHaveURL(/\/obchodni-podminky$/)
+  await expect(page.getByRole('heading', { level: 1, name: 'Obchodní podmínky' })).toBeVisible()
+  await expect(page.getByText('Návrh, k revizi advokátem').first()).toBeVisible()
+  const mapa = await (await request.get('/sitemap.xml')).text()
+  expect(mapa).toContain('/obchodni-podminky')
+})

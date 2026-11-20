@@ -8,7 +8,7 @@ adresa: "/ke-stazeni"
 
 # Ke stažení
 
-Podklady, které můžete přeposlat radě nebo zastupitelstvu. Všechny dokumenty jsou vzory a před podpisem je zkontroluje advokát. Místa, která doplníme podle obce, jsou v hranatých závorkách.
+Podklady, které můžete přeposlat radě nebo zastupitelstvu. Text obchodních podmínek si přečtete přímo na webu v [Obchodních podmínkách](/obchodni-podminky). Všechny dokumenty jsou vzory a před podpisem je zkontroluje advokát. Místa, která doplníme podle obce, jsou v hranatých závorkách.
 
 ## Dokumenty
 

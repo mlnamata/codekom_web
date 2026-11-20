@@ -29,6 +29,7 @@ const SLOUPCE = [
       ['/o-nas', 'O nás'],
       ['/kontakt', 'Kontakt'],
       ['/pristupnost', 'Prohlášení o přístupnosti'],
+      ['/obchodni-podminky', 'Obchodní podmínky'],
       ['/zasady-osobnich-udaju', 'Osobní údaje'],
       ['/cookies', 'Cookies'],
     ],
